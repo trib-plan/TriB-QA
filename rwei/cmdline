@@ -1,0 +1,6 @@
+import Amodel
+import Bmodel
+
+isinstance(self.model, Amodel)
+
+pytorch_pretrained_bert convert_tf_checkpoint_to_pytorch chinese_L-12_H-768_A-12/bert_model.ckpt chinese_L-12_H-768_A-12/bert_config.json chinese_L-12_H-768_A-12/pytorch_model.bin
