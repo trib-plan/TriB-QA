@@ -56,11 +56,7 @@
 
 小组目前成员4名：任慕成、魏然、柏宇、王洋。
 
-可分配任务待定。
-
-时间待定。
-
-### Yes or No classifying task
+### Yes or No classifying task(柏宇 & 王洋)
 
 #### 任务目标
 
