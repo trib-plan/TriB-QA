@@ -68,7 +68,28 @@
 
 #### 任务规划
 
-- [ ] 对训练数据集进行处理，得到所有YES_NO类型的fake_answers以及其对应的yesno_answers
+- [x] 对训练数据集进行处理，得到所有YES_NO类型的answers(不是fake_answers)以及其对应的yesno_answers
 - [ ] 阅读模型代码，对所得到的数据进行处理以适应模型要求。
 - [ ] 修改模型代码
 - [ ] 训练模型并得到初步结果
+
+#### 文档记录
+##### 训练级初步处理
+###### 操作步骤
+1. 将训练数据源文件放入data文件夹下
+2. 使用data_filter.py(将程序中的路径改为对应文件名，这里应该写一个parser来在运行时把文件名传进去)对原始数据进行处理，得到finished.json文件(这里在写完parser之后改为finished+文件名.json)。
+3. finished.json中的key为answer原句，value为另外两个key-value对，其中包括原句的分词结果"segmented_answers"以及原句的判断结果"yesno_answers"
+###### 样例
+```
+{
+    "ipad越狱与未越狱都是可以安装360的": 
+       {
+            "yesno_answers": "Yes", 
+            "segmented_answers": ["ipad", "越狱", "与", "未", "越狱", "都是", "可以", "安装", "360", "的"]
+       }
+}
+```
+
+
+
+
