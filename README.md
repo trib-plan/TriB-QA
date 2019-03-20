@@ -9,6 +9,8 @@
 
 项目注意事项、进展情况可以由[这里](https://github.com/trib-plan/TriB-QA/projects/1)跟踪。
 
+数据格式可以从[这里](https://github.com/trib-plan/TriB-QA/tree/master/data) 查看并补全
+
 ## 2. 时间规划
 
 竞赛的关键时间如下图：
