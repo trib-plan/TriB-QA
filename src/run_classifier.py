@@ -81,18 +81,22 @@ class InputFeatures(object):
 
 class DataProcessor(object):
     """Base class for data converters for sequence classification data sets."""
+    # 对序列分类任务 进行数据集的基础类数据转换
 
 
     def get_train_examples(self, data_dir):
         """Gets a collection of `InputExample`s for the train set."""
+        # 得到一个训练数据输入样例的集合
         raise NotImplementedError()
 
     def get_dev_examples(self, data_dir):
         """Gets a collection of `InputExample`s for the dev set."""
+        # 得到一个开发集数据输入样例的集合
         raise NotImplementedError()
 
     def get_labels(self):
         """Gets the list of labels for this data set."""
+        # 得到当前数据集的标签列表
         raise NotImplementedError()
 
     @classmethod
@@ -110,6 +114,7 @@ class DataProcessor(object):
 
 class MrpcProcessor(DataProcessor):
     """Processor for the MRPC data set (GLUE version)."""
+    # 对MRPC数据集的实现
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -236,11 +241,14 @@ class Sst2Processor(DataProcessor):
 
 def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer):
     """Loads a data file into a list of `InputBatch`s."""
+    # 把一个数据文件读入输入batch的列表中
+    # label_list 类型的属性和id对应
 
     label_map = {label : i for i, label in enumerate(label_list)}
 
     features = []
     for (ex_index, example) in enumerate(examples):
+        # 对句子a进行tokenize
         tokens_a = tokenizer.tokenize(example.text_a)
 
         tokens_b = None
@@ -252,6 +260,7 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
             _truncate_seq_pair(tokens_a, tokens_b, max_seq_length - 3)
         else:
             # Account for [CLS] and [SEP] with "- 2"
+            # 进行裁剪，因为有CLS和SEP，所以要最大长度减2
             if len(tokens_a) > max_seq_length - 2:
                 tokens_a = tokens_a[:(max_seq_length - 2)]
 
@@ -269,10 +278,13 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
         # embedding vector (and position vector). This is not *strictly* necessary
         # since the [SEP] token unambigiously separates the sequences, but it makes
         # it easier for the model to learn the concept of sequences.
-        #
+        # type_ids是用来指出这个是第一个还是第二个序列，嵌入向量为0还是1是在预选脸的时候学到的，并却被加入wordpiece向量和位置向量
+        # 这并不是很重要，因为sep token已经将序列分开，但这使得模型在学习序列的概念时变得更加简单
+
         # For classification tasks, the first vector (corresponding to [CLS]) is
         # used as as the "sentence vector". Note that this only makes sense because
         # the entire model is fine-tuned.
+        # 对于分类任务，第一个向量被用作句子向量，这只在整个模型被fine-tuned的情况下才有效
         tokens = ["[CLS]"] + tokens_a + ["[SEP]"]
         segment_ids = [0] * len(tokens)
 
@@ -313,16 +325,19 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
                               input_mask=input_mask,
                               segment_ids=segment_ids,
                               label_id=label_id))
+    # 最终返回的是每个句子的输入特征，包括输入id(源序列)，输入mask，分词id以及标签id
     return features
 
 
 def _truncate_seq_pair(tokens_a, tokens_b, max_length):
     """Truncates a sequence pair in place to the maximum length."""
+    # 截断序列对
 
     # This is a simple heuristic which will always truncate the longer sequence
     # one token at a time. This makes more sense than truncating an equal percent
     # of tokens from each, since if one sequence is very short then each token
     # that's truncated likely contains more information than a longer sequence.
+    # 这是一个简单地启发式算法，他可以每次都把最长的序列剪短一个token。这使得
     while True:
         total_length = len(tokens_a) + len(tokens_b)
         if total_length <= max_length:
@@ -449,6 +464,7 @@ def main():
         "mrpc": 2,
     }
 
+    # 设置系统环境
     if args.local_rank == -1 or args.no_cuda:
         device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
         n_gpu = torch.cuda.device_count()
@@ -458,46 +474,65 @@ def main():
         n_gpu = 1
         # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
         torch.distributed.init_process_group(backend='nccl')
+    # log
     logger.info("device: {} n_gpu: {}, distributed training: {}, 16-bits training: {}".format(
         device, n_gpu, bool(args.local_rank != -1), args.fp16))
+
 
     if args.gradient_accumulation_steps < 1:
         raise ValueError("Invalid gradient_accumulation_steps parameter: {}, should be >= 1".format(
                             args.gradient_accumulation_steps))
 
+    # 训练的batch_size大小是动态的？随着梯度累积步数的增加而减少
     args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
 
+    # 重新设置随机数
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     if n_gpu > 0:
         torch.cuda.manual_seed_all(args.seed)
 
+    # 设定训练集或者评估集
     if not args.do_train and not args.do_eval:
         raise ValueError("At least one of `do_train` or `do_eval` must be True.")
 
+    # 判断输出目录是否已经被建立
     if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
         raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
+    # 建立输出文件夹
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
 
+    # 把字符串变为小写字母
     task_name = args.task_name.lower()
 
+    # 确认在processor中能够找到自己的数据集
     if task_name not in processors:
         raise ValueError("Task not found: %s" % (task_name))
 
+    # 确定processor
     processor = processors[task_name]()
+    # 确定有几个类别
     num_labels = num_labels_task[task_name]
+    # 拿到标签的列表
     label_list = processor.get_labels()
 
+    # 定义tokenizer
     tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
 
+    # 没有训练样本和优化步数
     train_examples = None
     num_train_optimization_steps = None
+
+    # 如果进行训练的话，
     if args.do_train:
+        # 获得训练样本
         train_examples = processor.get_train_examples(args.data_dir)
+        # 拿到优化步数
         num_train_optimization_steps = int(
             len(train_examples) / args.train_batch_size / args.gradient_accumulation_steps) * args.num_train_epochs
+        #
         if args.local_rank != -1:
             num_train_optimization_steps = num_train_optimization_steps // torch.distributed.get_world_size()
 
@@ -506,6 +541,7 @@ def main():
     model = BertForSequenceClassification.from_pretrained(args.bert_model,
               cache_dir=cache_dir,
               num_labels = num_labels)
+    # 是十六比特浮点数还是三十二比特浮点数
     if args.fp16:
         model.half()
     model.to(device)
@@ -558,10 +594,12 @@ def main():
         logger.info("  Num examples = %d", len(train_examples))
         logger.info("  Batch size = %d", args.train_batch_size)
         logger.info("  Num steps = %d", num_train_optimization_steps)
+        # 源序列
         all_input_ids = torch.tensor([f.input_ids for f in train_features], dtype=torch.long)
         all_input_mask = torch.tensor([f.input_mask for f in train_features], dtype=torch.long)
         all_segment_ids = torch.tensor([f.segment_ids for f in train_features], dtype=torch.long)
         all_label_ids = torch.tensor([f.label_id for f in train_features], dtype=torch.long)
+
         train_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
         if args.local_rank == -1:
             train_sampler = RandomSampler(train_data)
@@ -569,13 +607,20 @@ def main():
             train_sampler = DistributedSampler(train_data)
         train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)
 
+        # 转换模式
         model.train()
+        # 对于每一个epoch
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
+            # 初始化训练loss
             tr_loss = 0
             nb_tr_examples, nb_tr_steps = 0, 0
+            # tqdm是一个python进度条
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
+                # 取出一个batch
                 batch = tuple(t.to(device) for t in batch)
+                # 取出四个数据
                 input_ids, input_mask, segment_ids, label_ids = batch
+                # 跑模型，得到结果
                 loss = model(input_ids, segment_ids, input_mask, label_ids)
                 if n_gpu > 1:
                     loss = loss.mean() # mean() to average on multi-gpu.
