@@ -145,25 +145,36 @@ class BertConfig(object):
 
         Args:
             vocab_size_or_config_json_file: Vocabulary size of `inputs_ids` in `BertModel`.
+                BertModel inputs_ids的词典大小
             hidden_size: Size of the encoder layers and the pooler layer.
+                编码层和池化层的大小
             num_hidden_layers: Number of hidden layers in the Transformer encoder.
+                transformer编码层的隐状态层数量
             num_attention_heads: Number of attention heads for each attention layer in
                 the Transformer encoder.
+                head的数量
             intermediate_size: The size of the "intermediate" (i.e., feed-forward)
                 layer in the Transformer encoder.
+                中间层的大小
             hidden_act: The non-linear activation function (function or string) in the
                 encoder and pooler. If string, "gelu", "relu" and "swish" are supported.
+                激活函数类型
             hidden_dropout_prob: The dropout probabilitiy for all fully connected
                 layers in the embeddings, encoder, and pooler.
+                dropout的概率
             attention_probs_dropout_prob: The dropout ratio for the attention
                 probabilities.
+                attention drop的概率
             max_position_embeddings: The maximum sequence length that this model might
                 ever be used with. Typically set this to something large just in case
                 (e.g., 512 or 1024 or 2048).
+                序列的最长长度
             type_vocab_size: The vocabulary size of the `token_type_ids` passed into
                 `BertModel`.
+                token的类型数量
             initializer_range: The sttdev of the truncated_normal_initializer for
                 initializing all weight matrices.
+
         """
         if isinstance(vocab_size_or_config_json_file, str) or (sys.version_info[0] == 2
                         and isinstance(vocab_size_or_config_json_file, unicode)):
@@ -486,6 +497,7 @@ class BertPreTrainingHeads(nn.Module):
 
 class BertPreTrainedModel(nn.Module):
     """ An abstract class to handle weights initialization and
+        一个下载和读取预训练模型的简单接口
         a simple interface for dowloading and loading pretrained models.
     """
     def __init__(self, config, *inputs, **kwargs):
@@ -638,33 +650,44 @@ class BertPreTrainedModel(nn.Module):
 
 class BertModel(BertPreTrainedModel):
     """BERT model ("Bidirectional Embedding Representations from a Transformer").
+    BERT
 
     Params:
         config: a BertConfig class instance with the configuration to build a new model
+        从BertConfig类中拿过来的相关参数
 
     Inputs:
         `input_ids`: a torch.LongTensor of shape [batch_size, sequence_length]
             with the word token indices in the vocabulary(see the tokens preprocessing logic in the scripts
             `extract_features.py`, `run_classifier.py` and `run_squad.py`)
+            类型为torch.LongTensor，有对应word token在词典中的索引
         `token_type_ids`: an optional torch.LongTensor of shape [batch_size, sequence_length] with the token
             types indices selected in [0, 1]. Type 0 corresponds to a `sentence A` and type 1 corresponds to
             a `sentence B` token (see BERT paper for more details).
+            一个可选的torch.LongTensor型的数据,内容为token的类型索引，0表示句子A，1表示句子B
         `attention_mask`: an optional torch.LongTensor of shape [batch_size, sequence_length] with indices
             selected in [0, 1]. It's a mask to be used if the input sequence length is smaller than the max
             input sequence length in the current batch. It's the mask that we typically use for attention when
             a batch has varying length sentences.
+            当输入序列的长度比最大的输入序列长度要短的时候进行的mask，我们主要用来在一个batch中的序列有多种不同的长度的句子时进行attention
         `output_all_encoded_layers`: boolean which controls the content of the `encoded_layers` output as described below. Default: `True`.
+            一个布尔值，他可以控制编码层输出的内容
 
     Outputs: Tuple of (encoded_layers, pooled_output)
+        输出为一个元组，包括(encoded_layers, pooled_output)
         `encoded_layers`: controled by `output_all_encoded_layers` argument:
+            被输出所有的encoded layers这一变量所控制
             - `output_all_encoded_layers=True`: outputs a list of the full sequences of encoded-hidden-states at the end
                 of each attention block (i.e. 12 full sequences for BERT-base, 24 for BERT-large), each
                 encoded-hidden-state is a torch.FloatTensor of size [batch_size, sequence_length, hidden_size],
+                如果全部输出的话，输出就是一个在每个attention格子末尾的encoded-hidden-states的完整序列的列表
             - `output_all_encoded_layers=False`: outputs only the full sequence of hidden-states corresponding
                 to the last attention block of shape [batch_size, sequence_length, hidden_size],
+                否则值输出最后一个attention格子的完整序列
         `pooled_output`: a torch.FloatTensor of size [batch_size, hidden_size] which is the output of a
             classifier pretrained on top of the hidden state associated to the first character of the
             input (`CLS`) to train on the Next-Sentence task (see BERT's paper).
+            池化输出，在与输入的第一个字母相连的最后一个隐状态顶层的预训练分类器的输出。用来进行下一个句子任务的训练
 
     Example usage:
     ```python
@@ -721,9 +744,15 @@ class BertModel(BertPreTrainedModel):
 
 class BertForPreTraining(BertPreTrainedModel):
     """BERT model with pre-training heads.
+        使用预训练头的BERT模型
     This module comprises the BERT model followed by the two pre-training heads:
+        这个模型包含了用有两个预训练头的BERT模型
         - the masked language modeling head, and
+        masked语言模型
         - the next sentence classification head.
+        下一个句子的分类问题
+
+
 
     Params:
         config: a BertConfig class instance with the configuration to build a new model.
@@ -742,18 +771,24 @@ class BertForPreTraining(BertPreTrainedModel):
         `masked_lm_labels`: optional masked language modeling labels: torch.LongTensor of shape [batch_size, sequence_length]
             with indices selected in [-1, 0, ..., vocab_size]. All labels set to -1 are ignored (masked), the loss
             is only computed for the labels set in [0, ..., vocab_size]
+            可选的masked语言模型标签，所有的-1都是被蒙起来的。
         `next_sentence_label`: optional next sentence classification loss: torch.LongTensor of shape [batch_size]
             with indices selected in [0, 1].
             0 => next sentence is the continuation, 1 => next sentence is a random sentence.
+            下一个句子的标签，越接近0代表越有可能是连续句子，否则是随机句子
 
     Outputs:
         if `masked_lm_labels` and `next_sentence_label` are not `None`:
             Outputs the total_loss which is the sum of the masked language modeling loss and the next
             sentence classification loss.
+            如果mask和下个句子的预测都加进来了，那么输出两个任务的loss之和
         if `masked_lm_labels` or `next_sentence_label` is `None`:
             Outputs a tuple comprising
             - the masked language modeling logits of shape [batch_size, sequence_length, vocab_size], and
             - the next sentence classification logits of shape [batch_size, 2].
+            如果其中有一个没加进去
+            输出一个元组，它包括两个的预测逻辑斯特分布
+
 
     Example usage:
     ```python
@@ -793,6 +828,7 @@ class BertForPreTraining(BertPreTrainedModel):
 class BertForMaskedLM(BertPreTrainedModel):
     """BERT model with the masked language modeling head.
     This module comprises the BERT model followed by the masked language modeling head.
+        包含使用masked语言模型头的BERT
 
     Params:
         config: a BertConfig class instance with the configuration to build a new model.
@@ -854,9 +890,11 @@ class BertForMaskedLM(BertPreTrainedModel):
 class BertForNextSentencePrediction(BertPreTrainedModel):
     """BERT model with next sentence prediction head.
     This module comprises the BERT model followed by the next sentence classification head.
+    同上上上个类
 
     Params:
         config: a BertConfig class instance with the configuration to build a new model.
+
 
     Inputs:
         `input_ids`: a torch.LongTensor of shape [batch_size, sequence_length]
@@ -917,10 +955,12 @@ class BertForSequenceClassification(BertPreTrainedModel):
     """BERT model for classification.
     This module is composed of the BERT model with a linear layer on top of
     the pooled output.
+    分类器BERT模型，包括一个在顶端用来分类的线性层
 
     Params:
         `config`: a BertConfig class instance with the configuration to build a new model.
         `num_labels`: the number of classes for the classifier. Default = 2.
+        # 分类器分类的数量，默认为2
 
     Inputs:
         `input_ids`: a torch.LongTensor of shape [batch_size, sequence_length]
@@ -935,6 +975,7 @@ class BertForSequenceClassification(BertPreTrainedModel):
             a batch has varying length sentences.
         `labels`: labels for the classification output: torch.LongTensor of shape [batch_size]
             with indices selected in [0, ..., num_labels].
+            分类标签
 
     Outputs:
         if `labels` is not `None`:
