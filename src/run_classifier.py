@@ -112,6 +112,70 @@ class DataProcessor(object):
             return lines
 
 
+
+class BaiduProcessor(DataProcessor):
+    def get_train_examples(self, data_dir):
+        """Gets a collection of `InputExample`s for the train set."""
+        logger.info("LOOKING AT {}".format(os.path.join(data_dir, "train.tsv")))
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "train.json")), "train")
+
+    def get_dev_examples(self, data_dir):
+        """Gets a collection of `InputExample`s for the dev set."""
+        # 得到一个开发集数据输入样例的集合
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "dev.json")), "dev")
+
+    def get_labels(self):
+        """Gets the list of labels for this data set."""
+        # 得到当前数据集的标签列表
+        return ["0", "1", "2"]
+
+    @classmethod
+    def _read_tsv(cls, input_file, quotechar=None):
+        """Reads a tab separated value file."""
+        # with open(input_file, "r") as f:
+        #     reader = csv.reader(f, delimiter="\t", quotechar=quotechar)
+        #     lines = []
+        #     for line in reader:
+        #         if sys.version_info[0] == 2:
+        #             line = list(unicode(cell, 'utf-8') for cell in line)
+        #         lines.append(line)
+        #     return lines
+        with open(input_file, "r") as f:
+            dict0 = f.readlines()
+            dict0 = dict0[0]
+            lines = []
+            for (sentence, type) in dict0.items():
+                line = []
+                line.append(sentence)
+                line.append(type["yesno_answers"])
+                line.append(type["segmented_answers"])
+                lines.append(line)
+            return lines
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            text_a = line[0]
+            # text_b = line[4]
+            label = line[1]
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
+        return examples
+
+
+
+
+
+
+
+
+
 class MrpcProcessor(DataProcessor):
     """Processor for the MRPC data set (GLUE version)."""
     # 对MRPC数据集的实现
@@ -455,6 +519,7 @@ def main():
         "mnli": MnliProcessor,
         "mrpc": MrpcProcessor,
         "sst-2": Sst2Processor,
+        "baidu": BaiduProcessor,
     }
 
     num_labels_task = {
@@ -462,6 +527,7 @@ def main():
         "sst-2": 2,
         "mnli": 3,
         "mrpc": 2,
+        "baidu": 3,
     }
 
     # 设置系统环境
@@ -551,7 +617,7 @@ def main():
         except ImportError:
             raise ImportError("Please install apex from https://www.github.com/nvidia/apex to use distributed and fp16 training.")
 
-        model = DDP(model)
+        model = DDP(model, device_ids= [0,1,2])
     elif n_gpu > 1:
         model = torch.nn.DataParallel(model)
 

@@ -29,6 +29,6 @@ for each in f.readlines():
     # new_dict = json.loads(f)
     # print(json_dicts)
 str0 = json.dumps(yes_no, ensure_ascii=False)
-fout = open("finished.json", 'w', encoding='utf-8')
+fout = open("train.json", 'w', encoding='utf-8')
 fout.write(str0)
 fout.close()
