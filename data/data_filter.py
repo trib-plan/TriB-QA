@@ -14,7 +14,8 @@ yes_no_train = {}
 yes_no_dev = {}
 yes_no_test = {}
 readlines = f.readlines()
-len0 = len(readlines)
+len0 = 15496
+# exit()
 total = 0
 for each in readlines:
     json_dicts = json.loads(each)
@@ -32,11 +33,11 @@ for each in readlines:
                 tmp["yesno_answers"] = 2
 
             tmp["segmented_answers"]=json_dicts["segmented_answers"][pos]
+            print(str(total) + '\r', end='')
             if total < 0.7 * len0:
                 yes_no_train[each_answer] = tmp
-            elif total >= 0.7 * len0 and total < 0.85 * len0:
-                yes_no_test[each_answer] = tmp
             else:
+                # print("lala")
                 yes_no_dev[each_answer] = tmp
             # print("fake_answers = " + str(each_answer) + "   yesno_answers = " + str(json_dicts["yesno_answers"][pos]) + "\r", end='')
             pos += 1
@@ -56,7 +57,7 @@ fout = open("dev.json", 'w', encoding='utf-8')
 fout.write(str0)
 fout.close()
 
-str0 = json.dumps(yes_no_test, ensure_ascii=False)
-fout = open("test.json", 'w', encoding='utf-8')
-fout.write(str0)
-fout.close()
+# str0 = json.dumps(yes_no_test, ensure_ascii=False)
+# fout = open("test.json", 'w', encoding='utf-8')
+# fout.write(str0)
+# fout.close()
