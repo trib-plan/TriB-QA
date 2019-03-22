@@ -23,5 +23,5 @@
 | 特殊情况的处理 |                           |                      |                                                              |
 |                | question_type             | DESCRIPTION          | 这类问题没有额外的信息                                       |
 |                |                           | ENTITY               | entity_answers:[[e1] [e2]...] 从每个answer 抽出一个(?)信息。 |
-|                |                           | YES_NO               | yesno_type :OPINION，FACT<br />yesno_answer: [ 'YES'/ 'NO'/'DEPENDS'] 根据answer 的个数判断数量。 |
+|                |                           | YES_NO               | yesno_type :OPINION，FACT<br />yesno_answer: [ 'Yes'/ 'No'/'Depends'] 根据answer 的个数判断数量。 |
 
