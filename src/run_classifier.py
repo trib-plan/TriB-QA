@@ -23,6 +23,7 @@ import logging
 import os
 import random
 import sys
+import json
 
 import numpy as np
 import torch
@@ -33,14 +34,17 @@ from tqdm import tqdm, trange
 
 from pytorch_pretrained_bert.file_utils import PYTORCH_PRETRAINED_BERT_CACHE
 from pytorch_pretrained_bert.modeling import BertForSequenceClassification, BertConfig, WEIGHTS_NAME, CONFIG_NAME
-from pytorch_pretrained_bert.tokenization import BertTokenizer
+# from Bert_modeling import BertForSequenceClassification, BertConfig, WEIGHTS_NAME, CONFIG_NAME
+# from Bert_tokenization import BertTokenizer
+from Bert_tokenization import BertTokenizer
 from pytorch_pretrained_bert.optimization import BertAdam, warmup_linear
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
                     datefmt = '%m/%d/%Y %H:%M:%S',
                     level = logging.INFO)
 logger = logging.getLogger(__name__)
-
 
 class InputExample(object):
     """A single training/test example for simple sequence classification."""
@@ -129,7 +133,7 @@ class BaiduProcessor(DataProcessor):
     def get_labels(self):
         """Gets the list of labels for this data set."""
         # 得到当前数据集的标签列表
-        return ["0", "1", "2"]
+        return [0, 1, 2]
 
     @classmethod
     def _read_tsv(cls, input_file, quotechar=None):
@@ -145,6 +149,7 @@ class BaiduProcessor(DataProcessor):
         with open(input_file, "r") as f:
             dict0 = f.readlines()
             dict0 = dict0[0]
+            dict0 = json.loads(dict0)
             lines = []
             for (sentence, type) in dict0.items():
                 line = []
@@ -166,7 +171,10 @@ class BaiduProcessor(DataProcessor):
             label = line[1]
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
+            # print(text_a, label)
+            # exit()
         return examples
+
 
 
 
@@ -617,7 +625,7 @@ def main():
         except ImportError:
             raise ImportError("Please install apex from https://www.github.com/nvidia/apex to use distributed and fp16 training.")
 
-        model = DDP(model, device_ids= [0,1,2])
+        model = DDP(model)
     elif n_gpu > 1:
         model = torch.nn.DataParallel(model)
 
@@ -684,10 +692,13 @@ def main():
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 # 取出一个batch
                 batch = tuple(t.to(device) for t in batch)
+                # print("batch has been token out!")
                 # 取出四个数据
                 input_ids, input_mask, segment_ids, label_ids = batch
+                # print("data has been token out! Run model...")
                 # 跑模型，得到结果
                 loss = model(input_ids, segment_ids, input_mask, label_ids)
+                # print("loss has been required!")
                 if n_gpu > 1:
                     loss = loss.mean() # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
@@ -696,9 +707,10 @@ def main():
                 if args.fp16:
                     optimizer.backward(loss)
                 else:
-                    loss.backward()
+                    # print(loss)
+                    loss[0].backward()
 
-                tr_loss += loss.item()
+                tr_loss += loss[0].item()
                 nb_tr_examples += input_ids.size(0)
                 nb_tr_steps += 1
                 if (step + 1) % args.gradient_accumulation_steps == 0:

@@ -34,6 +34,7 @@ PRETRAINED_VOCAB_ARCHIVE_MAP = {
     'bert-base-multilingual-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-multilingual-uncased-vocab.txt",
     'bert-base-multilingual-cased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-multilingual-cased-vocab.txt",
     'bert-base-chinese': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt",
+    # 'bert-base-chinese': "/home/ybai/.pytorch_pretrained_bert",
 }
 PRETRAINED_VOCAB_POSITIONAL_EMBEDDINGS_SIZE_MAP = {
     'bert-base-uncased': 512,
@@ -131,6 +132,8 @@ class BertTokenizer(object):
         try:
             resolved_vocab_file = cached_path(vocab_file, cache_dir=cache_dir)
         except EnvironmentError:
+            # print("vocab_file = " + str(vocab_file))
+            # print("cache_dir = " + str(cache_dir))
             logger.error(
                 "Model name '{}' was not found in model name list ({}). "
                 "We assumed '{}' was a path or url but couldn't find any file "

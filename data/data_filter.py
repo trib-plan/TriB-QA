@@ -10,8 +10,13 @@ print(f)
 
 
   # print(f.readlines())
-yes_no = {}
-for each in f.readlines():
+yes_no_train = {}
+yes_no_dev = {}
+yes_no_test = {}
+readlines = f.readlines()
+len0 = len(readlines)
+total = 0
+for each in readlines:
     json_dicts = json.loads(each)
     if json_dicts["question_type"] == "YES_NO":
         pos = 0
@@ -19,16 +24,39 @@ for each in f.readlines():
         for each_answer in json_dicts["answers"]:
             tmp = {}
             tmp["yesno_answers"] =json_dicts["yesno_answers"][pos]
+            if json_dicts["yesno_answers"][pos] == "YES":
+                tmp["yesno_answers"] = 1
+            elif json_dicts["yesno_answers"][pos] == "NO":
+                tmp["yesno_answers"] = 0
+            else:
+                tmp["yesno_answers"] = 2
+
             tmp["segmented_answers"]=json_dicts["segmented_answers"][pos]
-            yes_no[each_answer] = tmp
+            if total < 0.7 * len0:
+                yes_no_train[each_answer] = tmp
+            elif total >= 0.7 * len0 and total < 0.85 * len0:
+                yes_no_test[each_answer] = tmp
+            else:
+                yes_no_dev[each_answer] = tmp
             # print("fake_answers = " + str(each_answer) + "   yesno_answers = " + str(json_dicts["yesno_answers"][pos]) + "\r", end='')
             pos += 1
+            total += 1
 
     # print(str0)
     # print(json_dicts.items()[0].keys())
     # new_dict = json.loads(f)
     # print(json_dicts)
-str0 = json.dumps(yes_no, ensure_ascii=False)
+str0 = json.dumps(yes_no_train, ensure_ascii=False)
 fout = open("train.json", 'w', encoding='utf-8')
+fout.write(str0)
+fout.close()
+
+str0 = json.dumps(yes_no_dev, ensure_ascii=False)
+fout = open("dev.json", 'w', encoding='utf-8')
+fout.write(str0)
+fout.close()
+
+str0 = json.dumps(yes_no_test, ensure_ascii=False)
+fout = open("test.json", 'w', encoding='utf-8')
 fout.write(str0)
 fout.close()
