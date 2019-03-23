@@ -153,6 +153,9 @@ class BaiduProcessor(DataProcessor):
             lines = []
             for (sentence, type) in dict0.items():
                 line = []
+                # if "yesno_type" in type.keys():
+                #     line.append(str(type["yesno_type"]) + sentence)
+                # else:
                 line.append(sentence)
                 line.append(type["yesno_answers"])
                 line.append(type["segmented_answers"])
@@ -774,7 +777,7 @@ def main():
             label_ids = label_ids.to('cpu').numpy()
             tmp_eval_accuracy = accuracy(logits, label_ids)
 
-            eval_loss += tmp_eval_loss.mean().item()
+            eval_loss += tmp_eval_loss[0].mean().item()
             eval_accuracy += tmp_eval_accuracy
 
             nb_eval_examples += input_ids.size(0)

@@ -25,14 +25,21 @@ for each in readlines:
         for each_answer in json_dicts["answers"]:
             tmp = {}
             tmp["yesno_answers"] =json_dicts["yesno_answers"][pos]
-            if json_dicts["yesno_answers"][pos] == "YES":
+            # print(json_dicts["yesno_answers"][pos])
+            # if total > 10:
+            #     exit()
+            if json_dicts["yesno_answers"][pos] == "Yes":
                 tmp["yesno_answers"] = 1
-            elif json_dicts["yesno_answers"][pos] == "NO":
+            elif json_dicts["yesno_answers"][pos] == "No":
                 tmp["yesno_answers"] = 0
             else:
                 tmp["yesno_answers"] = 2
 
+            # print(json_dicts)
+            # exit()
             tmp["segmented_answers"]=json_dicts["segmented_answers"][pos]
+            if "yesno_type" in json_dicts.keys():
+                tmp["yesno_type"] = json_dicts["yesno_type"]
             print(str(total) + '\r', end='')
             if total < 0.7 * len0:
                 yes_no_train[each_answer] = tmp
@@ -43,6 +50,38 @@ for each in readlines:
             pos += 1
             total += 1
 
+f = open("./zhidao.train.json", "r", encoding='utf-8')
+print(f)
+readlines = f.readlines()
+
+for each in readlines:
+    json_dicts = json.loads(each)
+    if json_dicts["question_type"] == "YES_NO":
+        pos = 0
+        # print("yesno_answers = " + str(json_dicts["yesno_answers"]))
+        for each_answer in json_dicts["answers"]:
+            tmp = {}
+            tmp["yesno_answers"] =json_dicts["yesno_answers"][pos]
+            # print(json_dicts["yesno_answers"][pos])
+            # if total > 10:
+            #     exit()
+            if json_dicts["yesno_answers"][pos] == "Yes":
+                tmp["yesno_answers"] = 1
+            elif json_dicts["yesno_answers"][pos] == "No":
+                tmp["yesno_answers"] = 0
+            else:
+                tmp["yesno_answers"] = 2
+
+            # print(json_dicts)
+            # exit()
+            tmp["segmented_answers"]=json_dicts["segmented_answers"][pos]
+            if "yesno_type" in json_dicts.keys():
+                tmp["yesno_type"] = json_dicts["yesno_type"]
+            print(str(total) + '\r', end='')
+            yes_no_train[each_answer] = tmp
+            # print("fake_answers = " + str(each_answer) + "   yesno_answers = " + str(json_dicts["yesno_answers"][pos]) + "\r", end='')
+            pos += 1
+            total += 1
     # print(str0)
     # print(json_dicts.items()[0].keys())
     # new_dict = json.loads(f)
