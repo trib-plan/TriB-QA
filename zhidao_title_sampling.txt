@@ -1,0 +1,779 @@
+- Question  0 : 茄子卤面的做法
+ -- paragraph title:  如何做茄子卤面  -- is_selected:  True
+ -- paragraph title:  茄子打卤面的做法  -- is_selected:  True
+ -- paragraph title:  卤面的做法,西红柿茄子素卤面怎么做好吃  -- is_selected:  True
+ -- paragraph title:  茄子打卤面怎么做好吃  -- is_selected:  False
+ -- paragraph title:  茄子面条卤怎么做_百度知道  -- is_selected:  False
+
+
+- Question  1 : 家用电磁炉有辐射吗
+ -- paragraph title:  电磁炉有辐射吗?  -- is_selected:  True
+ -- paragraph title:  电磁炉辐射大吗  -- is_selected:  False
+ -- paragraph title:  电磁炉辐射大吗?  -- is_selected:  False
+ -- paragraph title:  电磁炉辐射到底有多大?  -- is_selected:  False
+ -- paragraph title:  用电磁炉做饭有辐射吗?  -- is_selected:  False
+
+
+- Question  2 : 星露谷物语作物价格
+ -- paragraph title:  星露谷物语哪些作物周期短比较赚钱  -- is_selected:  False
+ -- paragraph title:  星露谷物语 温室解锁要哪些作物  -- is_selected:  False
+
+
+- Question  3 : 女人怎么自慰
+ -- paragraph title:  小女孩怎么自慰  -- is_selected:  False
+ -- paragraph title:  女人怎么手淫啊  -- is_selected:  False
+ -- paragraph title:  女大学生怎样自慰_百度知道  -- is_selected:  False
+ -- paragraph title:  女生如何自慰_百度知道  -- is_selected:  False
+ -- paragraph title:  女人怎样自慰  -- is_selected:  False
+
+
+- Question  4 : 提高网速的方法
+ -- paragraph title:  怎样提高网速 百分百提高网速的方法  -- is_selected:  True
+ -- paragraph title:  有什么办法能让电脑提升网速?  -- is_selected:  False
+ -- paragraph title:  关于提高网速的方法有哪些  -- is_selected:  False
+ -- paragraph title:  有什么方法能提高网速吗  -- is_selected:  True
+ -- paragraph title:  有什么方法可以提高网速?_百度知道  -- is_selected:  False
+
+
+- Question  5 : 如何高效阅读 pdf
+ -- paragraph title:  如何高效阅读 pdf  -- is_selected:  False
+ -- paragraph title:  如何高效读懂一本书 pdf_百度知道  -- is_selected:  False
+ -- paragraph title:  如何高效读懂一本书 pdf_百度知道  -- is_selected:  False
+ -- paragraph title:  如何高效读懂一本书pdf电子版  -- is_selected:  False
+ -- paragraph title:  如何读书最有效.pdf  -- is_selected:  False
+
+
+- Question  6 : excel单因素方差分析结果怎么看
+ -- paragraph title:  单因素方差分析 excel结果怎么看  -- is_selected:  False
+ -- paragraph title:  excel单因素方差分析的结果怎么看  -- is_selected:  True
+ -- paragraph title:  求excel单因素方差分析的结果解析教程(尤其是结果分析出来之后怎么看懂,我会做,但是结果出来了不  -- is_selected:  False
+ -- paragraph title:  如何解析excel单因素方差分结果  -- is_selected:  False
+ -- paragraph title:  我通过excel做出了单因素方差分析,可不会分析结果  -- is_selected:  False
+
+
+- Question  7 : 淘宝注册开店流程
+ -- paragraph title:  淘宝开店流程步骤  -- is_selected:  True
+ -- paragraph title:  淘宝开店的认证步骤?  -- is_selected:  True
+ -- paragraph title:  淘宝网怎么开店步骤_百度知道  -- is_selected:  False
+ -- paragraph title:  淘宝企业店铺开店注册流程是怎样的  -- is_selected:  False
+ -- paragraph title:  淘宝开店的步骤.和注意事项.!?  -- is_selected:  False
+
+
+- Question  8 : 陆亦可最后和谁在一起了
+ -- paragraph title:  《人民的名义》陆亦可最后跟谁在一起了?  -- is_selected:  True
+ -- paragraph title:  人民的名义陆亦可结局是什么 陆亦可最后和谁在一起了  -- is_selected:  True
+ -- paragraph title:  人民的名义陆亦可结局和谁在一起了 陆亦可是不是喜欢陈海  -- is_selected:  False
+ -- paragraph title:  名义陆亦可结局是什么和谁在一起 陆亦可的扮演者是谁  -- is_selected:  True
+ -- paragraph title:  人民的名义陆亦可陈海最后在一起吗 陆亦可结局死了吗  -- is_selected:  False
+
+
+- Question  9 : nvidia控制面板无反应
+ -- paragraph title:  为什么我的nvidia控制面板打不开,点了没反应  -- is_selected:  True
+ -- paragraph title:  nvidia显卡控制面板打开后未响应.  -- is_selected:  True
+ -- paragraph title:  nvidia英伟达控制面板点击没反应  -- is_selected:  False
+ -- paragraph title:  如何解决nvidia控制面板打不开  -- is_selected:  False
+ -- paragraph title:  在桌面右键nvidia控制面板没反应 求解  -- is_selected:  False
+
+
+- Question  10 : 网站赌博输钱报警有吗
+ -- paragraph title:  赌博输钱了可以报警吗  -- is_selected:  True
+ -- paragraph title:  赌博输钱报警可以吗  -- is_selected:  False
+ -- paragraph title:  网络赌博输的钱可以报警吗  -- is_selected:  False
+ -- paragraph title:  参与网络赌博输钱,报警自己会被抓吗  -- is_selected:  False
+ -- paragraph title:  网络赌博输钱报警有回执吗_百度知道  -- is_selected:  False
+
+
+- Question  11 : ipad第一次充电需要注意什么
+ -- paragraph title:  ipad air第一次充电需要注意什么  -- is_selected:  True
+ -- paragraph title:  ipad mini第一次充电需要注意什么  -- is_selected:  True
+ -- paragraph title:  新ipad第一次充电应该注意什么  -- is_selected:  True
+ -- paragraph title:  ipad第一次充电需要注意什么  -- is_selected:  False
+ -- paragraph title:  ipad第一次充电要注意什么  -- is_selected:  False
+
+
+- Question  12 : 种草莓的方法
+ -- paragraph title:  种草莓的方法  -- is_selected:  True
+ -- paragraph title:  草莓的种植方法  -- is_selected:  False
+ -- paragraph title:  草莓栽种方法  -- is_selected:  True
+ -- paragraph title:  种草莓的技巧该怎么吸  -- is_selected:  False
+ -- paragraph title:  草莓的种植方法与技术?  -- is_selected:  True
+
+
+- Question  13 : 为什么thinkpad配置低但却贵
+ -- paragraph title:  thinkpad配置那么低为什么还那么贵?  -- is_selected:  True
+ -- paragraph title:  联想 thinkpad 为啥配置又低价格又贵??  -- is_selected:  True
+ -- paragraph title:  thinkpad配置那么低啊为什么卖上万,哪里好了?  -- is_selected:  False
+ -- paragraph title:  为什么thinkpad有些笔记本很贵 配置却比较差  -- is_selected:  True
+ -- paragraph title:  为啥thinkpad配置那么低还卖那么贵,i  -- is_selected:  False
+
+
+- Question  14 : 大疆无人机是中国的吗
+ -- paragraph title:  大疆无人机是中国的吗的最新相关信息  -- is_selected:  False
+ -- paragraph title:  出口的大疆无人机和国内的有什么区别  -- is_selected:  False
+ -- paragraph title:  大疆是不是国内最好的无人机?  -- is_selected:  True
+ -- paragraph title:  大疆的无人机怎么样,有人可以推荐一下吗  -- is_selected:  False
+ -- paragraph title:  大疆无人机是哪国家生产  -- is_selected:  True
+
+
+- Question  15 : 本田摩托车官方网报价
+ -- paragraph title:  本田踏板摩托车报价及图片2015官网  -- is_selected:  True
+ -- paragraph title:  本田摩托车多少钱?  -- is_selected:  True
+ -- paragraph title:  本田女装摩托车官方网报价查询  -- is_selected:  True
+ -- paragraph title:  本田250摩托车报价  -- is_selected:  False
+ -- paragraph title:  五羊本田摩托车价格_百度知道  -- is_selected:  False
+
+
+- Question  16 : 3dmax文件太大
+ -- paragraph title:  3dmax2012文件太大怎么办  -- is_selected:  True
+ -- paragraph title:  3dmax文件过大怎么清理  -- is_selected:  True
+ -- paragraph title:  3dmax文件太大打不开  -- is_selected:  False
+ -- paragraph title:  3dmax文件太大  渲染不了  -- is_selected:  False
+ -- paragraph title:  3dmax文件太大打不开  -- is_selected:  False
+
+
+- Question  17 : 清华大学2016录取分数线
+ -- paragraph title:  清华大学2016录取分数线是多少  -- is_selected:  False
+ -- paragraph title:  2016清华大学录取 分数线  -- is_selected:  True
+ -- paragraph title:  2016年清华大学录取分数线是多少  -- is_selected:  False
+ -- paragraph title:  2016年清华大学录取分数线是多少分  -- is_selected:  True
+ -- paragraph title:  2016清华大学录取分数线是多少  -- is_selected:  True
+
+
+- Question  18 : 蚕丝被可以水洗吗
+ -- paragraph title:  蚕丝被可以水洗吗?  -- is_selected:  True
+ -- paragraph title:  蚕丝被可以用洗衣机洗吗???  -- is_selected:  False
+ -- paragraph title:  蚕丝被能自己放洗衣机水洗吗  -- is_selected:  False
+ -- paragraph title:  蚕丝被能洗吗,怎么保养啊?  -- is_selected:  True
+ -- paragraph title:  蚕丝被可以水洗吗?  -- is_selected:  False
+
+
+- Question  19 : 鸟屎掉头上预兆
+ -- paragraph title:  鸟屎掉头上有什么预兆  -- is_selected:  True
+ -- paragraph title:  鸟屎掉头上有什么预兆  -- is_selected:  True
+ -- paragraph title:  鸟屎掉头上是什么预兆  -- is_selected:  True
+ -- paragraph title:  请问鸟屎掉头上有什么预兆?  -- is_selected:  False
+ -- paragraph title:  鸟屎掉头上有什么预兆  -- is_selected:  False
+
+
+- Question  20 : 浦发银行电话
+ -- paragraph title:  浦发银行的电话  -- is_selected:  True
+ -- paragraph title:  浦发银行客服电话  -- is_selected:  False
+ -- paragraph title:  浦发银行电话号码  -- is_selected:  False
+ -- paragraph title:  浦发银行客服电话号码?  -- is_selected:  True
+ -- paragraph title:  浦发银行的客服电话  -- is_selected:  False
+
+
+- Question  21 : 比价app哪个好
+ -- paragraph title:  有什么比价app比较好  -- is_selected:  False
+ -- paragraph title:  比较好用的比价手机app有哪些?  -- is_selected:  True
+ -- paragraph title:  哪个海淘app比较好用?最好能比价的那种.  -- is_selected:  True
+ -- paragraph title:  哪一个购物app比较好  -- is_selected:  False
+ -- paragraph title:  快比价app大家知道吗?干嘛用的?  -- is_selected:  False
+
+
+- Question  22 : 可能未检测到硬件更改 没声音
+ -- paragraph title:  电脑没有声音,提示可能未检测到硬件更改  -- is_selected:  True
+ -- paragraph title:  我的电脑没声音"可能未检测到硬件更改"是什么问题???硬件已经准装好 了啊~~~~~  -- is_selected:  False
+ -- paragraph title:  win7声卡可能未检测到硬件更改怎么办_百度知道  -- is_selected:  True
+ -- paragraph title:  win7声卡可能未检测到硬件更改怎么办  -- is_selected:  True
+ -- paragraph title:  电脑不能上网,也没有声音,说是可能未检测到硬件更改.  -- is_selected:  False
+
+
+- Question  23 : lol战绩怎么查询
+ -- paragraph title:  lol战绩查询系统总战绩怎么查询  -- is_selected:  True
+ -- paragraph title:  lol怎么查询几年前的战绩?  -- is_selected:  False
+ -- paragraph title:  lol怎么查看对方战绩_百度知道  -- is_selected:  True
+ -- paragraph title:  lol 战绩查询 在官网怎么查?  -- is_selected:  True
+ -- paragraph title:  lol战绩查询系统总战绩怎么查询  -- is_selected:  False
+
+
+- Question  24 : 龚如心有孩子吗
+ -- paragraph title:  龚如心为什么没有孩子  -- is_selected:  False
+ -- paragraph title:  龚如心弟弟有儿女么?  -- is_selected:  False
+ -- paragraph title:  龚如心和王德辉有子女吗?  -- is_selected:  False
+ -- paragraph title:  龚如心没有子女  -- is_selected:  True
+
+
+- Question  25 : 软水机价格
+ -- paragraph title:  一般家用软水机价格是多少?  -- is_selected:  True
+ -- paragraph title:  一般软水机价格要多少?  -- is_selected:  True
+ -- paragraph title:  史密斯软水机价格是多少  -- is_selected:  False
+
+
+- Question  26 : 尿素氮偏低
+ -- paragraph title:  尿素氮偏低的原因具体是什么 专家介绍  -- is_selected:  True
+ -- paragraph title:  尿素氮偏低是怎么回事求解答  -- is_selected:  False
+ -- paragraph title:  尿素氮偏低是什么原因?  -- is_selected:  False
+ -- paragraph title:  导致尿素氮偏低的原因有哪些  -- is_selected:  True
+ -- paragraph title:  关于尿素氮指标偏低有什么影响的问题  -- is_selected:  True
+
+
+- Question  27 : 侠客风云传前传恶人谷在哪
+ -- paragraph title:  侠客风云传前传恶人谷地图开启方法 恶人谷怎么去  -- is_selected:  True
+ -- paragraph title:  侠客风云传前传恶人谷在哪怎么去  -- is_selected:  False
+ -- paragraph title:  侠客风云传前传恶人谷在大地图哪里  -- is_selected:  True
+ -- paragraph title:  侠客风云传前传 薛鬼医在恶人谷具体哪个位置?  -- is_selected:  False
+ -- paragraph title:  侠客风云传前传 恶人谷的支线怎么触发  -- is_selected:  False
+
+
+- Question  28 : 老人体检 哪些必要
+ -- paragraph title:  老年人想做个全面体检需要做哪些项  -- is_selected:  True
+ -- paragraph title:  关于老年人体检需要查哪些项目_百度知道  -- is_selected:  False
+ -- paragraph title:  老年人需要做哪些体检项目 哪些是必要的  -- is_selected:  True
+ -- paragraph title:  老年人体检重要检查哪些  -- is_selected:  False
+ -- paragraph title:  老人要做哪些体检?  -- is_selected:  True
+
+
+- Question  29 : 衣服上的黄渍怎么去除
+ -- paragraph title:  衣服上黄渍去除小窍门  -- is_selected:  True
+ -- paragraph title:  衣服上的黄渍怎么去除小窍门,衣服上的黄渍如何清洗,  -- is_selected:  True
+ -- paragraph title:  怎么去除白色衣服上的黄渍  -- is_selected:  True
+ -- paragraph title:  怎样洗除浅色衣服上的黄渍?  -- is_selected:  False
+ -- paragraph title:  怎样可以去除衣服的黄渍  -- is_selected:  False
+
+
+- Question  30 : 北京鼻炎医院
+ -- paragraph title:  北京的鼻炎医院排行榜  -- is_selected:  True
+ -- paragraph title:  北京治疗鼻炎的医院  -- is_selected:  False
+ -- paragraph title:  北京鼻炎最好的医院是哪家?  -- is_selected:  False
+ -- paragraph title:  北京看鼻炎最好医院  -- is_selected:  True
+ -- paragraph title:  北京那个医院看鼻炎好  -- is_selected:  False
+
+
+- Question  31 : 4s店刷ecu多少钱一个
+ -- paragraph title:  现在4s店都玩刷ecu到底是什么猫腻  -- is_selected:  False
+ -- paragraph title:  4s店可以刷ecu吗?  -- is_selected:  True
+ -- paragraph title:  汽车升级ecu要多少钱?_百度知道  -- is_selected:  True
+ -- paragraph title:  rav4在4s店刷ecu多少钱  -- is_selected:  True
+
+
+- Question  32 : 目前实验动物中,比较严重的人畜共患病是什么
+ -- paragraph title:  目前实验动物中,比较严重的人畜共患病是什么  -- is_selected:  True
+ -- paragraph title:  目前实验动物中,比较严重的人畜共患病是什么  -- is_selected:  True
+ -- paragraph title:  比较严重的人畜共患病是什么?_百度知道  -- is_selected:  True
+
+
+- Question  33 : svn 和 git的区别
+ -- paragraph title:  git和svn的区别,哪个好  -- is_selected:  True
+ -- paragraph title:  git和svn的区别  -- is_selected:  False
+ -- paragraph title:  git对比svn有什么优势  -- is_selected:  False
+ -- paragraph title:  git和svn之间的区别及基本操作对比  -- is_selected:  False
+ -- paragraph title:  svn和git的区别  -- is_selected:  True
+
+
+- Question  34 : 一年换一次机油可以吗
+ -- paragraph title:  开的少,一年换一次机油可以吗  -- is_selected:  False
+ -- paragraph title:  家用轿车一年换一次机油行吗  -- is_selected:  True
+ -- paragraph title:  一年换一次机油可以吗  -- is_selected:  True
+ -- paragraph title:  可不可以一年换一次机油  -- is_selected:  True
+ -- paragraph title:  一年换一次机油行吗  -- is_selected:  False
+
+
+- Question  35 : 王者荣耀连胜成就人机可以吗
+ -- paragraph title:  王者荣耀中的连胜成就能否通过人机完成?  -- is_selected:  True
+ -- paragraph title:  请问王者荣耀在人机对战中可以获得成就吗?比如30个助攻?  -- is_selected:  False
+ -- paragraph title:  王者荣耀成就打人机算不算  -- is_selected:  False
+ -- paragraph title:  王者荣耀成就十连胜人机算吗  -- is_selected:  False
+ -- paragraph title:  王者荣耀最佳队友成就人机算不算  -- is_selected:  False
+
+
+- Question  36 : 举证期限
+ -- paragraph title:  《民事诉讼》中的举证期限是多少天??  -- is_selected:  True
+ -- paragraph title:  民事诉讼举证期限是多久_百度知道  -- is_selected:  False
+ -- paragraph title:  举证期限的时限规定  -- is_selected:  True
+ -- paragraph title:  什么是举证期限?是多少天?  -- is_selected:  False
+ -- paragraph title:  举证期限有何规定?  -- is_selected:  True
+
+
+- Question  37 : 论文引用公式怎么标注
+ -- paragraph title:  毕设论文图和公式如何标注引用  -- is_selected:  False
+ -- paragraph title:  论文中引用他人的文献怎样在论文中标注  -- is_selected:  True
+ -- paragraph title:  毕业论文引用的文献怎样在文章标注  -- is_selected:  False
+
+
+- Question  38 : 华为帐号密码找回
+ -- paragraph title:  我忘记了华为帐号的密码怎么办  -- is_selected:  True
+ -- paragraph title:  华为帐号的密码忘记了,怎么找回?  -- is_selected:  False
+ -- paragraph title:  华为手机 华为账号密码忘了怎么办  -- is_selected:  True
+ -- paragraph title:  我的华为帐号密码忘了,怎么样找回密码  -- is_selected:  True
+ -- paragraph title:  关于华为账号找回密码  -- is_selected:  False
+
+
+- Question  39 : 华为p10plus 闪存问题
+ -- paragraph title:  华为p10plus 闪存也有问题吗  -- is_selected:  True
+ -- paragraph title:  华为p10和p10plus都有闪存问题吗  -- is_selected:  True
+ -- paragraph title:  华为p10plus有没有闪存门_百度知道  -- is_selected:  False
+ -- paragraph title:  华为p10plus闪存影响大吗  -- is_selected:  True
+ -- paragraph title:  华为p10plus有闪存问题吗  -- is_selected:  False
+
+
+- Question  40 : 全民k歌怎么做后期
+ -- paragraph title:  全民k歌后期怎么做  -- is_selected:  True
+ -- paragraph title:  全民k歌怎么做后期mv  -- is_selected:  False
+ -- paragraph title:  全民k歌怎么制作后期  -- is_selected:  True
+ -- paragraph title:  如何做全民k歌后期制作  -- is_selected:  True
+ -- paragraph title:  全民k歌怎么后期制作  -- is_selected:  False
+
+
+- Question  41 : 赤芡粉的作用是真的吗
+ -- paragraph title:  赤芡粉真能去湿吗  -- is_selected:  True
+ -- paragraph title:  赤芡粉真能祛湿气吗  -- is_selected:  False
+ -- paragraph title:  赤芡粉可以除湿吗?_百度知道  -- is_selected:  False
+
+
+- Question  42 : 如何搭建vpn服务器
+ -- paragraph title:  如何架设vpn服务器  -- is_selected:  False
+ -- paragraph title:  vpn服务器如何建立  -- is_selected:  True
+ -- paragraph title:  如何在自己电脑上搭建vpn服务器  -- is_selected:  False
+ -- paragraph title:  公司要建vpn服务器,该怎么搭建  -- is_selected:  True
+ -- paragraph title:  家用vpn服务器如何搭建  -- is_selected:  True
+
+
+- Question  43 : 颈椎病怎样治才能好
+ -- paragraph title:  颈椎病怎样才能治好  -- is_selected:  True
+ -- paragraph title:  得了颈椎病怎么治?有什么好方法  -- is_selected:  False
+ -- paragraph title:  颈椎病能彻底治好吗?有什么好方法_百度知道  -- is_selected:  False
+ -- paragraph title:  颈椎病怎样能治好?  -- is_selected:  True
+ -- paragraph title:  怎样才能治好颈椎病呢  -- is_selected:  False
+
+
+- Question  44 : 拳击和散打哪个实用
+ -- paragraph title:  搏击,散打,拳击哪个更实用  -- is_selected:  False
+ -- paragraph title:  拳击和散打哪个更实用?  -- is_selected:  True
+ -- paragraph title:  散打和拳击哪个实战更实用  -- is_selected:  True
+ -- paragraph title:  拳击和散打那个实战更有用?  -- is_selected:  True
+ -- paragraph title:  泰拳,拳击,散打,哪个实用简单可以自学!  -- is_selected:  False
+
+
+- Question  45 : 龙珠超多少集
+ -- paragraph title:  龙珠超有多少集?  -- is_selected:  True
+ -- paragraph title:  龙珠超一共能有多少集?  -- is_selected:  True
+ -- paragraph title:  龙珠超一共多少集_百度知道  -- is_selected:  False
+ -- paragraph title:  龙珠超共多少集  -- is_selected:  False
+ -- paragraph title:  龙珠超一共多少集?  -- is_selected:  True
+
+
+- Question  46 : 1元包邮怎么赚钱
+ -- paragraph title:  网上一元买东西包邮怎么赚钱  -- is_selected:  True
+ -- paragraph title:  淘宝1元包邮怎么赚钱  -- is_selected:  False
+ -- paragraph title:  淘宝"一元包邮"到底赚的什么钱  -- is_selected:  False
+ -- paragraph title:  淘宝上 1 元钱包邮的商品怎么赚钱  -- is_selected:  False
+ -- paragraph title:  网上一块钱的包邮卖家怎么赚钱之道  -- is_selected:  False
+
+
+- Question  47 : 码率怎么算
+ -- paragraph title:  视频码率的计算公式  -- is_selected:  True
+ -- paragraph title:  视频的码率怎么计算?  -- is_selected:  True
+ -- paragraph title:  视频码率怎么算的?  -- is_selected:  False
+ -- paragraph title:  视频码率计算公式是什么_百度知道  -- is_selected:  False
+ -- paragraph title:  怎么计算比特率?_百度知道  -- is_selected:  False
+
+
+- Question  48 : 国寿鑫悦一生怎么样
+ -- paragraph title:  国寿鑫悦一生含医疗险吗?  -- is_selected:  False
+ -- paragraph title:  中国人寿鑫悦一生可以买吗?  -- is_selected:  False
+
+
+- Question  49 : 北京游戏公司排行榜
+ -- paragraph title:  世界游戏公司排名  -- is_selected:  False
+ -- paragraph title:  游戏排行榜  -- is_selected:  False
+
+
+- Question  50 : 海尔电脑怎么装系统
+ -- paragraph title:  海尔电脑怎样重装系统  -- is_selected:  True
+ -- paragraph title:  海尔电脑怎么安装系统  -- is_selected:  True
+ -- paragraph title:  海尔电脑怎么用u盘装系统  -- is_selected:  False
+ -- paragraph title:  海尔电脑重装系统.  -- is_selected:  False
+ -- paragraph title:  海尔台式电脑怎样重装系统  -- is_selected:  True
+
+
+- Question  51 : 1吨水等于方
+ -- paragraph title:  1吨水等于多少方水  -- is_selected:  True
+ -- paragraph title:  1吨水等于多少立方?1立方米水等于多少度水?求解!  -- is_selected:  False
+ -- paragraph title:  一立方的水等于多少吨水???  -- is_selected:  False
+ -- paragraph title:  1吨水等于多少方水?  -- is_selected:  False
+ -- paragraph title:  1方水等于多少吨  -- is_selected:  False
+
+
+- Question  52 : 大数据的4v特征
+ -- paragraph title:  大数据有有一个4v特点,是什么意思?  -- is_selected:  True
+ -- paragraph title:  大数据的4v特点具体指的是什么  -- is_selected:  False
+ -- paragraph title:  何谓大数据的4v特点和云计算  -- is_selected:  False
+ -- paragraph title:  大数据的4v特三点  -- is_selected:  False
+
+
+- Question  53 : 长城宽带客服
+ -- paragraph title:  长城宽带全国统一客服电话是多少  -- is_selected:  True
+ -- paragraph title:  长城宽带客服电话  -- is_selected:  False
+ -- paragraph title:  我要长城宽带客服电话  -- is_selected:  False
+ -- paragraph title:  长城宽带客服电话是多少?  -- is_selected:  False
+ -- paragraph title:  长城宽带客服电话是多少  -- is_selected:  False
+
+
+- Question  54 : 水草怎么养
+ -- paragraph title:  怎么养水草啊  -- is_selected:  False
+ -- paragraph title:  水草怎么饲养  -- is_selected:  True
+ -- paragraph title:  水草怎么养  -- is_selected:  True
+ -- paragraph title:  怎么养水草  -- is_selected:  True
+ -- paragraph title:  怎样才能养好水草?  -- is_selected:  False
+
+
+- Question  55 : 刺客信条大革命技能点怎么获得
+ -- paragraph title:  刺客信条大革命技能点数怎么获得  -- is_selected:  True
+ -- paragraph title:  求助,刺客信条大革命技能点怎么获得  -- is_selected:  True
+ -- paragraph title:  刺客信条大革命多人任务怎么把技能点拿全  -- is_selected:  False
+ -- paragraph title:  刺客信条大革命的技能点什么得  -- is_selected:  False
+ -- paragraph title:  刺客信条大革命怎么才能快速获得金币和技能点  -- is_selected:  True
+
+
+- Question  56 : 肚子响是怎么回事
+ -- paragraph title:  肚子咕噜咕噜响是怎么回事  -- is_selected:  True
+ -- paragraph title:  肚子里经常有响声是什么原因  -- is_selected:  True
+ -- paragraph title:  肚子老咕咕响是怎么回事  -- is_selected:  True
+ -- paragraph title:  肚子响是咋回事  -- is_selected:  False
+ -- paragraph title:  肚子总是响怎么办  -- is_selected:  False
+
+
+- Question  57 : dnf第二期勇者装备和第三期有什么区别
+ -- paragraph title:  dnf第二期勇者套装和第三期勇者套装的详情和资料在哪  -- is_selected:  False
+ -- paragraph title:  dnf里面的2期3期勇者装备有什么区别  -- is_selected:  True
+ -- paragraph title:  dnf2期和3期勇者有什么区别  -- is_selected:  True
+ -- paragraph title:  dnf我是dnf菜鸟,第二期勇者套装和第三期勇者套装是什么意思,为什么这样叫,求资料  -- is_selected:  True
+ -- paragraph title:  dnf勇者一期二期三期有什么区别?若满意,必采纳!  -- is_selected:  False
+
+
+- Question  58 : 女票炸了怎么没了
+ -- paragraph title:  为什么女票炸了没法看了???_百度知道  -- is_selected:  True
+ -- paragraph title:  女票炸了怎么报名.....  -- is_selected:  False
+ -- paragraph title:  女票炸了怎么报名_百度知道  -- is_selected:  False
+
+
+- Question  59 : 车内逃脱5攻略
+ -- paragraph title:  车内逃脱5把车开走攻略  -- is_selected:  False
+ -- paragraph title:  车内逃脱1—5攻略  -- is_selected:  False
+ -- paragraph title:  车内逃脱1-5攻略  -- is_selected:  False
+ -- paragraph title:  车内逃脱1-5最后一关攻略  -- is_selected:  True
+
+
+- Question  60 : 蔡少芬第一任老公是谁
+ -- paragraph title:  蔡少芬以前的老公是谁  -- is_selected:  True
+ -- paragraph title:  蔡少芬前任老公是谁  -- is_selected:  False
+ -- paragraph title:  艺人蔡少芬的丈夫是谁?_百度知道  -- is_selected:  False
+ -- paragraph title:  蔡少芬的老公是谁  -- is_selected:  False
+ -- paragraph title:  蔡少芬的老公是谁?  -- is_selected:  False
+
+
+- Question  61 : tumblr福利账号
+ -- paragraph title:  tumblr怎么看福利重口  -- is_selected:  False
+ -- paragraph title:  tumblr福利一日一色  -- is_selected:  False
+ -- paragraph title:  tumblr上有哪些福利公众号?  -- is_selected:  False
+ -- paragraph title:  tumblr 福利 是什么意思  -- is_selected:  False
+ -- paragraph title:  tumblr怎么下载可以看福利的那种中文的  -- is_selected:  False
+
+
+- Question  62 : 搞笑的游戏名字
+ -- paragraph title:  求一个搞笑的英雄联盟游戏名字  -- is_selected:  False
+ -- paragraph title:  给些搞笑的游戏名字我  -- is_selected:  True
+ -- paragraph title:  中国最搞笑名字?  -- is_selected:  False
+ -- paragraph title:  谁见过游戏里最搞笑的游戏名字  -- is_selected:  True
+ -- paragraph title:  求搞怪的游戏名字_百度知道  -- is_selected:  True
+
+
+- Question  63 : 百度视频怎么上传自己的视频
+ -- paragraph title:  怎么把自己做好的视频上传到百度去?  -- is_selected:  True
+ -- paragraph title:  百度上如何上传自己的视频文件??_百度知道  -- is_selected:  True
+ -- paragraph title:  怎么才能在百度上发自己的视频(或图片)  -- is_selected:  True
+ -- paragraph title:  百度视频怎么上传,在哪里上传?  -- is_selected:  False
+ -- paragraph title:  自己拍摄的视频 如何上传到百度  -- is_selected:  False
+
+
+- Question  64 : 欢乐颂第二季 播出时间
+ -- paragraph title:  欢乐颂第二季将在哪个台播出,几点?什么时间?  -- is_selected:  True
+ -- paragraph title:  欢乐颂2开播了吗 欢乐颂2播出时间  -- is_selected:  True
+ -- paragraph title:  欢乐颂第二季什么时候播出?  -- is_selected:  True
+ -- paragraph title:  欢乐颂第二季什么时候播出 播出时间表一览  -- is_selected:  False
+ -- paragraph title:  欢乐颂第二季什么时候播出 欢乐颂第二季播出时间  -- is_selected:  False
+
+
+- Question  65 : 王者荣耀 宫本武藏高手攻略
+ -- paragraph title:  《王者荣耀》宫本武藏怎么玩 宫本武藏玩法攻略  -- is_selected:  False
+ -- paragraph title:  王者荣耀高端局宫本武藏怎么玩 宫本武藏高操作技巧  -- is_selected:  False
+ -- paragraph title:  王者荣耀宫本武藏必看攻略 新版宫本武藏怎么玩  -- is_selected:  True
+ -- paragraph title:  王者荣耀怎么玩好宫本武藏  -- is_selected:  False
+ -- paragraph title:  王者荣耀宫本武藏怎么玩厉害  -- is_selected:  True
+
+
+- Question  66 : 支原体感染 咳嗽
+ -- paragraph title:  支原体感染引起咳嗽要怎么治疗  -- is_selected:  True
+ -- paragraph title:  支原体感染咳嗽会传染吗?  -- is_selected:  False
+ -- paragraph title:  支原体感染反复咳嗽  -- is_selected:  True
+ -- paragraph title:  支原体感染咳嗽怎么查  -- is_selected:  True
+ -- paragraph title:  咳嗽支原体感染的症状是什么  -- is_selected:  False
+
+
+- Question  67 : 如何调用webservice接口
+ -- paragraph title:  怎么调用webservice接口  -- is_selected:  True
+ -- paragraph title:  如何调用web service接口的某个方法  -- is_selected:  True
+ -- paragraph title:  如何调用webservice接口  -- is_selected:  True
+ -- paragraph title:  java如何调用webservice接口  -- is_selected:  False
+ -- paragraph title:  怎么调用webservice接口里的方法  -- is_selected:  False
+
+
+- Question  68 : 隐形牙齿正畸价格
+ -- paragraph title:  隐形牙齿矫正多少钱_百度知道  -- is_selected:  True
+ -- paragraph title:  隐形牙齿矫正的价格多少?  -- is_selected:  True
+ -- paragraph title:  做隐形牙齿矫正要多少钱_百度知道  -- is_selected:  False
+ -- paragraph title:  隐形矫正牙齿的价格高吗?  -- is_selected:  True
+ -- paragraph title:  隐形牙齿正畸费用是多少  -- is_selected:  False
+
+
+- Question  69 : 莲子芯泡茶有什么功效
+ -- paragraph title:  莲子芯泡茶有什么功效?如何用莲子芯泡茶喝?  -- is_selected:  True
+ -- paragraph title:  莲子芯泡水喝好吗_百度知道  -- is_selected:  False
+ -- paragraph title:  莲子芯泡茶喝天天喝可以吗,喝多了有什么副作用  -- is_selected:  False
+ -- paragraph title:  莲子芯可以直接泡开水喝吗?有什么功效?  -- is_selected:  True
+ -- paragraph title:  莲子心 泡茶有什么功效 去哪里可以购买  -- is_selected:  True
+
+
+- Question  70 : 转述句怎么改
+ -- paragraph title:  把句子改为转述句,怎么改?什么叫转述句  -- is_selected:  True
+ -- paragraph title:  怎么改为间接转述句  -- is_selected:  False
+ -- paragraph title:  改转述句大全及答案  -- is_selected:  False
+ -- paragraph title:  改转述句  -- is_selected:  False
+ -- paragraph title:  转述句怎么改  -- is_selected:  False
+
+
+- Question  71 : 头条号推荐是什么意思
+ -- paragraph title:  头条号发布的文章推荐量是什么意思  -- is_selected:  False
+ -- paragraph title:  今日头条自媒体的推荐是什么意思  -- is_selected:  False
+ -- paragraph title:  头条号,显示已经推荐多少次是什么意思  -- is_selected:  True
+ -- paragraph title:  头条号推荐1.1万是什么意思  -- is_selected:  False
+ -- paragraph title:  头条号是什么?  -- is_selected:  False
+
+
+- Question  72 : 今日头条客服热线
+ -- paragraph title:  今日头条客服电话谁知道???  -- is_selected:  True
+ -- paragraph title:  今日头条官方电话  -- is_selected:  False
+ -- paragraph title:  今日头条报料热线  -- is_selected:  False
+ -- paragraph title:  今日头条没有客服吗  -- is_selected:  False
+ -- paragraph title:  今日头条投诉电话  -- is_selected:  False
+
+
+- Question  73 : 阴阳师如何升星
+ -- paragraph title:  阴阳师升星攻略技巧 怎么升星快  -- is_selected:  True
+ -- paragraph title:  阴阳师怎么任何等级的式神都可以升星  -- is_selected:  False
+ -- paragraph title:  阴阳师怎么任何等级的式神都可以升星  -- is_selected:  False
+ -- paragraph title:  阴阳师如何快速升星.一天可以五星吗  -- is_selected:  False
+ -- paragraph title:  阴阳师手游式神怎么升星  -- is_selected:  False
+
+
+- Question  74 : 百度网盘上传服务器错误
+ -- paragraph title:  百度云盘上传不了文件,显示服务器错误  -- is_selected:  False
+ -- paragraph title:  百度云上传失败服务器错误  -- is_selected:  True
+ -- paragraph title:  百度网盘上传服务器错误,这是怎么回事?  -- is_selected:  False
+ -- paragraph title:  网盘文件上传 显示服务器错误  -- is_selected:  True
+ -- paragraph title:  百度云上传文件为什么显示服务器错误  -- is_selected:  False
+
+
+- Question  75 : 一战导火索
+ -- paragraph title:  一战的导火线  -- is_selected:  True
+ -- paragraph title:  一战导火索是什么事件  -- is_selected:  False
+ -- paragraph title:  一战爆发的导火索是什么  -- is_selected:  False
+ -- paragraph title:  第一次世界大战的导火索是什么事件  -- is_selected:  False
+ -- paragraph title:  第一次世界大战的导火索是什么?  -- is_selected:  False
+
+
+- Question  76 : 体检前注意事项
+ -- paragraph title:  体检前一天需要注意什么  -- is_selected:  True
+ -- paragraph title:  体检需要注意什么?  -- is_selected:  True
+ -- paragraph title:  体检前需要注意什么  -- is_selected:  False
+ -- paragraph title:  体检前需要注意什么?_百度知道  -- is_selected:  True
+ -- paragraph title:  全身体检前应注意哪些事项  -- is_selected:  False
+
+
+- Question  77 : 周知什么意思
+ -- paragraph title:  敬请周知是什么意思?  -- is_selected:  True
+ -- paragraph title:  周知是什么意思  -- is_selected:  False
+ -- paragraph title:  敬请周知是什么意思?  -- is_selected:  True
+ -- paragraph title:  周知什么意思  -- is_selected:  False
+ -- paragraph title:  "望周知"是什么意思?  -- is_selected:  False
+
+
+- Question  78 : 滴滴打车对车有什么要求
+ -- paragraph title:  滴滴打车对车型有何要求  -- is_selected:  True
+ -- paragraph title:  加入滴滴打车的车辆有什么要求和标准  -- is_selected:  True
+ -- paragraph title:  滴滴打车对车辆有什么要求  -- is_selected:  False
+ -- paragraph title:  滴滴打车对车型有何要求_百度知道  -- is_selected:  False
+ -- paragraph title:  滴滴打车对车辆有什么要求吗  -- is_selected:  True
+
+
+- Question  79 : 共享航班和主飞航班的区别
+ -- paragraph title:  去哪儿网上的主飞航班和共享航班有什么区别  -- is_selected:  True
+ -- paragraph title:  共享航班与主飞航班的区别  -- is_selected:  True
+ -- paragraph title:  主航班与共享航班有什么不一样的  -- is_selected:  False
+ -- paragraph title:  什么叫做主飞航班,共享航班.  -- is_selected:  False
+ -- paragraph title:  想问下共享航班和主飞航班一样吗  -- is_selected:  False
+
+
+- Question  80 : cad线宽
+ -- paragraph title:  cad中如何设置线宽?  -- is_selected:  True
+ -- paragraph title:  cad里的默认线宽是多少?  -- is_selected:  True
+ -- paragraph title:  关于cad线宽  -- is_selected:  False
+ -- paragraph title:  cad的线宽怎么设置,  -- is_selected:  True
+ -- paragraph title:  cad 如何取消线宽  -- is_selected:  False
+
+
+- Question  81 : 百度账号能改名字吗
+ -- paragraph title:  百度账号注册后 还可以改名字吗 怎么改?  -- is_selected:  True
+ -- paragraph title:  如何修改百度帐号的用户名?  -- is_selected:  False
+ -- paragraph title:  百度账号怎么改名字  -- is_selected:  False
+ -- paragraph title:  百度用户名怎么更改  -- is_selected:  False
+ -- paragraph title:  百度账号已经的昵称能修改吗?要怎么修改?  -- is_selected:  True
+
+
+- Question  82 : warframe土星boss怎么打
+ -- paragraph title:  warframe土星boss怎么打  -- is_selected:  True
+ -- paragraph title:  warframe木星boss怎么打  -- is_selected:  True
+ -- paragraph title:  warframe阋神星boss怎么打  -- is_selected:  False
+ -- paragraph title:  warframe空战boss怎么打  -- is_selected:  False
+ -- paragraph title:  warframe土星导航模块在哪里打  -- is_selected:  False
+
+
+- Question  83 : 任务栏一直在最前面
+ -- paragraph title:  怎么让任务栏显示在最前面  -- is_selected:  True
+ -- paragraph title:  怎样才能让任务栏始终保持在最前面?  -- is_selected:  False
+ -- paragraph title:  为什么我电脑的任务栏总在最前面啊???  -- is_selected:  False
+ -- paragraph title:  我的电脑的任务栏总是在最前面,怎么弄掉?  -- is_selected:  False
+ -- paragraph title:  怎么取消win7任务栏总在最前啊  -- is_selected:  False
+
+
+- Question  84 : 海水缸好养吗
+ -- paragraph title:  海水鱼好养吗  -- is_selected:  False
+ -- paragraph title:  纯养海水鱼缸那些好养?  -- is_selected:  False
+ -- paragraph title:  海水缸如何养水  -- is_selected:  False
+ -- paragraph title:  海水缸好养么?我以前都养热带鱼的  -- is_selected:  True
+ -- paragraph title:  海水鱼好养吗  -- is_selected:  False
+
+
+- Question  85 : 凯特戴琳斯露过点吗
+ -- paragraph title:  凯特戴琳斯胸部整过的吧  -- is_selected:  False
+ -- paragraph title:  凯特戴琳斯怎么样  -- is_selected:  False
+
+
+- Question  86 : win10的远程桌面在哪里
+ -- paragraph title:  win10怎么找到远程桌面,win10远程桌面在哪里  -- is_selected:  True
+ -- paragraph title:  win10怎么找到远程桌面,win10远程桌面在哪里  -- is_selected:  False
+ -- paragraph title:  win10怎么找到远程桌面,win10远程桌面在哪里  -- is_selected:  True
+ -- paragraph title:  win10怎么找到远程桌面,win10远程桌面在哪里  -- is_selected:  False
+ -- paragraph title:  win10怎么找到远程桌面,win10远程桌面在哪里  -- is_selected:  False
+
+
+- Question  87 : 狂战传说已停止工作
+ -- paragraph title:  狂战传说停止工作怎么办  -- is_selected:  False
+ -- paragraph title:  狂战传说停止工作怎么办  -- is_selected:  True
+ -- paragraph title:  狂战传说停止工作怎么办  -- is_selected:  False
+ -- paragraph title:  狂战传说停止工作怎么办  -- is_selected:  False
+
+
+- Question  88 : 明月镜片怎么样
+ -- paragraph title:  明月镜片怎么样?  -- is_selected:  True
+ -- paragraph title:  明月镜片质量好吗?_百度知道  -- is_selected:  True
+ -- paragraph title:  明月镜片好吗?明月镜片怎么样?  -- is_selected:  True
+ -- paragraph title:  明月眼镜片质量好不好_百度知道  -- is_selected:  False
+ -- paragraph title:  明月镜片的口碑好吗?_百度知道  -- is_selected:  False
+
+
+- Question  89 : ipad屏幕上下抖动
+ -- paragraph title:  ipad屏幕抖动  -- is_selected:  True
+ -- paragraph title:  ipad屏幕背景抖动  -- is_selected:  True
+ -- paragraph title:  ipad的屏幕一直颤抖 怎么办?上个月还好好的 不动屏幕也一直在抖  -- is_selected:  True
+ -- paragraph title:  ipad屏幕抖动  -- is_selected:  False
+ -- paragraph title:  ipad屏幕抖动  -- is_selected:  False
+
+
+- Question  90 : 谷歌浏览器启动页被篡改
+ -- paragraph title:  chrome启动页被恶意篡改怎么办  -- is_selected:  True
+ -- paragraph title:  谷歌浏览器主页被篡改,怎么设置  -- is_selected:  True
+ -- paragraph title:  chrome启动页面被篡改,能从根本解决问题吗?  -- is_selected:  False
+ -- paragraph title:  chrome启动页被篡改  -- is_selected:  False
+ -- paragraph title:  chrome 中 浏览器的错误页面被篡改了怎么改回来_百度知道  -- is_selected:  False
+
+
+- Question  91 : 日本签证照片 要求
+ -- paragraph title:  日本签证照片尺寸  -- is_selected:  True
+ -- paragraph title:  日本旅游签证照片有什么要求多大尺寸的?  -- is_selected:  True
+ -- paragraph title:  日本签证照片要求  -- is_selected:  False
+ -- paragraph title:  日本签证现在到底要多大尺寸的照片  -- is_selected:  False
+ -- paragraph title:  日本签证照片可以用美国签证的照片吗  -- is_selected:  False
+
+
+- Question  92 : 股票前加xd什么意思
+ -- paragraph title:  股票代码前加xd是什么意思?  -- is_selected:  True
+ -- paragraph title:  股票名称前加xd是什么意思?  -- is_selected:  True
+ -- paragraph title:  股票中,前面加了个xd是什么意思?  -- is_selected:  False
+ -- paragraph title:  股票前面加个xd是什么意思?这样的股票好不?  -- is_selected:  True
+ -- paragraph title:  股票名称前面加xd是什么意思  -- is_selected:  False
+
+
+- Question  93 : 固态和机械硬盘一起用
+ -- paragraph title:  固态硬盘和机械硬盘可以一起使用吗  -- is_selected:  True
+ -- paragraph title:  请问固态硬盘和机械硬盘如何在一起使用  -- is_selected:  True
+ -- paragraph title:  固态硬盘和机械硬盘同时装好不好?  -- is_selected:  False
+ -- paragraph title:  固态硬盘和机械硬盘怎么一起用???  -- is_selected:  False
+ -- paragraph title:  机械硬盘和固态硬盘一起用需要注意什么  -- is_selected:  False
+
+
+- Question  94 : 继电器作用
+ -- paragraph title:  继电器的作用  -- is_selected:  True
+ -- paragraph title:  继电器的作用,用途?  -- is_selected:  False
+ -- paragraph title:  继电器作用  -- is_selected:  True
+ -- paragraph title:  继电器主要起什么作用啊…  -- is_selected:  False
+ -- paragraph title:  电流继电器的作用是什么?  -- is_selected:  False
+
+
+- Question  95 : 信用卡查询密码
+ -- paragraph title:  信用卡的查询密码是什么?  -- is_selected:  True
+ -- paragraph title:  农行信用卡查询密码是什么  -- is_selected:  True
+ -- paragraph title:  邮政信用卡查询密码是什么  -- is_selected:  False
+ -- paragraph title:  招行信用卡查询密码是什么?!  -- is_selected:  False
+ -- paragraph title:  交通银行信用卡查询密码是什么  -- is_selected:  False
+
+
+- Question  96 : 艾美特电风扇怎么拆
+ -- paragraph title:  如何拆洗艾美特风扇  -- is_selected:  True
+ -- paragraph title:  艾美特电风扇怎么拆洗  -- is_selected:  True
+ -- paragraph title:  如何拆电风扇 艾美特电风扇如何拆洗  -- is_selected:  True
+ -- paragraph title:  艾美特风扇怎么拆卸啊  -- is_selected:  False
+ -- paragraph title:  艾美特电风扇怎么拆洗 艾美特电风扇的拆洗方法  -- is_selected:  False
+
+
+- Question  97 : xd股票是好是坏
+ -- paragraph title:  股票前面加xd是好是坏_百度知道  -- is_selected:  True
+ -- paragraph title:  股票名称前的xd是好还是坏  -- is_selected:  True
+ -- paragraph title:  股票xd了怎么办,是好是坏(要赔要赚)?  -- is_selected:  False
+ -- paragraph title:  股票前加xd是好还是坏事  -- is_selected:  False
+ -- paragraph title:  原买的股票突然加了xd是好是坏  -- is_selected:  True
+
+
+- Question  98 : 吴昌硕字画拍卖价格
+ -- paragraph title:  吴昌硕字画价格到底是多少  -- is_selected:  True
+ -- paragraph title:  吴昌硕字画2016年最1新拍卖成交价格多少  -- is_selected:  True
+ -- paragraph title:  吴昌硕字画值多少钱,拍卖成交记录和价格  -- is_selected:  True
+ -- paragraph title:  吴昌硕的作品《枇杷》 价值多少钱_百度知道  -- is_selected:  False
+ -- paragraph title:  一幅吴昌硕的山水画拍卖价多少?  -- is_selected:  False
+
+
+- Question  99 : 英雄联盟突然fps很低
+ -- paragraph title:  你好,我玩英雄联盟前几天fps正常,今天突然很低,应该怎么办?  -- is_selected:  True
+ -- paragraph title:  英雄联盟 fps突然变得很低.....怎么回事?  -- is_selected:  True
+ -- paragraph title:  打英雄联盟突然fps低了怎么办  -- is_selected:  False
+ -- paragraph title:  英雄联盟fps突然变低怎么办  -- is_selected:  False
+ -- paragraph title:  最近玩英雄联盟fps会突然变低,求大神指教  -- is_selected:  False
+
+
+- Question  100 : 大明医圣牡蛎杞副作用
+ -- paragraph title:  大明医圣牡蛎杞草的作用  -- is_selected:  True
+ -- paragraph title:  大明医圣牡蛎杞草是真的吗?大明医圣牡蛎杞草是真的吗?  -- is_selected:  False
+ -- paragraph title:  大明医圣牡蛎杞草是什么?  -- is_selected:  False
+ -- paragraph title:  大明医圣牡蛎杞草 效果好吗  -- is_selected:  False
+ -- paragraph title:  大明医圣牡蛎杞李医师  -- is_selected:  False

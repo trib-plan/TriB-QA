@@ -1,0 +1,769 @@
+- Question  0 : 微信分享链接打开app
+ -- paragraph title:  iOS里,把一个页面链接分享给好友,好友在微信里打开这个链接,怎么跳  -- is_selected:  True
+ -- paragraph title:  怎么可以在微信里面打开APP下载链接地址_百度经验  -- is_selected:  True
+ -- paragraph title:  android微信分享的链接怎么启动app-CSDN论坛  -- is_selected:  False
+ -- paragraph title:  android 从微信分享的网页中启动APP - mattdong1024的专栏 - CSDN  -- is_selected:  False
+ -- paragraph title:  微信浏览器中点击链接怎么打开本地app_百度经验  -- is_selected:  True
+
+
+- Question  1 : 睡觉中猝死的方法
+ -- paragraph title:  有什么方法可以在睡眠中死亡?比如在_有问必答_快速问医生  -- is_selected:  True
+ -- paragraph title:  震惊 这样的睡眠方式竟然会导致猝死 - 三九养生堂  -- is_selected:  False
+ -- paragraph title:  有什么方法可以在睡眠中死亡?比如在_快速问医生_免费咨询  -- is_selected:  False
+ -- paragraph title:  女生半夜睡觉突然尖叫身亡 揭秘猝死原因有哪些 - 专栏 - 中国网   -- is_selected:  False
+ -- paragraph title:  带七种东西睡觉--死亡危险_百度文库  -- is_selected:  False
+
+
+- Question  2 : 板蓝根颗粒的功效与作用
+ -- paragraph title:  板兰根冲剂_百度百科  -- is_selected:  True
+ -- paragraph title:  长期喝板蓝根颗粒有哪些好处还坏处_百度知道  -- is_selected:  True
+ -- paragraph title:  板蓝根的功效多 不只是防治感冒_养生攻略_养生知识_养生信息_百度  -- is_selected:  False
+ -- paragraph title:  板蓝根冲剂的功效与作用_健康经验_快速问医生_有问必答  -- is_selected:  False
+ -- paragraph title:  板蓝根颗粒的功效与作用是什么_康爱多网上药店  -- is_selected:  False
+
+
+- Question  3 : oracle 时间格式
+ -- paragraph title:  oracle常用的时间格式转换 - FoxBryant的专栏 - 博客频道 - CSDN.  -- is_selected:  True
+ -- paragraph title:  Oracle 默认时间格式 & Date格式转换 - carekee - 博客园  -- is_selected:  True
+ -- paragraph title:  oracle sql查询语句 时间格式_百度知道  -- is_selected:  True
+ -- paragraph title:  怎样设置oracle里的时间格式_百度知道  -- is_selected:  False
+ -- paragraph title:  在oracle中,怎么定义(年月日星期时分秒)时间格式。_百度知道  -- is_selected:  False
+
+
+- Question  4 : 回扣怎么做账
+ -- paragraph title:  回扣的账务处理怎么做呀?  -- is_selected:  True
+ -- paragraph title:  给客户的回扣 怎么入账_百度知道  -- is_selected:  True
+ -- paragraph title:  回扣怎么做账_百度知道  -- is_selected:  False
+ -- paragraph title:  客户拿回扣怎么做账_百度知道  -- is_selected:  False
+ -- paragraph title:  回扣在会计中做账应该怎么做?_百度知道  -- is_selected:  False
+
+
+- Question  5 : 白玉麻山药价格
+ -- paragraph title:  2017年白玉山药山药价格行情(产地)_中国山药网_蔬菜商情网  -- is_selected:  False
+ -- paragraph title:  白玉山药价格 - 绿果网  -- is_selected:  False
+ -- paragraph title:  白玉山药价格_今日最新白玉山药价格行情趋势 - 慧聪网  -- is_selected:  False
+ -- paragraph title:  【山药价格】2017年今日山药最新批发价格表_山药产地价格行情__中国  -- is_selected:  False
+ -- paragraph title:  2016年今日白玉山药价格与全国白玉山药产地批发平均价格并预测行情  -- is_selected:  False
+
+
+- Question  6 : 冰血暴好看吗
+ -- paragraph title:  冰血暴是不是真的特别好看_美剧吧_百度贴吧  -- is_selected:  True
+ -- paragraph title:  有人看了冰血暴嘛?好看不?   -- is_selected:  False
+ -- paragraph title:  冰血暴好看吗网友评价 高分美剧都有哪些_百度知道  -- is_selected:  False
+ -- paragraph title:  美剧冰血暴和权利的游戏哪个好看吗_百度知道  -- is_selected:  False
+ -- paragraph title:  真探和冰血暴哪部更好_百度知道  -- is_selected:  False
+
+
+- Question  7 : 招商银行账户管理费
+ -- paragraph title:  招商银行在线取消年费、账户管理费方法_百度经验  -- is_selected:  False
+ -- paragraph title:  现在招商银行要收帐户管理费了吗?_百度知道  -- is_selected:  True
+ -- paragraph title:  招行的账户管理费如何收取的_百度知道  -- is_selected:  False
+ -- paragraph title:  招商银行借记卡有账户管理费吗_百度知道  -- is_selected:  False
+ -- paragraph title:  招行卡如何设置账户管理费减免_百度经验  -- is_selected:  False
+
+
+- Question  8 : 微信登录环境异常被限制登录怎么办
+ -- paragraph title:  我的微信因登录环境异常被限制登录怎么解除_百度知道  -- is_selected:  True
+ -- paragraph title:  该微信账号因登陆环境异常,已被限制登陆,这是什么意思?_百度知道  -- is_selected:  False
+ -- paragraph title:  微信因登录环境异常被限制登录怎么办_百度知道  -- is_selected:  False
+ -- paragraph title:  微信解除登录限制 微信自助解除限制_百度经验  -- is_selected:  False
+ -- paragraph title:  微信莫名其妙被封“因登录环境异常已被限制登录” - 赚客大家谈 -   -- is_selected:  False
+
+
+- Question  9 : 奶瓶什么材质的最好
+ -- paragraph title:  什么材质的奶瓶最好呢_百度经验  -- is_selected:  True
+ -- paragraph title:  塑料奶瓶什么材质好?四大常用材质大比拼_39健康网_育儿  -- is_selected:  True
+ -- paragraph title:  奶瓶什么材质好_百度经验  -- is_selected:  False
+ -- paragraph title:  奶瓶什么材质好_百度宝宝知道  -- is_selected:  False
+ -- paragraph title:  什么材质的奶瓶最好 奶瓶哪种材质最安全_查查吧  -- is_selected:  False
+
+
+- Question  10 : 南宁属于什么省
+ -- paragraph title:  南宁属于什么省_百度知道  -- is_selected:  True
+ -- paragraph title:  南宁市在哪里,南宁市在哪个省,南宁属于哪个市_百度知道  -- is_selected:  True
+ -- paragraph title:  南宁是属于哪个省_百度知道  -- is_selected:  False
+
+
+- Question  11 : 移动硬盘摔了一下 能通电但是读不出来
+ -- paragraph title:  移动硬盘摔了一下后读不出来了_百度知道  -- is_selected:  True
+ -- paragraph title:  西部数据1T的移动硬盘,摔了一下,结果就读不出来了,请求大神帮助:  -- is_selected:  False
+ -- paragraph title:  我的移动硬盘在通电时摔了一下,读不出数据了,急!!!!!!!_百度知道  -- is_selected:  False
+ -- paragraph title:  移动硬盘通电状态下摔了一下后电脑无法读盘怎么提出里面数据?_百度  -- is_selected:  False
+
+
+- Question  12 : 论文参考文献的格式
+ -- paragraph title:  参考文献_最新论文参考文献标准格式  -- is_selected:  False
+ -- paragraph title:  论文参考文献标准格式如何写_百度知道  -- is_selected:  True
+ -- paragraph title:  论文参考文献的格式是什么_百度知道  -- is_selected:  False
+ -- paragraph title:  参考文献书写格式  -- is_selected:  False
+ -- paragraph title:  本科毕业论文参考文献格式  -- is_selected:  False
+
+
+- Question  13 : 送女生什么生日礼物比较好
+ -- paragraph title:  送给一个自己很喜欢女孩子的生日礼物,送什么比较好?_百度知道  -- is_selected:  True
+ -- paragraph title:  送女生生日礼物送啥好?_百度知道  -- is_selected:  False
+
+
+- Question  14 : sc币是什么
+ -- paragraph title:  SC/CNY是什么币?_百度知道  -- is_selected:  True
+ -- paragraph title:  素材资源网上的sc币有什么用_百度知道  -- is_selected:  False
+ -- paragraph title:  大神求助,买钥匙,充值SC币,空白什么鬼_百度知道  -- is_selected:  False
+ -- paragraph title:  sc是什么虚拟货币_百度知道  -- is_selected:  False
+ -- paragraph title:  云币网sc那币是什么币-玩币族  -- is_selected:  False
+
+
+- Question  15 : 无固定期限劳动合同的好处
+ -- paragraph title:  签订无固定期限劳动合同有什么好处啊?_百度知道  -- is_selected:  True
+ -- paragraph title:  签无固定期限劳动合同有什么好处_百度知道  -- is_selected:  False
+
+
+- Question  16 : 吉布提中国基地多大
+ -- paragraph title:  中国驻吉布提基地_百度百科  -- is_selected:  False
+ -- paragraph title:  中国吉布提基地今年或竣工 将迎来怎样规模的舰队|中国|吉布提|基地_  -- is_selected:  True
+ -- paragraph title:  吉布提人的真实生活图照 世界上最热的国家吉布提,在吉布提中国人有  -- is_selected:  False
+ -- paragraph title:  讨论中国人民解放军吉布提基地的规模和军力配置-海军版-超级大本营  -- is_selected:  False
+ -- paragraph title:  中国在吉布提基地租金曝光:国人吓一跳-今日军事   -- is_selected:  False
+
+
+- Question  17 : 我想去贩毒怎么联系
+ -- paragraph title:  我想去贩毒怎么联系我急需用钱没办法才走这条路 -- 找法网免费法律  -- is_selected:  False
+ -- paragraph title:  我想去贩毒怎么联系只因我没钱 -- 找法网免费法律咨询  -- is_selected:  False
+ -- paragraph title:  想好了 我要去贩毒_城市论坛  -- is_selected:  False
+ -- paragraph title:  想贩毒,怎样才能联系到-免费法律咨询-华律网  -- is_selected:  False
+ -- paragraph title:  朋友说现在贩毒,我想找到他怎么找? - 110网免费法律咨询  -- is_selected:  False
+
+
+- Question  18 : 好用pdf注册码
+ -- paragraph title:  好用PDF转换器的注册码谁能给一个?15分!!!_百度知道  -- is_selected:  True
+ -- paragraph title:  在吗?给我个pdf转换成word转换器注册码好啊_百度知道  -- is_selected:  True
+ -- paragraph title:  万能pdf转换器|万能pdf转换器破解版 v1.0 全能版_含注册码下载 -   -- is_selected:  False
+ -- paragraph title:  免费PDF转换器注册码_百度经验  -- is_selected:  False
+ -- paragraph title:  pdf转换成word转换器破解版下载|完美PDF转换成Word转换器17.8 免费  -- is_selected:  False
+
+
+- Question  19 : iphone7不激活怎么验机
+ -- paragraph title:  怎么看iphone7是不是翻新机_百度经验  -- is_selected:  False
+ -- paragraph title:  推荐大家一个不激活验机的方式,可以避免激活后无法退货的尴尬。 -   -- is_selected:  True
+ -- paragraph title:  新到手全新未拆封iPhone验机步骤-搜狐  -- is_selected:  False
+ -- paragraph title:  iPhone可以不激活验证机子真假吗_iphone7吧_百度贴吧  -- is_selected:  False
+ -- paragraph title:  苹果7不激活怎么验机_百度知道  -- is_selected:  True
+
+
+- Question  20 : h1z1怎么练枪法
+ -- paragraph title:  新手才玩h1z1,怎么练枪法。_h1z1吧_百度贴吧  -- is_selected:  True
+ -- paragraph title:  《H1Z1》枪法技巧及练习方法 枪法怎么练-游民星空 GamerSky.com  -- is_selected:  False
+ -- paragraph title:  h1z1枪法怎么练-原创-高清视频-爱奇艺  -- is_selected:  False
+ -- paragraph title:  《H1Z1》枪法技巧及练习方法 枪法怎么练 :: 游民星空 GamerSky.com  -- is_selected:  False
+ -- paragraph title:  h1z1枪法技巧一览 h1z1怎么练枪法_www.3dmgame.com  -- is_selected:  False
+
+
+- Question  21 : 裸睡有什么好处和坏处
+ -- paragraph title:  裸睡有什么好处和坏处_百度经验  -- is_selected:  True
+ -- paragraph title:  女人裸睡的好处和坏处是什么? - 爱问知识人  -- is_selected:  False
+ -- paragraph title:  裸睡有什么好处和坏处?_39健康网_女性  -- is_selected:  True
+ -- paragraph title:  女人裸睡的好处和坏处有哪些_保健常识_女性_99健康网  -- is_selected:  True
+ -- paragraph title:  为什么有人要裸睡?裸睡有什么好处和坏处呢_百度经验  -- is_selected:  False
+
+
+- Question  22 : 优酷播放未知错误
+ -- paragraph title:  手机优酷登陆不了 一直说未知错误 而且本来可以缓存的视频说不支持  -- is_selected:  False
+ -- paragraph title:  优酷视频下载出错解决方法_百度经验  -- is_selected:  False
+ -- paragraph title:  优酷播放出错代码2001怎么解决_视频播放教程  -- is_selected:  False
+ -- paragraph title:  为什么不能看优酷上面显示此视频暂时无法播放 播放: 未知 为什么 请  -- is_selected:  False
+
+
+- Question  23 : 首页页眉怎么去掉
+ -- paragraph title:  如何去掉WORD中首页页眉_百度知道  -- is_selected:  True
+ -- paragraph title:  怎样去掉word首页的页眉页脚_百度知道  -- is_selected:  True
+ -- paragraph title:  怎样删除word文档中首页的页眉?_百度知道  -- is_selected:  False
+
+
+- Question  24 : 干粽叶泡多长时间
+ -- paragraph title:  干粽叶要泡多长时间才能包粽子_百度知道  -- is_selected:  True
+ -- paragraph title:  干粽叶泡了一天一夜还能用吗_百度知道  -- is_selected:  False
+ -- paragraph title:  干粽叶怎么处理 干粽叶泡多长时间_腾牛健康网  -- is_selected:  False
+ -- paragraph title:  干粽叶要泡多长时间才能包粽子 干粽叶用开水泡吗_Wed114结婚网  -- is_selected:  False
+ -- paragraph title:  粽叶和糯米要浸泡多少时间_百度知道  -- is_selected:  False
+
+
+- Question  25 : illegalargumentexception是什么异常
+ -- paragraph title:  IllegalArgumentException是什么异常?_百度知道  -- is_selected:  True
+ -- paragraph title:  IllegalArgumentException异常问题-CSDN论坛-CSDN.NET-中国最大的IT  -- is_selected:  False
+ -- paragraph title:  解决spring的java.lang.IllegalArgumentException异常。 - 博客频道  -- is_selected:  False
+ -- paragraph title:  请教下java.lang.IllegalArgumentException这个异常是怎么回事?-  -- is_selected:  False
+ -- paragraph title:  java.lang.IllegalArgumentException是什么意思_百度作业帮  -- is_selected:  False
+
+
+- Question  26 : 嘴唇肿了
+ -- paragraph title:  嘴唇无故就突然肿胀起来,摸着像有硬块,现_有问必答_快速问医生  -- is_selected:  True
+ -- paragraph title:  早上起来上嘴唇肿了_有问必答_快速问医生  -- is_selected:  True
+ -- paragraph title:  嘴唇突然肿了是为什么啊_百度拇指医生  -- is_selected:  True
+ -- paragraph title:  吓哭!嘴唇变香肠嘴!这是肿么了?!-健康频道-手机搜狐  -- is_selected:  False
+ -- paragraph title:  上嘴唇肿了怎么办_百度经验  -- is_selected:  False
+
+
+- Question  27 : 梦幻西游手游五行村之危攻略
+ -- paragraph title:  梦幻西游手游五行村之危1-3环攻略__一游网  -- is_selected:  False
+ -- paragraph title:  梦幻西游手游五行村之危地狱难度攻略_18183梦幻西游手游专区  -- is_selected:  False
+ -- paragraph title:  梦幻西游手游五行村之危任务攻略 五行村之危怎么做_梦幻西游_小皮  -- is_selected:  True
+ -- paragraph title:  梦幻西游手游五行村之危地狱难度通关攻略_72G梦幻西游手游专区  -- is_selected:  False
+ -- paragraph title:  梦幻西游手游五行村之危地狱难度过关解析_梦幻西游手游_游戏狗  -- is_selected:  False
+
+
+- Question  28 : 三星s8值得买吗
+ -- paragraph title:  细数三星S8的十大优缺点 三星新机皇值不值得买?_三星(SAMSUNG)手机  -- is_selected:  False
+ -- paragraph title:  三星S8 vs iPhone 8:七大方面详细分析谁值得买_数码_腾讯网  -- is_selected:  False
+ -- paragraph title:  三星S8+值得买吗?三星Galaxy S8+全面深度评测图解_手机评测_手机  -- is_selected:  False
+ -- paragraph title:  三星S8/S8+值不值得买?老外三大理由say no_TechWeb  -- is_selected:  True
+ -- paragraph title:  三星S8很惊艳,但有5个理由不值得购买_搜狐科技_搜狐网  -- is_selected:  False
+
+
+- Question  29 : 山海经异兽图实力排名
+ -- paragraph title:  山海经异兽大全,70个山海经异兽排名(含名字和图片)_排行榜123网  -- is_selected:  True
+ -- paragraph title:  山海经异兽排名实力_祥安阁历史  -- is_selected:  False
+ -- paragraph title:  上古四大凶兽实力排行图片,上古四大凶兽之首,山海经异兽排名_天涯  -- is_selected:  False
+ -- paragraph title:  山海经十大异兽排名凶兽排名图片 麒麟饕餮山海经里最霸道的是谁_尚  -- is_selected:  False
+ -- paragraph title:  山海经异兽图大全,神异灵兽能力图文详解 —【94677奇闻网】  -- is_selected:  False
+
+
+- Question  30 : 唐嫣为什么不选李易峰
+ -- paragraph title:  唐嫣最终选择罗晋,“拒绝”李易峰,原来是这个原因,大家都错了  -- is_selected:  True
+ -- paragraph title:  李易峰霍建华最怕的女星竟然是唐嫣,终于知道她为何总穿平底鞋!  -- is_selected:  False
+ -- paragraph title:  李易峰真心配不上唐嫣!-搜狐  -- is_selected:  False
+ -- paragraph title:  为什么唐嫣选择了罗晋而不是李易峰,身世大揭秘_百度知道  -- is_selected:  False
+ -- paragraph title:  李易峰看透了唐嫣,单身至今,原来是一直放不下她?  -- is_selected:  False
+
+
+- Question  31 : 2017年高考报名人数
+ -- paragraph title:  全国31省市2017年高考报名人数汇总_高考_新东方在线  -- is_selected:  False
+ -- paragraph title:  2017年全国各省市高考报名人数排行榜  -- is_selected:  True
+ -- paragraph title:  2017全国高考报名人数 2017年高考人数预测 2017届全国高考生人数  -- is_selected:  False
+ -- paragraph title:  2017年全国高考报名人数汇总_各省市高考报名人数有多少   -- is_selected:  False
+ -- paragraph title:  2017全国高考报名人数 2017年高考人数预测 2017届全国高考生人数  -- is_selected:  False
+
+
+- Question  32 : 怎么把几个word合成一个
+ -- paragraph title:  怎么把多个Word文档合并成一个_百度经验  -- is_selected:  True
+ -- paragraph title:  Word2010中怎样将多个文档合成一个文档_Word联盟  -- is_selected:  False
+ -- paragraph title:  高效快速将多个WORD文档合并到一个WORD文档中  -- is_selected:  True
+ -- paragraph title:  在Word 中怎么样将多个文档合成一个文档_百度经验  -- is_selected:  False
+ -- paragraph title:  怎么把多个word合成一个_百度知道  -- is_selected:  False
+
+
+- Question  33 : 弹弹堂宝珠在哪里
+ -- paragraph title:  弹弹堂手游宝珠在哪里 宝珠系统找不到在哪-琵琶网  -- is_selected:  True
+ -- paragraph title:  弹弹堂手游宝珠在哪里打开 宝珠怎么用_4399弹弹堂手游   -- is_selected:  False
+ -- paragraph title:  腾讯弹弹堂宝珠在哪里看 弹弹堂宝珠属性介绍_5577我机网  -- is_selected:  False
+ -- paragraph title:  弹弹堂手游宝珠在哪里获取 宝珠获取方法解读_18183弹弹堂手游专区  -- is_selected:  False
+ -- paragraph title:  手游弹弹堂的宝珠系统在哪里,怎么找不到_百度知道  -- is_selected:  False
+
+
+- Question  34 : 王者荣耀一个赛季多长时间
+ -- paragraph title:  王者荣耀赛季多长时间一结算?_百度知道  -- is_selected:  True
+ -- paragraph title:  王者荣耀现在是什么赛季,什么时候结束_百度知道  -- is_selected:  False
+ -- paragraph title:  王者荣耀第七个赛季什么时候结束_百度知道  -- is_selected:  False
+
+
+- Question  35 : 大话西游之大圣娶亲 票房
+ -- paragraph title:  大话西游之大圣娶亲三天收入破亿 未来情怀将换回多少票房?-中商情报  -- is_selected:  True
+ -- paragraph title:  大话西游之大圣娶亲票房 - 电影票房数据库  -- is_selected:  False
+ -- paragraph title:  大话西游之大圣娶亲三天收入破亿 未来情怀将换回多少票房?  -- is_selected:  False
+ -- paragraph title:  疯了!这部95年票房仅20万人民币的烂片竟然重映了 - 《大话西游之  -- is_selected:  False
+ -- paragraph title:  《大话西游之大圣娶亲》创华语2D复映票房最高纪录_新浪陕西时尚_  -- is_selected:  False
+
+
+- Question  36 : 宿主机是什么意思
+ -- paragraph title:  什么是宿主机_百度知道  -- is_selected:  True
+ -- paragraph title:  什么是宿主机,什么又是目标机,两者之间有什么区别?_百度知道  -- is_selected:  False
+ -- paragraph title:  双宿主主机_百度百科  -- is_selected:  False
+ -- paragraph title:  什么是宿主机?宿主机目标机的介绍_百度文库  -- is_selected:  True
+ -- paragraph title:  宿主机 - 必应 词典  -- is_selected:  False
+
+
+- Question  37 : linux 查看系统内存
+ -- paragraph title:  linux系统怎么查看系统内存_百度知道  -- is_selected:  False
+ -- paragraph title:  linux下查看内存的命令_百度知道  -- is_selected:  True
+ -- paragraph title:  在Linux系统下怎么查内存?_百度知道  -- is_selected:  False
+
+
+- Question  38 : excel取前几位
+ -- paragraph title:  Excel中一长串数字怎么只取前几位_百度知道  -- is_selected:  True
+ -- paragraph title:  excel 取前几位文字_百度知道  -- is_selected:  True
+ -- paragraph title:  电子表格中数值取前几位怎么做?_百度知道  -- is_selected:  False
+ -- paragraph title:  excel中如何取前几位,中间几位,后几位_百度知道  -- is_selected:  False
+ -- paragraph title:  EXCEL表格中怎么取前一单元格中的前几个字符_百度知道  -- is_selected:  False
+
+
+- Question  39 : 巫师3狼人无限回血怎么杀
+ -- paragraph title:  巫师3狼人无限回血怎么杀 狼人打法攻略 18183TV游戏频道  -- is_selected:  True
+ -- paragraph title:  打狼人任务怎么过BOSS无限回血 - 《巫师3:狂猎》 - 3DMGAME论坛 -   -- is_selected:  True
+ -- paragraph title:  巫师3狼人无限回血怎么杀 狼人打法介绍_当游网  -- is_selected:  False
+ -- paragraph title:  野性之心那个狼人怎么打?尼玛一直回血啊!【巫师3吧】_百度贴吧  -- is_selected:  False
+ -- paragraph title:  林中夫人有个会回血的狼人打不过啊 - 《巫师3:狂猎》 - 3DMGAME论坛  -- is_selected:  False
+
+
+- Question  40 : 2017年湖南省公务员考试成绩
+ -- paragraph title:  2017年湖南省公务员考试成绩查询入口(已开通)_中公网校  -- is_selected:  False
+ -- paragraph title:  湖南公务员考试成绩查询_2017湖南公务员成绩查询入口_湖南省考成绩  -- is_selected:  False
+ -- paragraph title:  2017年湖南省公务员考试成绩查询时间_中公网校  -- is_selected:  False
+ -- paragraph title:  2017湖南省公务员考试成绩查询:预计5月18日公布  -- is_selected:  False
+ -- paragraph title:  2017年湖南省公务员考试成绩公布时间及网址_公务员_新东方在线  -- is_selected:  True
+
+
+- Question  41 : 奇迹血色城堡等级
+ -- paragraph title:  奇迹MU恶魔血色城堡等级进入表_百度文库  -- is_selected:  True
+ -- paragraph title:  奇迹里血色城堡限制分多少等级?_百度知道  -- is_selected:  False
+ -- paragraph title:  MU奇迹里的血色城堡和恶魔广场各是几级进哪层_百度知道  -- is_selected:  True
+ -- paragraph title:  奇迹 血堡进入等级_百度知道  -- is_selected:  True
+ -- paragraph title:  MU奇迹里的血色城堡和恶魔广场各是几级进哪层_百度知道  -- is_selected:  False
+
+
+- Question  42 : cad旋转快捷键
+ -- paragraph title:  CAD如何旋转图像,CAD旋转的快捷键 - 中望CAD常见问题_中望技术社区   -- is_selected:  False
+ -- paragraph title:  CAD中旋转的快捷键是什么?_百度知道  -- is_selected:  True
+ -- paragraph title:  CAD水平翻转快捷键是什么啊_百度知道  -- is_selected:  False
+ -- paragraph title:  CAD中的旋转快捷键是什么?_百度知道  -- is_selected:  False
+
+
+- Question  43 : 高频呼叫电话 请谨慎接听
+ -- paragraph title:  本次来电是高频呼叫电话,请谨慎接听,这是什么意思?_百度知道  -- is_selected:  True
+ -- paragraph title:  手机出现“高频呼叫电话请谨慎接听”,是什么意思_百度知道  -- is_selected:  False
+ -- paragraph title:  本次来电是高频来电,请慎重接听是什么意思_百度知道  -- is_selected:  False
+ -- paragraph title:  本次电话为高频呼叫电话请谨慎接听.是什么情况?_百度知道  -- is_selected:  False
+
+
+- Question  44 : 煤气灶什么牌子好
+ -- paragraph title:  煤气灶哪个牌子和性价比质量最好_百度知道  -- is_selected:  True
+
+
+- Question  45 : 国金宝可靠吗
+ -- paragraph title:  国金宝投资理财网怎么样,安全吗? - 知乎  -- is_selected:  True
+ -- paragraph title:  国金宝理财靠谱吗_百度知道  -- is_selected:  False
+ -- paragraph title:  国金宝理财可靠吗_百度知道  -- is_selected:  False
+ -- paragraph title:  国金宝是骗局吗,可以相信吗?_百度知道  -- is_selected:  False
+ -- paragraph title:  国金宝怎么样?国金宝安全吗? - 希财新金融  -- is_selected:  False
+
+
+- Question  46 : 李易欢历史上是谁
+ -- paragraph title:  李易欢历史上有吗,李易欢小时候是谁演的_百度知道  -- is_selected:  True
+ -- paragraph title:  龙珠传奇李易欢的原型是谁 历史上真的有这个人吗-秀目网  -- is_selected:  False
+ -- paragraph title:  《龙珠传奇》李易欢历史原型是谁?李易欢最后复仇成功了吗?_影视资讯  -- is_selected:  True
+ -- paragraph title:  龙珠传奇李易欢历史上的原型是谁 结局复仇成功了吗和谁在一起--湖北  -- is_selected:  False
+ -- paragraph title:  龙珠传奇李易欢历史上的原型是谁 结局复仇成功了吗和谁在一起  -- is_selected:  False
+
+
+- Question  47 : 89c51和89c52的区别
+ -- paragraph title:  单片机89c51与89c52的区别_百度知道  -- is_selected:  True
+ -- paragraph title:  89c51和89c52区别_百度知道  -- is_selected:  False
+ -- paragraph title:    -- is_selected:  False
+ -- paragraph title:    -- is_selected:  False
+
+
+- Question  48 : ap考试时间
+ -- paragraph title:  2016年AP考试时间安排-新东方网  -- is_selected:  True
+ -- paragraph title:  2017年AP考试时间表  -- is_selected:  False
+ -- paragraph title:  2017年AP考试各科时间安排及报考须知来了!  -- is_selected:  False
+ -- paragraph title:  2017年AP考试各科时间安排及报考须知 _搜狐教育_搜狐网  -- is_selected:  False
+ -- paragraph title:  2016年AP考试时间表 - 小马过河  -- is_selected:  False
+
+
+- Question  49 : 绣眉有哪几种
+ -- paragraph title:  绣眉有哪几种方法?绣眉的基本方法_绣眉_妆美扮靓_爱靓网  -- is_selected:  True
+ -- paragraph title:  绣眉有哪几种常见方法?绣眉一般要多少钱【图】_彩妆资讯百科_美容_  -- is_selected:  False
+ -- paragraph title:  绣眉有哪几种_百度知道  -- is_selected:  False
+ -- paragraph title:  绣眉有几种,哪种比较好看?_百度知道  -- is_selected:  False
+ -- paragraph title:  绣眉分哪几种_百度知道  -- is_selected:  False
+
+
+- Question  50 : 实习的目的
+ -- paragraph title:  大学生实习的目的_百度知道  -- is_selected:  True
+ -- paragraph title:  毕业实习的目的是什么_百度知道  -- is_selected:  False
+ -- paragraph title:  大学生毕业实习目的及内容  -- is_selected:  False
+ -- paragraph title:  实习目的_毕业生实习目的意义  -- is_selected:  False
+ -- paragraph title:  生产实习目的及意义  -- is_selected:  False
+
+
+- Question  51 : 人人车靠谱吗
+ -- paragraph title:  人人车检测靠谱吗?价格怎么算的? - 求助咨询 人人车社区-专业二手车  -- is_selected:  False
+ -- paragraph title:  人人车网买车靠谱吗?_百度知道  -- is_selected:  True
+ -- paragraph title:  人人车到底靠谱吗_百度知道  -- is_selected:  False
+
+
+- Question  52 : 萨满开三槽任务流程
+ -- paragraph title:  萨满神器第三插槽解锁任务详细流程是什么_特玩网魔兽世界专区  -- is_selected:  True
+ -- paragraph title:  萨满开三槽任务～好急呐!求助各位大神! NGA玩家社区 [f370]  -- is_selected:  False
+ -- paragraph title:  魔兽世界萨满的开三槽任务详细流程是什么?我现在职业_游戏问答_  -- is_selected:  False
+ -- paragraph title:  萨满第三槽任务全程要多久~~ NGA玩家社区 [f7]  -- is_selected:  False
+ -- paragraph title:  新手萨满求问萨满的三槽任务流程是什么 NGA玩家社区 [f370]  -- is_selected:  False
+
+
+- Question  53 : 拉杆箱十大排名
+ -- paragraph title:  箱包十大品牌_拉杆箱十大品牌_旅行箱品牌→十大品牌网  -- is_selected:  False
+ -- paragraph title:  十大拉杆箱品牌  -- is_selected:  False
+ -- paragraph title:  拉杆箱十大品牌排名解析_百度文库  -- is_selected:  True
+ -- paragraph title:  十大拉杆箱品牌排行榜_排行榜123网  -- is_selected:  True
+ -- paragraph title:  全球10 大顶级行李箱品牌排行榜  -- is_selected:  False
+
+
+- Question  54 : 端午节的相关知识
+ -- paragraph title:  端午节小常识_图文_百度文库  -- is_selected:  False
+ -- paragraph title:  端午节小知识_百度文库  -- is_selected:  True
+ -- paragraph title:  端午节知识_百度文库  -- is_selected:  True
+ -- paragraph title:  端午节知识问答_百度文库  -- is_selected:  False
+ -- paragraph title:  关于端午节的知识_百度知道  -- is_selected:  False
+
+
+- Question  55 : 郑州最好的人流医院
+ -- paragraph title:  郑州人流医院_郑州无痛人流医院_郑州人流较好的医院_郑州哪家医院做  -- is_selected:  False
+ -- paragraph title:  郑州做人流哪里好_郑州人流医院_郑州无痛人流医院-河南省医药院附属  -- is_selected:  False
+ -- paragraph title:  郑州人流医院哪家好【挂号】无痛人流多少钱_河南省做人流医院排行榜  -- is_selected:  False
+ -- paragraph title:  郑州人流医院_郑州无痛人流医院_郑州做人流哪里好_河南省医药院附属  -- is_selected:  False
+
+
+- Question  56 : 北京英语培训学校排名
+ -- paragraph title:  北京英语培训机构,最好的英语培训机构排名  -- is_selected:  True
+ -- paragraph title:  【北京英语培训机构排行榜,北京英语培训机构排名】  -- is_selected:  False
+ -- paragraph title:  北京英语培训机构排行榜,北京英语培训机构排名 - 精英家教网  -- is_selected:  False
+ -- paragraph title:  最新英语培训机构排名,2015英语培训机构排名-听力课堂  -- is_selected:  True
+ -- paragraph title:  2016北京英语培训机构最新排名  -- is_selected:  True
+
+
+- Question  57 : 数字1到10的各种写法
+ -- paragraph title:  1-10 数字的正确写法_百度文库  -- is_selected:  False
+ -- paragraph title:  数字1至10的写法_百度文库  -- is_selected:  False
+ -- paragraph title:  数字1——10的书写ppt_百度文库  -- is_selected:  False
+ -- paragraph title:  1到10各数的写法_百度文库  -- is_selected:  False
+ -- paragraph title:  求几种不同语言的1到10的数字的写法_百度知道  -- is_selected:  True
+
+
+- Question  58 : 95号汽油比92号耐用吗
+ -- paragraph title:  【说客】95号就一定比92号油品质更好、更耐烧吗_汽车之家  -- is_selected:  True
+ -- paragraph title:  95号汽油比92号汽油更耐用吗_百度知道  -- is_selected:  True
+ -- paragraph title:  95号汽油好还是92号汽油好_百度知道  -- is_selected:  True
+ -- paragraph title:  95号汽油比92号汽油好在哪里_百度知道  -- is_selected:  False
+ -- paragraph title:  92号的车加95号汽油真的好吗?别傻了,不但没好处  -- is_selected:  False
+
+
+- Question  59 : 2017峰会什么时候开始
+ -- paragraph title:  2017北京一带一路峰会什么时候召开_2017一带一路峰会召开时间  -- is_selected:  True
+ -- paragraph title:  北京峰会2017几号开_2017年北京峰会开几天  -- is_selected:  False
+ -- paragraph title:  2017年北京一带一路峰会时间  -- is_selected:  False
+ -- paragraph title:  2017年G20峰会在哪个国家召开_2017G20峰会是哪里_2017G20峰会时间几  -- is_selected:  False
+ -- paragraph title:  2017一带一路北京峰会时间看点有哪些- 北京本地宝  -- is_selected:  False
+
+
+- Question  60 : 360root怎么卸载
+ -- paragraph title:  如何彻底卸载360一键root_百度知道  -- is_selected:  True
+ -- paragraph title:  手机装了360超级root卸载不了怎么办_百度知道  -- is_selected:  True
+ -- paragraph title:  如何卸载手机上的360超级root?_百度知道  -- is_selected:  True
+ -- paragraph title:  kingroot怎么卸载不掉怎么办_百度知道  -- is_selected:  False
+ -- paragraph title:  360超级root怎么解除 怎么卸载  -- is_selected:  False
+
+
+- Question  61 : 新疆北疆旅游攻略
+ -- paragraph title:  如何玩转新疆之北疆 – 360旅游  -- is_selected:  False
+ -- paragraph title:  2017北疆旅游攻略,北疆自由行攻略,蚂蜂窝北疆出游攻略游记 - 蚂蜂窝  -- is_selected:  False
+ -- paragraph title:  北疆景点介绍,北疆旅游景点,北疆景点推荐 - 蚂蜂窝  -- is_selected:  True
+ -- paragraph title:  新疆(北疆)两个人的穷游旅行-喀纳斯旅游攻略 | Yododo 游多多   -- is_selected:  False
+ -- paragraph title:  想去新疆北疆旅游,有没有去过的驴友的攻略_百度知道  -- is_selected:  True
+
+
+- Question  62 : 上海年薪30万什么水平
+ -- paragraph title:  家庭年收入30万在上海会是什么样的生活? - 知乎  -- is_selected:  False
+ -- paragraph title:  年薪30万在上海过的是什么样的生活?_婆媳关系_天涯论坛_天涯社区  -- is_selected:  False
+ -- paragraph title:  [上海年薪30万什么水平]年薪30万的文案平时都在干嘛?  -- is_selected:  False
+ -- paragraph title:  个人年薪30万在上海或者苏州属于什么水平?【常熟吧】_百度贴吧  -- is_selected:  True
+ -- paragraph title:  85年终于年薪30W了, 在上海算什么水平-宽带山KDS-宽带山社区-第一  -- is_selected:  True
+
+
+- Question  63 : 连接池的作用
+ -- paragraph title:  数据库连接池的作用是什么?_百度知道  -- is_selected:  True
+ -- paragraph title:  什么是数据库连接池,有什么作用?_百度知道  -- is_selected:  False
+ -- paragraph title:  JAVA的连接池起什么作用_百度知道  -- is_selected:  False
+ -- paragraph title:  数据库连接池的工作机制是什么_百度知道  -- is_selected:  False
+ -- paragraph title:  连接池的作用 - 小忒的学习与生活 - 博客频道 - CSDN.NET  -- is_selected:  True
+
+
+- Question  64 : 勒索病毒解决了吗
+ -- paragraph title:  勒索病毒现在有解决的办法了吗?_百度知道  -- is_selected:  True
+ -- paragraph title:  比特币勒索病毒解决了吗_百度知道  -- is_selected:  True
+ -- paragraph title:  中了勒索病毒能不能解决_百度知道  -- is_selected:  False
+ -- paragraph title:  防止“勒索病毒”变成对整个中国的勒索_军事_中华网  -- is_selected:  False
+ -- paragraph title:  关于勒索病毒的解决方案_百度经验  -- is_selected:  False
+
+
+- Question  65 : 画壁结局什么意思
+ -- paragraph title:  画壁结尾什么意思_百度知道  -- is_selected:  True
+ -- paragraph title:  画壁结局是什么意思_百度知道  -- is_selected:  True
+ -- paragraph title:  画壁最后的结局是什么意思、想表达什么?_百度知道  -- is_selected:  False
+
+
+- Question  66 : 楼梯踏步高度
+ -- paragraph title:  楼梯踏步高度标准是多少_百度知道  -- is_selected:  True
+ -- paragraph title:  楼梯踏步尺寸多少合适,是怎么计算的_百度知道  -- is_selected:  False
+ -- paragraph title:  楼梯踏步高度标准是多少?  -- is_selected:  False
+ -- paragraph title:  请问室内楼梯踏步高度一般是多少?_其他_土巴兔问吧  -- is_selected:  False
+ -- paragraph title:  楼梯踏步高度的相关规范01_图文_百度文库  -- is_selected:  False
+
+
+- Question  67 : 怎么获取input的value值
+ -- paragraph title:  js 中怎么从input获取输入的value值_百度知道  -- is_selected:  True
+ -- paragraph title:  js文件里如何获取input的的值_百度知道  -- is_selected:  False
+ -- paragraph title:  javascript中怎么获取input的值啊?_百度知道  -- is_selected:  False
+ -- paragraph title:  如何js获取当前input的value值_百度知道  -- is_selected:  False
+ -- paragraph title:  input value-怎么获取input里的value值——CSDN问答频道  -- is_selected:  False
+
+
+- Question  68 : 珍嗖啦怎么吃法才正确
+ -- paragraph title:  珍嗖啦食用方法|珍嗖啦的正确吃法_珍嗖啦吧_百度贴吧  -- is_selected:  True
+ -- paragraph title:  珍嗖啦一天吃几次比较合适总代教你正确使用方法 - 须知网  -- is_selected:  True
+ -- paragraph title:  珍嗖啦正确吃法时间 珍嗖啦什么时间吃?-百科大全-就爱阅读网  -- is_selected:  True
+ -- paragraph title:  珍嗖啦的吃法——服用方法_搜了网  -- is_selected:  False
+ -- paragraph title:  珍嗖啦的正确吃法?怎么吃才能瘦的更快?有谁吃过?_深圳热线手机版  -- is_selected:  False
+
+
+- Question  69 : 初中生毕业后干什么
+ -- paragraph title:  初中生毕业后能干什么_百度文库  -- is_selected:  False
+ -- paragraph title:  初中生毕业后‘该做什么?_百度知道  -- is_selected:  True
+ -- paragraph title:  初中生毕业以后做什么职业_百度知道  -- is_selected:  True
+ -- paragraph title:  初中生毕业做什么行业好呢!_百度知道  -- is_selected:  False
+ -- paragraph title:  初中生毕业后‘该做什么?_百度知道  -- is_selected:  False
+
+
+- Question  70 : 网络卡是什么原因
+ -- paragraph title:  网络忽然很卡是什么原因、以前不卡、就忽然卡了_百度知道  -- is_selected:  True
+ -- paragraph title:  路由器上网很卡是什么原因?_百度知道  -- is_selected:  True
+ -- paragraph title:  我的网速很快 但是wifi很卡 什么原因_百度知道  -- is_selected:  True
+ -- paragraph title:  网络很卡是什么原因??急!_百度知道  -- is_selected:  False
+
+
+- Question  71 : 君子兰多久浇一次水
+ -- paragraph title:  盆栽君子兰多长时间浇一次水_百度知道  -- is_selected:  True
+ -- paragraph title:  君子兰多长时间浇一次水?_百度知道  -- is_selected:  True
+ -- paragraph title:  君子兰几天浇一次水呢??_百度知道  -- is_selected:  False
+ -- paragraph title:  君子兰多久浇一次水 君子兰几天浇一次水(图) - 花木中国网  -- is_selected:  False
+ -- paragraph title:  君子兰几天浇一次水呀. - 爱问知识人  -- is_selected:  False
+
+
+- Question  72 : 超级淘安全吗
+ -- paragraph title:  超级淘安全吗_百度知道  -- is_selected:  False
+ -- paragraph title:  通过超级淘购物,我的账户安全吗?_百度知道  -- is_selected:  False
+ -- paragraph title:  揭秘超级淘安全吗,为何宝妈都喜欢用超级淘网购?  -- is_selected:  True
+ -- paragraph title:  超级淘可信吗,带你一探究竟  -- is_selected:  True
+ -- paragraph title:  超级淘,一款返利类APP到底安全性有多高呢?  -- is_selected:  False
+
+
+- Question  73 : 美女与极品哪里可以看
+ -- paragraph title:  美女与极品在哪里看_1905电影网在线观看  -- is_selected:  True
+ -- paragraph title:  美女与极品怎么看不了_百度知道  -- is_selected:  False
+ -- paragraph title:  求资源!!哪里可以看_美女与极品吧_百度贴吧  -- is_selected:  True
+ -- paragraph title:  美女与极品不能看了-原创-高清视频-爱奇艺  -- is_selected:  False
+ -- paragraph title:  怎么看不到了啊_美女与极品吧_百度贴吧  -- is_selected:  False
+
+
+- Question  74 : 上海雅思培训费用
+ -- paragraph title:  在上海雅思培训一般多少钱?  -- is_selected:  False
+ -- paragraph title:  【上海雅思培训需要多少钱】   -- is_selected:  False
+ -- paragraph title:  【雅思培训班费用】雅思培训一般多少钱,上海雅思班学费   -- is_selected:  False
+ -- paragraph title:  上海雅思培训一般多少钱,上海雅思培训一般需要多少钱-【中国教育  -- is_selected:  False
+ -- paragraph title:  上海雅思培训周末班一般多少钱_百度知道  -- is_selected:  True
+
+
+- Question  75 : 银耳和什么搭配最好
+ -- paragraph title:  银耳和什么搭配最好_食材_养生之道网  -- is_selected:  True
+ -- paragraph title:  银耳和什么搭配最好_百度知道  -- is_selected:  True
+ -- paragraph title:  银耳和什么一起吃好_银耳可以和什么一起吃_银耳和什么搭配好-豆果  -- is_selected:  True
+ -- paragraph title:  推荐三款银耳的最佳搭配__寻医问药_xywy.com  -- is_selected:  False
+ -- paragraph title:  银耳和什么搭配最好 - 三九养生堂  -- is_selected:  False
+
+
+- Question  76 : 神仙水使用方法
+ -- paragraph title:  skii神仙水怎么用?_百度知道  -- is_selected:  True
+ -- paragraph title:  SK2神仙水怎么用?_百度知道  -- is_selected:  True
+ -- paragraph title:  skii神仙水怎么用?_百度知道  -- is_selected:  False
+
+
+- Question  77 : 智能家居品牌排行
+ -- paragraph title:  智能家居十大品牌_智能家居公司十强→十大品牌网  -- is_selected:  False
+ -- paragraph title:  智能家居十大品牌_智能家居十大品牌排行榜_智能家居品牌排行_中洁网  -- is_selected:  True
+ -- paragraph title:  最新智能家居十大品牌排名(附选择技巧)-土巴兔装修大学  -- is_selected:  True
+ -- paragraph title:  世界十大智能家居  -- is_selected:  False
+ -- paragraph title:  品牌榜:2016-2017年智能家居十大品牌排行榜 投票结果公布【新】_  -- is_selected:  False
+
+
+- Question  78 : 最小生成树算法
+ -- paragraph title:  最小生成树算法汇总 - 博客频道 - CSDN.NET  -- is_selected:  False
+ -- paragraph title:  最小生成树-Prim算法和Kruskal算法 - as_ - 博客园  -- is_selected:  False
+ -- paragraph title:  最小生成树_百度百科  -- is_selected:  True
+ -- paragraph title:  最小生成树算法及应用_图文_百度文库  -- is_selected:  False
+ -- paragraph title:  最小生成树算法讲解_百度文库  -- is_selected:  False
+
+
+- Question  79 : 天刀精英服申请技巧
+ -- paragraph title:  现在精英服这么好进,难道是因为没什么人申请了?感觉有点方_天涯明月  -- is_selected:  False
+ -- paragraph title:  天涯明月刀精英体验服申请方法 什么是精英服-新浪天涯明月刀专区  -- is_selected:  True
+ -- paragraph title:  大家进来看看,精英服申请成功,填写这内容都可以成功,,我醉了-天涯  -- is_selected:  False
+ -- paragraph title:  天刀精英服资格详解_天涯明月刀ol精英服吧_百度贴吧  -- is_selected:  False
+ -- paragraph title:  天涯明月刀精英服申请理由 体验服申请方法_特玩网天涯明月刀专区  -- is_selected:  False
+
+
+- Question  80 : pro duo为什么没人买
+ -- paragraph title:  为啥就没有见到几个人买amd的pro duo的?【显卡吧】_百度贴吧  -- is_selected:  True
+ -- paragraph title:  为何AMD Pro Duo吧里没有讨论的呢?_图拉丁吧_百度贴吧  -- is_selected:  True
+ -- paragraph title:  土豪真是多,13999的AMD Radeon Pro Duo 居然真有人买。。。。。 -   -- is_selected:  False
+ -- paragraph title:  amd radeon pro duo值得买吗_百度知道  -- is_selected:  True
+ -- paragraph title:  AMD Radeon Pro Duo售价几近腰斩,799美元买到就是赚到! - 超能网  -- is_selected:  False
+
+
+- Question  81 : 电脑显示器黑屏但灯亮
+ -- paragraph title:  电脑的显示器灯亮着但是 却是黑屏_百度知道  -- is_selected:  True
+ -- paragraph title:  电脑显示器灯亮但是黑屏_百度知道  -- is_selected:  False
+ -- paragraph title:  我的电脑不能启动了怎么办?电源灯亮着,但是显示器是黑屏_百度知道  -- is_selected:  False
+
+
+- Question  82 : 模拟人生4攻略
+ -- paragraph title:  模拟人生4攻略秘籍_模拟人生4全攻略_模拟人生4攻略专区_游侠网  -- is_selected:  False
+ -- paragraph title:  模拟人生4游戏专区_模拟人生4下载及攻略秘籍 _ 游民星空 GamerSky.  -- is_selected:  False
+ -- paragraph title:  《模拟人生4》游戏全秘籍(作弊码)|Sims 4,The - 我爱秘籍  -- is_selected:  False
+ -- paragraph title:  模拟人生4超迅速赚钱心得攻略_模拟人生4攻略秘籍_游侠网  -- is_selected:  False
+ -- paragraph title:  模拟人生4怎么玩 游戏新手攻略详细图文介绍_心得秘籍_巴士单机游戏  -- is_selected:  True
+
+
+- Question  83 : 嘴唇长水泡
+ -- paragraph title:  嘴唇上长水泡是怎么回事?_百度拇指医生  -- is_selected:  False
+ -- paragraph title:  嘴唇上长水泡是为什么?_百度拇指医生  -- is_selected:  False
+ -- paragraph title:  【嘴上起水泡怎么办】嘴唇上长水泡怎么回事?早上起来嘴唇上长子很多  -- is_selected:  True
+ -- paragraph title:  嘴唇长水泡_百度拇指医生  -- is_selected:  False
+ -- paragraph title:  嘴唇上长泡该怎么办_百度经验  -- is_selected:  False
+
+
+- Question  84 : dnf伊莎杜拉在哪
+ -- paragraph title:  DNF伊莎杜拉在哪个地图_百度知道  -- is_selected:  True
+ -- paragraph title:  dnf伊莎杜拉在哪_百度知道  -- is_selected:  True
+ -- paragraph title:  dnf伊莎杜拉npc在哪_百度知道  -- is_selected:  False
+ -- paragraph title:  DNF伊莎杜拉在哪个地图_百度知道  -- is_selected:  False
+ -- paragraph title:  与巴恩一起寻找伊莎杜拉任务怎么做 DNF任务_特玩网DNF专区  -- is_selected:  False
+
+
+- Question  85 : 职业资格证书有哪些
+ -- paragraph title:  职业资格证书有哪些_百度知道  -- is_selected:  True
+ -- paragraph title:  目前职业资格证书有哪些_百度知道  -- is_selected:  True
+ -- paragraph title:  国家职业资格证书有哪些_查查吧  -- is_selected:  True
+ -- paragraph title:  职业资格证书_百度百科  -- is_selected:  False
+ -- paragraph title:  全国职业资格证书都有哪些_百度文库  -- is_selected:  False
+
+
+- Question  86 : 怎样参加自考本科
+ -- paragraph title:  如何参加自考本科?_百度知道  -- is_selected:  True
+ -- paragraph title:  自考是什么意思?可以直接考本科吗?_百度知道  -- is_selected:  False
+
+
+- Question  87 : 三星a8一直重启怎么办
+ -- paragraph title:  三星手机无限重启怎么办_百度知道  -- is_selected:  True
+ -- paragraph title:  三星手机a8用着用着就重启了是怎么回事?_百度知道  -- is_selected:  True
+ -- paragraph title:  三星a8一直重启不能进入待机_百度知道  -- is_selected:  True
+ -- paragraph title:  三星a8无限重启怎么办_百度知道  -- is_selected:  False
+ -- paragraph title:  三星a8一直重启怎么办_百度经验  -- is_selected:  False
+
+
+- Question  88 : 电饼铛自制烤肉的做法
+ -- paragraph title:  电饼铛烤肉的做法_百度知道  -- is_selected:  True
+ -- paragraph title:  用电饼铛烤肉 事先要怎么腌肉啊_百度知道  -- is_selected:  True
+ -- paragraph title:  电饼铛烤肉的做法,电饼铛烤肉怎么做好吃,电饼铛烤肉的家常做法_懒  -- is_selected:  False
+ -- paragraph title:  【用电饼铛在家做顿烤肉大餐吧!的做法】用电饼铛在家做顿烤肉大餐吧  -- is_selected:  False
+ -- paragraph title:  电饼铛烤肉的做法_家常电饼铛烤肉的做法【图】电饼铛烤肉的家常做法  -- is_selected:  False
+
+
+- Question  89 : 爆炒小龙虾的做法
+ -- paragraph title:  爆炒小龙虾的做法_家常爆炒小龙虾的做法【图】爆炒小龙虾的家常做法  -- is_selected:  True
+ -- paragraph title:  【图文】爆炒香辣小龙虾的做法_爆炒香辣小龙虾的家常做法_爆炒香辣  -- is_selected:  True
+ -- paragraph title:  爆炒龙虾的做法_爆炒龙虾怎么做_爆炒龙虾的家常做法 _下厨房  -- is_selected:  False
+ -- paragraph title:  爆炒麻辣小龙虾的做法  -- is_selected:  True
+ -- paragraph title:  爆炒小龙虾的做法_家常爆炒小龙虾的做法【图】爆炒小龙虾的家常做法  -- is_selected:  False
+
+
+- Question  90 : mia英文名
+ -- paragraph title:  mia英文名什么意思_百度知道  -- is_selected:  True
+ -- paragraph title:  英文名Mia好不好?怎么读?要音标_百度知道  -- is_selected:  False
+ -- paragraph title:  英文名Mia是什么意思?_百度知道  -- is_selected:  False
+ -- paragraph title:  好听女生英文名里面要有mia_百度知道  -- is_selected:  False
+ -- paragraph title:  英文名有讲究不能乱起 中国女孩常误用暧昧名字_新浪新闻  -- is_selected:  False
+
+
+- Question  91 : 姜子牙大招距离
+ -- paragraph title:  王者荣耀姜子牙大招多远 姜子牙大招释放技巧_搞趣网  -- is_selected:  True
+ -- paragraph title:  姜子牙大招的最大距离是多少?【王者荣耀吧】_百度贴吧  -- is_selected:  True
+ -- paragraph title:  王者荣耀姜子牙怎么玩 王者荣耀姜子牙大招距离/射程_百度知道  -- is_selected:  True
+ -- paragraph title:  王者荣耀姜子牙大招多远_百度知道  -- is_selected:  False
+ -- paragraph title:  王者荣耀姜子牙的大招现在能打多远?_百度知道  -- is_selected:  False
+
+
+- Question  92 : lol怎么15分钟投降
+ -- paragraph title:  LOL怎么在15分钟投降 LOL15分钟投降方法介绍-闽南网  -- is_selected:  True
+ -- paragraph title:  LOL怎么15分钟投降 LOL15分钟投降指令是什么_LOL攻略  -- is_selected:  False
+ -- paragraph title:  LOL3分钟怎么投降_百度经验  -- is_selected:  False
+ -- paragraph title:  LOL怎么15分钟投降 LOL15分钟投降指令是什么-無趣  -- is_selected:  False
+ -- paragraph title:  LOL怎么在15分钟投降 LOL15分钟投降方法介绍 - 游戏攻略  -- is_selected:  False
+
+
+- Question  93 : 杰尼斯事务所艺人排名
+ -- paragraph title:  杰尼斯事务所_2016日推最常被提到的艺人排行_沪江日语  -- is_selected:  False
+ -- paragraph title:  【图片】【年末赚钱榜】2016年杰尼斯(Johnnys)艺人销售额排行榜【  -- is_selected:  True
+ -- paragraph title:  杰尼斯艺人内部地位排名遭曝光 日本投票演技出众十大艺人名单揭晓_  -- is_selected:  True
+ -- paragraph title:  偶像中也有学霸!扒一扒各个杰尼斯艺人的学历-微众圈  -- is_selected:  False
+ -- paragraph title:  杰尼斯事务所_日本人选出的2016好感度艺人TOP10_沪江日语  -- is_selected:  False
+
+
+- Question  94 : 性价比手机排行榜
+ -- paragraph title:  【智能手机排行榜2017前十名|智能手机性价比排行】-手机中国  -- is_selected:  True
+ -- paragraph title:  手机什么牌子好,手机十大品牌排行榜   -- is_selected:  False
+ -- paragraph title:  【手机大全】手机报价及图片大全-ZOL中关村在线  -- is_selected:  False
+ -- paragraph title:  高性价比手机推荐_手机销量排行榜 - 手机推荐网  -- is_selected:  False
+
+
+- Question  95 : 雾化器哪个牌子好
+ -- paragraph title:  想买个雾化器在家用,哪个牌子比较好_雾化器吧_百度贴吧  -- is_selected:  True
+ -- paragraph title:  雾化机什么牌子的好 十大品牌排行榜新鲜出炉-土巴兔装修大学  -- is_selected:  False
+ -- paragraph title:  【十大雾化器品牌】【雾化机品牌】雾化器什么牌子好?→ 买购网  -- is_selected:  False
+ -- paragraph title:  谁能够说一说家用雾化器那个牌子好?怎么样挑选好的家用雾化器?_生活  -- is_selected:  False
+ -- paragraph title:  如何选购雾化器,雾化器什么牌子好_百度经验  -- is_selected:  False
+
+
+- Question  96 : 双重验证怎么关闭
+ -- paragraph title:  怎样关闭Apple ID 的两步式验证_百度经验  -- is_selected:  True
+ -- paragraph title:  苹果双重认证怎么关闭_百度知道  -- is_selected:  False
+ -- paragraph title:  苹果id双重认证怎么关闭_百度知道  -- is_selected:  False
+ -- paragraph title:  苹果icloud的双重认证怎么关掉?_百度知道  -- is_selected:  True
+ -- paragraph title:  Apple ID 的双重认证 - Apple 支持  -- is_selected:  False
+
+
+- Question  97 : 搜狗浏览器无痕浏览怎么开启
+ -- paragraph title:  搜狗浏览器5.0无痕浏览在哪_百度经验  -- is_selected:  False
+ -- paragraph title:  搜狗浏览器怎么设置无痕浏览_百度经验  -- is_selected:  True
+ -- paragraph title:  搜狗高速浏览器怎么设置无痕浏览 搜狗无痕模式_百度经验  -- is_selected:  True
+ -- paragraph title:  搜狗浏览器怎么设置无痕浏览模式?搜狗浏览器无痕浏览功能使用方法_  -- is_selected:  False
+ -- paragraph title:  搜狗浏览器如何打开隐私窗口?搜狗浏览器的无痕浏览在哪? - 比克尔  -- is_selected:  False
+
+
+- Question  98 : 肾阴阳两虚怎么治
+ -- paragraph title:  肾阴阳两虚型_百度百科  -- is_selected:  True
+ -- paragraph title:  【肾阴阳两虚怎么补】阴阳两虚能同时补吗 -有问必答-快速问医生  -- is_selected:  True
+ -- paragraph title:  肾阴阳两虚治疗,阴阳双补   -- is_selected:  False
+ -- paragraph title:  手淫引起的,肾阴阳两虚怎么调理_寻医问药网_xywy.com  -- is_selected:  False
+ -- paragraph title:  什么叫肾阴阳两虚?怎么治疗?_百度知道  -- is_selected:  False
+
+
+- Question  99 : 脸肿怎么消肿
+ -- paragraph title:  脸部摔肿,如何快速消肿_有问必答_快速问医生  -- is_selected:  True
+ -- paragraph title:  脸肿了怎么消肿_百度经验  -- is_selected:  True
+ -- paragraph title:  脸肿了怎么快速消肿,脸肿了怎么办能消肿,脸肿怎么消肿-乐哈健康网   -- is_selected:  False
+ -- paragraph title:  早上起来脸浮肿怎样快速消肿?_百度拇指医生  -- is_selected:  False
+ -- paragraph title:  脸肿怎么快速消肿_百度知道  -- is_selected:  False
+
+
+- Question  100 : 办公笔记本电脑排名
+ -- paragraph title:  【2017笔记本电脑排行榜】笔记本电脑什么牌子好_笔记本电脑推荐排名  -- is_selected:  True
+ -- paragraph title:  办公用的什么品牌笔记本电脑比较好_百度知道  -- is_selected:  True
+ -- paragraph title:  办公室用笔记本电脑推荐下哪种好_百度知道  -- is_selected:  False
+ -- paragraph title:  【商务办公笔记本电脑】最新商务办公笔记本电脑报价及图片大全-ZOL  -- is_selected:  False
+ -- paragraph title:  【2017商务办公本笔记本电脑排行榜】商务办公本笔记本电脑哪款好_  -- is_selected:  False
