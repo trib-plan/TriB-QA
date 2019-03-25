@@ -89,5 +89,6 @@ Baidu Zhidao
 - baidu_zhidao 1 label num:  351186
 - baidu_zhidao 0 label num:  301879
 
+由于 paragraph 长度都很长，实际操作时候取 max_question_len = 400，取 batch_size = 10 ，实测显存占用11g，105服务器单卡最大batch应该在12左右，batch=16实测爆显存，数据处理大概12h一个epoch，目前仍在训练过程当中。
 
 
