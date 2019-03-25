@@ -1,0 +1,13 @@
+Baidu Search
+- baidu_search example num:  632553
+- baidu_search avg_question_len:  9.6154535667367
+- baidu_search avg_paragraph_len:  774.4874216073594
+- baidu_search 1 label num:  238427
+- baidu_search 0 label num:  394126
+
+Baidu Zhidao
+- baidu_zhidao example num:  653065
+- baidu_zhidao avg_question_len:  9.523424161454066
+- baidu_zhidao avg_paragraph_len:  591.300689824137
+- baidu_zhidao 1 label num:  351186
+- baidu_zhidao 0 label num:  301879
