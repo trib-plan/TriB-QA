@@ -9,12 +9,22 @@
 baidu_search  
 example_nums: 136208  
 doc_nums: 632553  
-paragraph_nums: 7688828  
+paragraph_nums: 7371191  
+avg_para_charlen: 63.99444784431715  
+avg_para_wordlen: 36.97641317393621  
+avg_mostrelated_charlen: 209.88829709484418  
+avg_mostrelated_wordlen: 120.48022854965568  
+most nums: 608883  
   
 baidu_zhidao  
 example_nums: 135366  
 doc_nums: 653065  
-paragraph_nums: 1807941  
+paragraph_nums: 1772768  
+avg_para_charlen: 215.0283455026264  
+avg_para_wordlen: 128.91797855105688  
+avg_mostrelated_charlen: 359.0590676297614  
+avg_mostrelated_wordlen: 215.21554889436135  
+most nums: 631852  
   
 
 ### 关于如何从paragraphs当中选取most_related_paragraph:  
