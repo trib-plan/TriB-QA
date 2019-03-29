@@ -22,6 +22,11 @@ paragraph_nums: 1807941
 2. 略略略  
 
   
+数据格式：  
+指标（length, rouge, length \times rouge)：符合条件数-例子总数-比例  
+第一行符合条件，指的是most_related_paragraph具有max_length或者max_rouge或者最大两者乘积  
+第二行符合条件，指的是most_related_paragraph的指标大于备选paragraphs的平均值  
+
 baidu_search:  
 sentence: 100  
 lengths:  159 282 0.5638297872340425  
