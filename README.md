@@ -8,6 +8,8 @@
 ### 关于如何从paragraphs当中选取most_related_paragraph:  
 1. 他们在测试的时候选取了question和paragraphs中rouge f1值最高的paragraph, 但是从下面的统计数据可以看出来， 选取length最长的paragraph是most_related的正确率要比rouge最高的正确率要高，而且高不少。。。这是因为第一步尽量选择包含信息多的paragraph？？？  
 2. 略略略  
+
+  
 baidu_search:  
 sentence: 100  
 lengths:  159 282 0.5638297872340425  
