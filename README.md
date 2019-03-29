@@ -5,6 +5,18 @@
 ## 任务：paragraph选择（rwei）
 ###### **自己的branch就把做的放在前面了**
 
+### 数据整体统计情况：  
+baidu_search  
+example_nums: 136208  
+doc_nums: 632553  
+paragraph_nums: 7688828  
+  
+baidu_zhidao  
+example_nums: 135366  
+doc_nums: 653065  
+paragraph_nums: 1807941  
+  
+
 ### 关于如何从paragraphs当中选取most_related_paragraph:  
 1. 他们在测试的时候选取了question和paragraphs中rouge f1值最高的paragraph, 但是从下面的统计数据可以看出来， 选取length最长的paragraph是most_related的正确率要比rouge最高的正确率要高，而且高不少。。。这是因为第一步尽量选择包含信息多的paragraph？？？  
 2. 略略略  
@@ -66,6 +78,7 @@ dot:  10154 16053 0.6325297452189622
 dot:  12760 16053 0.794867003052389  
 time:  151.27087998390198  
   
+### 哇，下面这部分分类看错数据了，真蠢
 在实际数据中，每一个question（String类型）对应一个documents（List类型）  
 每一个documents，包含多个 paragraph （最少1个，对多5个）  
 每个 paragraph 具有 title - paragraph - is_selected 三项内容  
@@ -99,8 +112,8 @@ Baidu Zhidao
 - baidu_zhidao 0 label num:  301879
 
 由于 paragraph 长度都很长，实际操作时候取 max_question_len = 400，取 batch_size = 10 ，实测显存占用11g，105服务器单卡最大batch应该在12左右，batch=16实测爆显存，数据处理大概12h一个epoch，目前仍在训练过程当中。
-
-
+  
+## 下面是正常的Tri-Bit  
 ## 1.任务介绍
 
 [百度阅读理解竞赛官网](http://lic2019.ccf.org.cn/read)查看具体要求.  
