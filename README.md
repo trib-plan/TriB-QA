@@ -4,8 +4,33 @@
 
 ## 任务：paragraph选择（rwei）
 ###### **自己的branch就把做的放在前面了**
-
-### 数据整体统计情况：  
+### 3_31数据统计情况（每天和洗数据斗争！！！）：  
+dev_search_recall_3_31:  
+total_doc_num: 5531  
+baseline_match_num: 1594  0.28819381666967997  
+len_match_num: 3470  0.6273729886096546  
+seg_len_match_num: 3460  0.6255649972880131  
+  
+dev_zhidao_recall_3_31:   
+total_doc_num: 4983  
+baseline_match_num: 2845  0.5709412000802729  
+len_match_num: 3438  0.6899458157736303  
+seg_len_match_num: 3325  0.6672687136263296  
+  
+train_search_recall_3_31:   
+total_doc_num: 608122  
+baseline_match_num: 176894  0.2908857104331039  
+len_match_num: 351236  0.5775748945112987  
+seg_len_match_num: 352054  0.5789200193382249  
+  
+train_zhidao_recall_3_31:   
+total_doc_num: 630872  
+baseline_match_num: 372451  0.590374909648867  
+len_match_num: 444664  0.7048402845585159  
+seg_len_match_num: 433439  0.6870474517810269  
+  
+  
+### 3_30数据整体统计情况：  
 baidu_search  
 example_nums: 136208  
 doc_nums: 632553  
