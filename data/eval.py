@@ -40,3 +40,14 @@ for i in range(len(cleaned_pre)):
     n = n + 1
     a = r.get_scores(cleaned_pre[i], real_ans[i])
     sum += a[0]['rouge-l']['f']
+
+writer = open("F:\TriB-QA\data\\Trial_Prediction", 'w', encoding='utf-8')
+for i in range(len(cleaned_pre)):
+    print(i)
+    writer.write(json.dumps("Prediction:  " + cleaned_pre[i], ensure_ascii=False))
+    writer.write('\n')
+    writer.write(json.dumps("Answer:  " + real_ans[i], ensure_ascii=False))
+    writer.write('\n')
+writer.write("RougeL : F1- %f" % sum/n)
+writer.close()
+
