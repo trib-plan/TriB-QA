@@ -1,0 +1,118 @@
+export BAIDU_DIR=/home/mcren/TriB-QA
+
+f:只有答案那一段训练
+f2: 答案上下段
+ALL 所有数据。
+
+CUDA_VISIBLE_DEVICES=7  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_predict \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/f.search.train.json \
+  --predict_file $BAIDU_DIR/data/f.search.dev.json \
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 2.0 \
+  --max_seq_length 400 \
+  --doc_stride 128 \
+  --output_dir /home/mcren/TriB-QA/output1/
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=7  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/output\
+  --do_predict \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/f.search.train.json \
+  --predict_file $BAIDU_DIR/data/f.search.dev.json \
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 2.0 \
+  --max_seq_length 400 \
+  --doc_stride 128 \
+  --output_dir /home/mcren/TriB-QA/output/
+
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=0  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_predict \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/f2.search.train.json \
+  --predict_file $BAIDU_DIR/data/f2.search.dev.json \
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 400 \
+  --doc_stride 128 \
+  --max_answer_length 100 \
+  --output_dir /home/mcren/TriB-QA/output4/
+
+
+
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=6  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/All.train.json \
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 400 \
+  --doc_stride 128 \
+  --max_answer_length 100 \
+  --output_dir /home/mcren/TriB-QA/output-only-train-10epoch/
+
+
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=0  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/output-only-train\
+  --do_predict \
+  --do_lower_case \
+  --predict_file $BAIDU_DIR/data/preprocessed_zhidao.test1.json\
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 400 \
+  --doc_stride 128 \
+  --max_answer_length 100 \
+  --output_dir /home/mcren/TriB-QA/test1/
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=6  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/output-only-train\
+  --do_predict \
+  --do_lower_case \
+  --predict_file $BAIDU_DIR/data/preprocessed_search.test1.json\
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 400 \
+  --doc_stride 128 \
+  --max_answer_length 100 \
+  --output_dir /home/mcren/TriB-QA/test1-search/
+
+
+CUDA_VISIBLE_DEVICES=0 python run_classifier.py \
+--data_dir=/home/mcren/123 \
+--bert_model=/home/mcren/123/output4 \
+--task_name=baidu \
+--output_dir=/home/mcren/123/test1output \
+--do_eval \
+--do_lower_case
+
+tmux a -t xxxx
+tmux new -s xxx
+tmux detach
+
+ctrl B
+% left "" up

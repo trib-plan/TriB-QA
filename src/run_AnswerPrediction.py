@@ -36,23 +36,23 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
+# 百度 例子
 class BaiduExample(object):
     """
     A single training/test example for the baidu dataset
-    For examples without an answer, the start and end position are -1.
+    包括ID， 问题，分词过的文本，fake answer， SP,EP
     """
 
     def __init__(self,
                  qas_id,
                  question_text,
-                 context_tokens,
+                 doc_tokens,
                  orig_answer_text=None,
                  start_position=None,
                  end_position=None,):
         self.qas_id = qas_id
         self.question_text = question_text
-        self.context_tokens = context_tokens
+        self.doc_tokens = doc_tokens
         self.orig_answer_text = orig_answer_text
         self.start_position = start_position
         self.end_position = end_position
@@ -65,17 +65,16 @@ class BaiduExample(object):
         s += "qas_id: %s" % (self.qas_id)
         s += ", question_text: %s" % (
             self.question_text)
-        s += ", context_tokens: [%s]" % (" ".join(self.context_tokens))
+        s += ", doc_tokens: [%s]" % (" ".join(self.doc_tokens))
         if self.start_position:
             s += ", start_position: %d" % (self.start_position)
         if self.start_position:
             s += ", end_position: %d" % (self.end_position)
         return s
 
-
+# 生成 特征
 class InputFeatures(object):
     """A single set of features of data."""
-
     def __init__(self,
                  unique_id,
                  example_index,
@@ -100,37 +99,46 @@ class InputFeatures(object):
         self.start_position = start_position
         self.end_position = end_position
 
+# 读取百度例子
 def read_baidu_examples(input_file, is_training):
     """Read a baidu json file into a list of BaiduExample."""
     def is_whitespace(c):
         if c == " " or c == "\t" or c == "\r" or c == "\n" or ord(c) == 0x202F:
             return True
         return False
+
     with open(input_file, "r", encoding='utf-8') as reader:
         examples = []
         for line in reader:
             example = json.loads(line)
-            qas_id = example['question_id']
+            qas_id = example['id']
             question_text = example['question']
-            # 假设到这一步的时候，每一个输入的样本，都是整个doc输入，不考虑分段。
-            # 因为和第一个任务 可以分开训练，我们直接可以从数据中筛选具备条件的样本。
-            # title放在后面，这样不会影响answer span
-            context_tokens = example['documents'][0][0]['segmented_paragraphs']+" "+example['documents'][0]['title']
+            context_tokens = example['seg_para']
+            #seg para就是 分词后的文本
+            # qas_id = example['question_id']
+            # question_text = example['question']
+            # context_tokens = example['doc_tokens']
             start_position = None
             end_position = None
             orig_answer_text = None
-
-            #若不是训练，那么数据应该只包含，问题，文本，标题，
+            #若不是训练，那么数据应该只包含问题，文本，以上三个信息都为None
             #若是训练的话，
             if is_training:
-                orig_answer_text = example['fake_answers'][0]
-                start_position = example['answer_spans'][0][0]
-                end_position = example['answer_spans'][0][1]
+                orig_answer_text = example['fake_answer'][0]
+                start_position = int(example['answer_span'][0])
+                end_position = int(example['answer_span'][1])
 
+                # 检测一下给出的fake answer 能否在文中找出来。 找不出来就跳过。
+                actual_text = "".join(context_tokens[start_position:(end_position+1)])
+                cleaned_answer_text = orig_answer_text
+                if actual_text.find(cleaned_answer_text) == -1:
+                    logger.warning("Could not find answer: '%s' vs. '%s'",
+                                   actual_text, cleaned_answer_text)
+                    continue
             per_example = BaiduExample(
                 qas_id=qas_id,
                 question_text=question_text,
-                context_tokens=context_tokens,
+                doc_tokens=context_tokens,
                 orig_answer_text=orig_answer_text,
                 start_position=start_position,
                 end_position=end_position,
@@ -236,22 +244,20 @@ def convert_examples_to_features(examples, tokenizer, max_seq_length,
 
             start_position = None
             end_position = None
-            if is_training :
+            if is_training:
                 # For training, if our document chunk does not contain an annotation
                 # we throw it out, since there is nothing to predict.
                 doc_start = doc_span.start
                 doc_end = doc_span.start + doc_span.length - 1
-                out_of_span = False
-                if not (tok_start_position >= doc_start and
-                        tok_end_position <= doc_end):
-                    out_of_span = True
-                if out_of_span:
-                    start_position = 0
-                    end_position = 0
-                else:
-                    doc_offset = len(query_tokens) + 2
-                    start_position = tok_start_position - doc_start + doc_offset
-                    end_position = tok_end_position - doc_start + doc_offset
+                if (example.start_position < doc_start or
+                        example.end_position < doc_start or
+                        example.start_position > doc_end or example.end_position > doc_end):
+                    continue
+
+                doc_offset = len(query_tokens) + 2
+                start_position = tok_start_position - doc_start + doc_offset
+                end_position = tok_end_position - doc_start + doc_offset
+
             if example_index < 20:
                 logger.info("*** Example ***")
                 logger.info("unique_id: %s" % (unique_id))
@@ -268,9 +274,7 @@ def convert_examples_to_features(examples, tokenizer, max_seq_length,
                     "input_mask: %s" % " ".join([str(x) for x in input_mask]))
                 logger.info(
                     "segment_ids: %s" % " ".join([str(x) for x in segment_ids]))
-                if is_training and example.is_impossible:
-                    logger.info("impossible example")
-                if is_training and not example.is_impossible:
+                if is_training:
                     answer_text = " ".join(tokens[start_position:(end_position + 1)])
                     logger.info("start_position: %d" % (start_position))
                     logger.info("end_position: %d" % (end_position))
@@ -294,10 +298,9 @@ def convert_examples_to_features(examples, tokenizer, max_seq_length,
 
     return features
 
-
 def _improve_answer_span(doc_tokens, input_start, input_end, tokenizer,
                          orig_answer_text):
-    #因为word piece tokenizer，要拆词，对应的answer span 需要改变。
+    #因为word piece tokenizer，要进一步拆词，对应的answer span 需要改变。
     tok_answer_text = " ".join(tokenizer.tokenize(orig_answer_text))
 
     for new_start in range(input_start, input_end + 1):
@@ -349,12 +352,10 @@ def _check_is_max_context(doc_spans, cur_span_index, position):
 RawResult = collections.namedtuple("RawResult",
                                    ["unique_id", "start_logits", "end_logits"])
 
-
 def write_predictions(all_examples, all_features, all_results, n_best_size,
                       max_answer_length, do_lower_case, output_prediction_file,
-                      output_nbest_file, output_null_log_odds_file, verbose_logging
-                      , null_score_diff_threshold):
-    """Write final predictions to the json file and log-odds of null if needed."""
+                      output_nbest_file, verbose_logging):
+    """Write final predictions to the json file."""
     logger.info("Writing predictions to: %s" % (output_prediction_file))
     logger.info("Writing nbest to: %s" % (output_nbest_file))
 
@@ -372,22 +373,15 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
 
     all_predictions = collections.OrderedDict()
     all_nbest_json = collections.OrderedDict()
-    scores_diff_json = collections.OrderedDict()
-
     for (example_index, example) in enumerate(all_examples):
         features = example_index_to_features[example_index]
 
         prelim_predictions = []
-        # keep track of the minimum score of null start+end of position 0
-        score_null = 1000000  # large and positive
-        min_null_feature_index = 0  # the paragraph slice with min mull score
-        null_start_logit = 0  # the start logit at the slice with min null score
-        null_end_logit = 0  # the end logit at the slice with min null score
         for (feature_index, feature) in enumerate(features):
             result = unique_id_to_result[feature.unique_id]
+
             start_indexes = _get_best_indexes(result.start_logits, n_best_size)
             end_indexes = _get_best_indexes(result.end_logits, n_best_size)
-            # if we could have irrelevant answers, get the min score of irrelevant
             for start_index in start_indexes:
                 for end_index in end_indexes:
                     # We could hypothetically create invalid predictions, e.g., predict
@@ -415,6 +409,7 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
                             end_index=end_index,
                             start_logit=result.start_logits[start_index],
                             end_logit=result.end_logits[end_index]))
+
         prelim_predictions = sorted(
             prelim_predictions,
             key=lambda x: (x.start_logit + x.end_logit),
@@ -429,42 +424,32 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
             if len(nbest) >= n_best_size:
                 break
             feature = features[pred.feature_index]
-            if pred.start_index > 0:  # this is a non-null prediction
-                tok_tokens = feature.tokens[pred.start_index:(pred.end_index + 1)]
-                orig_doc_start = feature.token_to_orig_map[pred.start_index]
-                orig_doc_end = feature.token_to_orig_map[pred.end_index]
-                orig_tokens = example.doc_tokens[orig_doc_start:(orig_doc_end + 1)]
-                tok_text = " ".join(tok_tokens)
 
-                # De-tokenize WordPieces that have been split off.
-                tok_text = tok_text.replace(" ##", "")
-                tok_text = tok_text.replace("##", "")
+            tok_tokens = feature.tokens[pred.start_index:(pred.end_index + 1)]
+            orig_doc_start = feature.token_to_orig_map[pred.start_index]
+            orig_doc_end = feature.token_to_orig_map[pred.end_index]
+            orig_tokens = example.doc_tokens[orig_doc_start:(orig_doc_end + 1)]
+            tok_text = " ".join(tok_tokens)
 
-                # Clean whitespace
-                tok_text = tok_text.strip()
-                tok_text = " ".join(tok_text.split())
-                orig_text = " ".join(orig_tokens)
+            # De-tokenize WordPieces that have been split off.
+            tok_text = tok_text.replace(" ##", "")
+            tok_text = tok_text.replace("##", "")
 
-                final_text = get_final_text(tok_text, orig_text, do_lower_case, verbose_logging)
-                if final_text in seen_predictions:
-                    continue
+            # Clean whitespace
+            tok_text = tok_text.strip()
+            tok_text = " ".join(tok_text.split())
+            orig_text = " ".join(orig_tokens)
 
-                seen_predictions[final_text] = True
-            else:
-                final_text = ""
-                seen_predictions[final_text] = True
+            final_text = get_final_text(tok_text, orig_text, do_lower_case, verbose_logging)
+            if final_text in seen_predictions:
+                continue
 
+            seen_predictions[final_text] = True
             nbest.append(
                 _NbestPrediction(
                     text=final_text,
                     start_logit=pred.start_logit,
                     end_logit=pred.end_logit))
-
-            # In very rare edge cases we could only have single null prediction.
-            # So we just create a nonce prediction in this case to avoid failure.
-            if len(nbest) == 1:
-                nbest.insert(0,
-                             _NbestPrediction(text="empty", start_logit=0.0, end_logit=0.0))
 
         # In very rare edge cases we could have no valid predictions. So we
         # just create a nonce prediction in this case to avoid failure.
@@ -475,12 +460,8 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
         assert len(nbest) >= 1
 
         total_scores = []
-        best_non_null_entry = None
         for entry in nbest:
             total_scores.append(entry.start_logit + entry.end_logit)
-            if not best_non_null_entry:
-                if entry.text:
-                    best_non_null_entry = entry
 
         probs = _compute_softmax(total_scores)
 
@@ -494,23 +475,30 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
             nbest_json.append(output)
 
         assert len(nbest_json) >= 1
+        i = 0
+        # 这里我做了一个修改，把“。’这个情况给抹去。
+        # 但是为什么不起作用！！！？？？
+        for i in range(n_best_size):
+            if nbest_json[i]['text'] == "。":
+                continue
+            else:
+                all_predictions[example.qas_id] = nbest_json[i]["text"]
+                break
+        # while i < n_best_size:
+        #     if nbest_json[i]['text'] == "。":
+        #         i +=1
+        #     else:
+        #         all_predictions[example.qas_id] = nbest_json[i]["text"]
+        #         break
 
-        # predict "" iff the null score - the score of best non-null > threshold
-        score_diff = score_null - best_non_null_entry.start_logit - (
-            best_non_null_entry.end_logit)
-        scores_diff_json[example.qas_id] = score_diff
-        if score_diff > null_score_diff_threshold:
-            all_predictions[example.qas_id] = ""
-        else:
-            all_predictions[example.qas_id] = best_non_null_entry.text
-            all_nbest_json[example.qas_id] = nbest_json
+        # all_predictions[example.qas_id] = nbest_json[0]["text"]
+        all_nbest_json[example.qas_id] = nbest_json
 
     with open(output_prediction_file, "w") as writer:
-        writer.write(json.dumps(all_predictions, indent=4) + "\n")
+        writer.write(json.dumps(all_predictions, indent=4,ensure_ascii=False) + "\n")
 
     with open(output_nbest_file, "w") as writer:
-        writer.write(json.dumps(all_nbest_json, indent=4) + "\n")
-
+        writer.write(json.dumps(all_nbest_json, indent=4,ensure_ascii=False) + "\n")
 
 
 def get_final_text(pred_text, orig_text, do_lower_case, verbose_logging=False):
@@ -650,8 +638,7 @@ def main():
     ## Required parameters
     parser.add_argument("--bert_model", default=None, type=str, required=True,
                         help="Bert pre-trained model selected in the list: bert-base-uncased, "
-                             "bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, "
-                             "bert-base-multilingual-cased, bert-base-chinese.")
+                             "bert-large-uncased, bert-base-cased, bert-base-multilingual, bert-base-chinese.")
     parser.add_argument("--output_dir", default=None, type=str, required=True,
                         help="The output directory where the model checkpoints and predictions will be written.")
 
@@ -667,15 +654,15 @@ def main():
     parser.add_argument("--max_query_length", default=64, type=int,
                         help="The maximum number of tokens for the question. Questions longer than this will "
                              "be truncated to this length.")
-    parser.add_argument("--do_train", action='store_true', help="Whether to run training.")
-    parser.add_argument("--do_predict", action='store_true', help="Whether to run eval on the dev set.")
+    parser.add_argument("--do_train", default=False, action='store_true', help="Whether to run training.")
+    parser.add_argument("--do_predict", default=False, action='store_true', help="Whether to run eval on the dev set.")
     parser.add_argument("--train_batch_size", default=32, type=int, help="Total batch size for training.")
     parser.add_argument("--predict_batch_size", default=8, type=int, help="Total batch size for predictions.")
     parser.add_argument("--learning_rate", default=5e-5, type=float, help="The initial learning rate for Adam.")
     parser.add_argument("--num_train_epochs", default=3.0, type=float,
                         help="Total number of training epochs to perform.")
     parser.add_argument("--warmup_proportion", default=0.1, type=float,
-                        help="Proportion of training to perform linear learning rate warmup for. E.g., 0.1 = 10%% "
+                        help="Proportion of training to perform linear learning rate warmup for. E.g., 0.1 = 10% "
                              "of training.")
     parser.add_argument("--n_best_size", default=20, type=int,
                         help="The total number of n-best predictions to generate in the nbest_predictions.json "
@@ -683,10 +670,11 @@ def main():
     parser.add_argument("--max_answer_length", default=30, type=int,
                         help="The maximum length of an answer that can be generated. This is needed because the start "
                              "and end predictions are not conditioned on one another.")
-    parser.add_argument("--verbose_logging", action='store_true',
+    parser.add_argument("--verbose_logging", default=False, action='store_true',
                         help="If true, all of the warnings related to data processing will be printed. "
                              "A number of warnings are expected for a normal SQuAD evaluation.")
     parser.add_argument("--no_cuda",
+                        default=False,
                         action='store_true',
                         help="Whether not to use CUDA when available")
     parser.add_argument('--seed',
@@ -698,6 +686,7 @@ def main():
                         default=1,
                         help="Number of updates steps to accumulate before performing a backward/update pass.")
     parser.add_argument("--do_lower_case",
+                        default=True,
                         action='store_true',
                         help="Whether to lower case the input text. True for uncased models, False for cased models.")
     parser.add_argument("--local_rank",
@@ -705,6 +694,7 @@ def main():
                         default=-1,
                         help="local_rank for distributed training on gpus")
     parser.add_argument('--fp16',
+                        default=False,
                         action='store_true',
                         help="Whether to use 16-bit float precision instead of 32-bit")
     parser.add_argument('--loss_scale',
@@ -712,9 +702,7 @@ def main():
                         help="Loss scaling to improve fp16 numeric stability. Only used when fp16 set to True.\n"
                              "0 (default value): dynamic loss scaling.\n"
                              "Positive power of 2: static loss scaling value.\n")
-    parser.add_argument('--null_score_diff_threshold',
-                        type=float, default=0.0,
-                        help="If null_score - best_non_null is greater than the threshold predict null.")
+
     args = parser.parse_args()
 
     if args.local_rank == -1 or args.no_cuda:
@@ -731,9 +719,9 @@ def main():
 
     if args.gradient_accumulation_steps < 1:
         raise ValueError("Invalid gradient_accumulation_steps parameter: {}, should be >= 1".format(
-            args.gradient_accumulation_steps))
+                            args.gradient_accumulation_steps))
 
-    args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
+    args.train_batch_size = int(args.train_batch_size / args.gradient_accumulation_steps)
 
     random.seed(args.seed)
     np.random.seed(args.seed)
@@ -753,27 +741,25 @@ def main():
             raise ValueError(
                 "If `do_predict` is True, then `predict_file` must be specified.")
 
-    if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
+    if os.path.exists(args.output_dir) and os.listdir(args.output_dir):
         raise ValueError("Output directory () already exists and is not empty.")
-    if not os.path.exists(args.output_dir):
-        os.makedirs(args.output_dir)
+    os.makedirs(args.output_dir, exist_ok=True)
 
-    tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
+    tokenizer = BertTokenizer.from_pretrained(args.bert_model)
 
     train_examples = None
-    num_train_optimization_steps = None
+    num_train_steps = None
+    # cached_train_features_file = args.train_file + '_{0}_{1}_{2}_{3}'.format(
+    #     list(filter(None, args.bert_model.split('/'))).pop(), str(args.max_seq_length), str(args.doc_stride),str(args.max_query_length))
     if args.do_train:
         train_examples = read_baidu_examples(
             input_file=args.train_file, is_training=True)
-        num_train_optimization_steps = int(
-            len(train_examples) / args.train_batch_size / args.gradient_accumulation_steps) * args.num_train_epochs
-        if args.local_rank != -1:
-            num_train_optimization_steps = num_train_optimization_steps // torch.distributed.get_world_size()
+        num_train_steps = int(
+            len(train_examples) / args.train_batch_size / args.gradient_accumulation_steps * args.num_train_epochs)
 
     # Prepare model
     model = BertForBaiduQA_Answer_Selection.from_pretrained(args.bert_model,
-                                                     cache_dir=os.path.join(PYTORCH_PRETRAINED_BERT_CACHE,
-                                                                            'distributed_{}'.format(args.local_rank)))
+                cache_dir=PYTORCH_PRETRAINED_BERT_CACHE / 'distributed_{}'.format(args.local_rank))
 
     if args.fp16:
         model.half()
@@ -782,8 +768,7 @@ def main():
         try:
             from apex.parallel import DistributedDataParallel as DDP
         except ImportError:
-            raise ImportError(
-                "Please install apex from https://www.github.com/nvidia/apex to use distributed and fp16 training.")
+            raise ImportError("Please install apex from https://www.github.com/nvidia/apex to use distributed and fp16 training.")
 
         model = DDP(model)
     elif n_gpu > 1:
@@ -800,15 +785,17 @@ def main():
     optimizer_grouped_parameters = [
         {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)], 'weight_decay': 0.01},
         {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
-    ]
+        ]
 
+    t_total = num_train_steps
+    if args.local_rank != -1:
+        t_total = t_total // torch.distributed.get_world_size()
     if args.fp16:
         try:
             from apex.optimizers import FP16_Optimizer
             from apex.optimizers import FusedAdam
         except ImportError:
-            raise ImportError(
-                "Please install apex from https://www.github.com/nvidia/apex to use distributed and fp16 training.")
+            raise ImportError("Please install apex from https://www.github.com/nvidia/apex to use distributed and fp16 training.")
 
         optimizer = FusedAdam(optimizer_grouped_parameters,
                               lr=args.learning_rate,
@@ -822,7 +809,7 @@ def main():
         optimizer = BertAdam(optimizer_grouped_parameters,
                              lr=args.learning_rate,
                              warmup=args.warmup_proportion,
-                             t_total=num_train_optimization_steps)
+                             t_total=t_total)
 
     global_step = 0
     if args.do_train:
@@ -849,7 +836,7 @@ def main():
         logger.info("  Num orig examples = %d", len(train_examples))
         logger.info("  Num split examples = %d", len(train_features))
         logger.info("  Batch size = %d", args.train_batch_size)
-        logger.info("  Num steps = %d", num_train_optimization_steps)
+        logger.info("  Num steps = %d", num_train_steps)
         all_input_ids = torch.tensor([f.input_ids for f in train_features], dtype=torch.long)
         all_input_mask = torch.tensor([f.input_mask for f in train_features], dtype=torch.long)
         all_segment_ids = torch.tensor([f.segment_ids for f in train_features], dtype=torch.long)
@@ -864,14 +851,15 @@ def main():
         train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)
 
         model.train()
+        N_epoch  = 0
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 if n_gpu == 1:
-                    batch = tuple(t.to(device) for t in batch)  # multi-gpu does scattering it-self
+                    batch = tuple(t.to(device) for t in batch) # multi-gpu does scattering it-self
                 input_ids, input_mask, segment_ids, start_positions, end_positions = batch
                 loss = model(input_ids, segment_ids, input_mask, start_positions, end_positions)
                 if n_gpu > 1:
-                    loss = loss.mean()  # mean() to average on multi-gpu.
+                    loss = loss.mean() # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
                     loss = loss / args.gradient_accumulation_steps
 
@@ -880,27 +868,25 @@ def main():
                 else:
                     loss.backward()
                 if (step + 1) % args.gradient_accumulation_steps == 0:
-                    if args.fp16:
-                        # modify learning rate with special warm up BERT uses
-                        # if args.fp16 is False, BertAdam is used and handles this automatically
-                        lr_this_step = args.learning_rate * warmup_linear(global_step / num_train_optimization_steps,
-                                                                          args.warmup_proportion)
-                        for param_group in optimizer.param_groups:
-                            param_group['lr'] = lr_this_step
+                    # modify learning rate with special warm up BERT uses
+                    lr_this_step = args.learning_rate * warmup_linear(global_step/t_total, args.warmup_proportion)
+                    for param_group in optimizer.param_groups:
+                        param_group['lr'] = lr_this_step
                     optimizer.step()
                     optimizer.zero_grad()
                     global_step += 1
 
+            # Save a trained model
+            N_epoch+=1
+            NAME = str(N_epoch)+"_"+ WEIGHTS_NAME
+            model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
+            output_model_file = os.path.join(args.output_dir, NAME)
+            torch.save(model_to_save.state_dict(), output_model_file)
+            output_config_file = os.path.join(args.output_dir, CONFIG_NAME)
+            with open(output_config_file, 'w') as f:
+                f.write(model_to_save.config.to_json_string())
+    # Load a trained model that you have fine-tuned
     if args.do_train:
-        # Save a trained model and the associated configuration
-        model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
-        output_model_file = os.path.join(args.output_dir, WEIGHTS_NAME)
-        torch.save(model_to_save.state_dict(), output_model_file)
-        output_config_file = os.path.join(args.output_dir, CONFIG_NAME)
-        with open(output_config_file, 'w') as f:
-            f.write(model_to_save.config.to_json_string())
-
-        # Load a trained model and config that you have fine-tuned
         config = BertConfig(output_config_file)
         model = BertForBaiduQA_Answer_Selection(config)
         model.load_state_dict(torch.load(output_model_file))
@@ -955,12 +941,10 @@ def main():
                                              end_logits=end_logits))
         output_prediction_file = os.path.join(args.output_dir, "predictions.json")
         output_nbest_file = os.path.join(args.output_dir, "nbest_predictions.json")
-        output_null_log_odds_file = os.path.join(args.output_dir, "null_odds.json")
         write_predictions(eval_examples, eval_features, all_results,
                           args.n_best_size, args.max_answer_length,
                           args.do_lower_case, output_prediction_file,
-                          output_nbest_file, output_null_log_odds_file, args.verbose_logging,
-                          args.null_score_diff_threshold)
+                          output_nbest_file, args.verbose_logging)
 
 
 if __name__ == "__main__":
