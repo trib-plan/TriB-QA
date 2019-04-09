@@ -1,7 +1,7 @@
 ## 只需要跑run.sh
 
 ```
-bash ./start.sh 5 rmc/search_dev_paragraph.json rmc/search rmc/zhidao_dev_paragraph.json rmc/zhidao  rmc/trial_output
+bash ./run.sh 5 rmc/search_dev_paragraph.json rmc/search rmc/zhidao_dev_paragraph.json rmc/zhidao  rmc/trial_output
 ```
 6个参数 按以下排序。
 
