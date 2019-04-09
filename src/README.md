@@ -1,3 +1,16 @@
+## 只需要跑run.sh
+
+```
+bash ./start.sh 5 rmc/search_dev_paragraph.json rmc/search rmc/zhidao_dev_paragraph.json rmc/zhidao  rmc/trial_output
+```
+6个参数 按以下排序。
+echo "CUDA_VISIBLE_DEVICES= $1"
+echo "search_predict_file = $2"
+echo "search_output_file = $3"
+echo "zhidao_predict_file = $4"
+echo "zhidao_output_file = $5"
+echo "final_output_file = $6"
+#################################################################################################
 ## 第一步 分别预测search 和zhidao，同时跑快一点
 
 需要自行定义predict file，output file （输出放在自己名字底下好区分）
