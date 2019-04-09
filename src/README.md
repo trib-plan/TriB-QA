@@ -4,6 +4,7 @@
 bash ./start.sh 5 rmc/search_dev_paragraph.json rmc/search rmc/zhidao_dev_paragraph.json rmc/zhidao  rmc/trial_output
 ```
 6个参数 按以下排序。
+
 echo "CUDA_VISIBLE_DEVICES= $1"
 
 echo "search_predict_file = $2"
