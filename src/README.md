@@ -13,8 +13,8 @@ CUDA_VISIBLE_DEVICES=4  python run_Everything.py \
   --learning_rate 3e-5 \
   --num_train_epochs 3.0 \
   --max_seq_length 400 \
-  --doc_stride 128 \
-  --max_answer_length 100 \
+  --doc_stride 400 \
+  --max_answer_length 150 \
   --output_dir /home/share/Baidu_Dev/rmc/zhidao/
 ```
 
@@ -29,8 +29,8 @@ CUDA_VISIBLE_DEVICES=5  python run_Everything.py \
   --learning_rate 3e-5 \
   --num_train_epochs 3.0 \
   --max_seq_length 400 \
-  --doc_stride 128 \
-  --max_answer_length 100 \
+  --doc_stride 400 \
+  --max_answer_length 150 \
   --output_dir /home/share/Baidu_Dev/rmc/search/
 ```
 
