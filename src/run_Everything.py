@@ -1,3 +1,5 @@
+# -*- coding：utf-8 -*-
+
 # coding=utf-8
 
 from __future__ import absolute_import, division, print_function
@@ -297,6 +299,7 @@ def convert_examples_to_features(examples, tokenizer, max_seq_length,
                     start_position=start_position,
                     end_position=end_position))
             unique_id += 1
+
     return features
 
 def _improve_answer_span(doc_tokens, input_start, input_end, tokenizer,
@@ -479,12 +482,12 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
         i = 0
         # 这里我做了一个修改，把“。’这个情况给抹去。
         # 但是为什么不起作用！！！？？？
-        # for i in range(n_best_size):
-        #     if nbest_json[i]['text'] == "。":
-        #         continue
-        #     else:
-        #         all_predictions[example.qas_id] = nbest_json[i]["text"]
-        #         break
+        for i in range(n_best_size):
+            if nbest_json[i]['text'] == "。":
+                continue
+            else:
+                all_predictions[example.qas_id] = nbest_json[i]["text"]
+                break
         # while i < n_best_size:
         #     if nbest_json[i]['text'] == "。":
         #         i +=1
@@ -492,7 +495,7 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
         #         all_predictions[example.qas_id] = nbest_json[i]["text"]
         #         break
 
-        all_predictions[example.qas_id] = nbest_json[0]["text"]
+        # all_predictions[example.qas_id] = nbest_json[0]["text"]
         all_nbest_json[example.qas_id] = nbest_json
 
     with open(output_prediction_file, "w") as writer:
@@ -500,6 +503,129 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
 
     with open(output_nbest_file, "w") as writer:
         writer.write(json.dumps(all_nbest_json, indent=4,ensure_ascii=False) + "\n")
+
+def predictions(all_examples, all_features, all_results, n_best_size,
+                      max_answer_length, do_lower_case, verbose_logging):
+    example_index_to_features = collections.defaultdict(list)
+    for feature in all_features:
+        example_index_to_features[feature.example_index].append(feature)
+
+    unique_id_to_result = {}
+    for result in all_results:
+        unique_id_to_result[result.unique_id] = result
+
+    _PrelimPrediction = collections.namedtuple(  # pylint: disable=invalid-name
+        "PrelimPrediction",
+        ["feature_index", "start_index", "end_index", "start_logit", "end_logit"])
+
+    all_predictions = collections.OrderedDict()
+    all_nbest_json = collections.OrderedDict()
+    for (example_index, example) in enumerate(all_examples):
+        features = example_index_to_features[example_index]
+
+        prelim_predictions = []
+        for (feature_index, feature) in enumerate(features):
+            result = unique_id_to_result[feature.unique_id]
+
+            start_indexes = _get_best_indexes(result.start_logits, n_best_size)
+            end_indexes = _get_best_indexes(result.end_logits, n_best_size)
+            for start_index in start_indexes:
+                for end_index in end_indexes:
+                    # We could hypothetically create invalid predictions, e.g., predict
+                    # that the start of the span is in the question. We throw out all
+                    # invalid predictions.
+                    if start_index >= len(feature.tokens):
+                        continue
+                    if end_index >= len(feature.tokens):
+                        continue
+                    if start_index not in feature.token_to_orig_map:
+                        continue
+                    if end_index not in feature.token_to_orig_map:
+                        continue
+                    if not feature.token_is_max_context.get(start_index, False):
+                        continue
+                    if end_index < start_index:
+                        continue
+                    length = end_index - start_index + 1
+                    if length > max_answer_length:
+                        continue
+                    prelim_predictions.append(
+                        _PrelimPrediction(
+                            feature_index=feature_index,
+                            start_index=start_index,
+                            end_index=end_index,
+                            start_logit=result.start_logits[start_index],
+                            end_logit=result.end_logits[end_index]))
+
+        prelim_predictions = sorted(
+            prelim_predictions,
+            key=lambda x: (x.start_logit + x.end_logit),
+            reverse=True)
+
+        _NbestPrediction = collections.namedtuple(  # pylint: disable=invalid-name
+            "NbestPrediction", ["text", "start_logit", "end_logit"])
+
+        seen_predictions = {}
+        nbest = []
+        for pred in prelim_predictions:
+            if len(nbest) >= n_best_size:
+                break
+            feature = features[pred.feature_index]
+
+            tok_tokens = feature.tokens[pred.start_index:(pred.end_index + 1)]
+            orig_doc_start = feature.token_to_orig_map[pred.start_index]
+            orig_doc_end = feature.token_to_orig_map[pred.end_index]
+            orig_tokens = example.doc_tokens[orig_doc_start:(orig_doc_end + 1)]
+            tok_text = " ".join(tok_tokens)
+
+            # De-tokenize WordPieces that have been split off.
+            tok_text = tok_text.replace(" ##", "")
+            tok_text = tok_text.replace("##", "")
+
+            # Clean whitespace
+            tok_text = tok_text.strip()
+            tok_text = " ".join(tok_text.split())
+            orig_text = " ".join(orig_tokens)
+
+            final_text = get_final_text(tok_text, orig_text, do_lower_case, verbose_logging)
+            if final_text in seen_predictions:
+                continue
+
+            seen_predictions[final_text] = True
+            nbest.append(
+                _NbestPrediction(
+                    text=final_text,
+                    start_logit=pred.start_logit,
+                    end_logit=pred.end_logit))
+
+        # In very rare edge cases we could have no valid predictions. So we
+        # just create a nonce prediction in this case to avoid failure.
+        if not nbest:
+            nbest.append(
+                _NbestPrediction(text="empty", start_logit=0.0, end_logit=0.0))
+
+        assert len(nbest) >= 1
+
+        total_scores = []
+        for entry in nbest:
+            total_scores.append(entry.start_logit + entry.end_logit)
+
+        probs = _compute_softmax(total_scores)
+
+        nbest_json = []
+        for (i, entry) in enumerate(nbest):
+            output = collections.OrderedDict()
+            output["text"] = entry.text
+            output["probability"] = probs[i]
+            output["start_logit"] = entry.start_logit
+            output["end_logit"] = entry.end_logit
+            nbest_json.append(output)
+
+        assert len(nbest_json) >= 1
+        pred = nbest_json[0]["text"]
+        all_predictions[example.qas_id] = [''.join(pred.split())]
+
+    return all_predictions
 
 
 def get_final_text(pred_text, orig_text, do_lower_case, verbose_logging=False):
@@ -633,6 +759,43 @@ def _compute_softmax(scores):
     return probs
 
 
+
+#
+# def calc_Rouge_L(candidate, refs):
+#     """
+#    Compute ROUGE-L score given one candidate and references for an image
+#    :param candidate: str : candidate sentence to be evaluated
+#    :param refs: list of str : COCO reference sentences for the particular image to be evaluated
+#    :returns score: int (ROUGE-L score for the candidate evaluated against references)
+#    """
+#     beta = 1.
+#     assert (len(candidate) == 1)
+#     assert (len(refs) > 0)
+#     prec = []
+#     rec = []
+#
+#     # split into tokens
+#     token_c = candidate[0]  # .split(" ")
+#
+#     for reference in refs:
+#         # split into tokens
+#         token_r = reference  # .split(" ")
+#         # compute the longest common subsequence
+#         lcs = my_lcs(token_r, token_c)
+#         prec.append(lcs / float(len(token_c)))
+#         rec.append(lcs / float(len(token_r)))
+#
+#     prec_max = max(prec)
+#     rec_max = max(rec)
+#
+#     if (prec_max != 0 and rec_max != 0):
+#         score = ((1 + beta ** 2) * prec_max * rec_max) / float(rec_max + beta ** 2 * prec_max)
+#     else:
+#         score = 0.0
+#     return [prec_max, rec_max, score]
+#
+
+
 def main():
     parser = argparse.ArgumentParser()
 
@@ -650,7 +813,7 @@ def main():
     parser.add_argument("--max_seq_length", default=384, type=int,
                         help="The maximum total input sequence length after WordPiece tokenization. Sequences "
                              "longer than this will be truncated, and sequences shorter than this will be padded.")
-    parser.add_argument("--doc_stride", default=300, type=int,
+    parser.add_argument("--doc_stride", default=128, type=int,
                         help="When splitting up a long document into chunks, how much stride to take between chunks.")
     parser.add_argument("--max_query_length", default=64, type=int,
                         help="The maximum number of tokens for the question. Questions longer than this will "
@@ -819,7 +982,6 @@ def main():
             str(args.max_query_length))
         train_features = None
         try:
-            print("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
             with open(cached_train_features_file, "rb") as reader:
                 train_features = pickle.load(reader)
         except:
@@ -844,8 +1006,9 @@ def main():
         all_segment_ids = torch.tensor([f.segment_ids for f in train_features], dtype=torch.long)
         all_start_positions = torch.tensor([f.start_position for f in train_features], dtype=torch.long)
         all_end_positions = torch.tensor([f.end_position for f in train_features], dtype=torch.long)
+        all_example_index = torch.arange(all_input_ids.size(0), dtype=torch.long)
         train_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids,
-                                   all_start_positions, all_end_positions)
+                                   all_start_positions, all_end_positions,all_example_index)
         if args.local_rank == -1:
             train_sampler = RandomSampler(train_data)
         else:
@@ -858,8 +1021,38 @@ def main():
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 if n_gpu == 1:
                     batch = tuple(t.to(device) for t in batch) # multi-gpu does scattering it-self
-                input_ids, input_mask, segment_ids, start_positions, end_positions = batch
-                loss = model(input_ids, segment_ids, input_mask, start_positions, end_positions)
+                input_ids, input_mask, segment_ids, start_positions, end_positions,example_indices = batch
+
+                for i, example_index in enumerate(example_indices):
+                    start_logits = batch_start_logits[i].detach().cpu().tolist()
+                    end_logits = batch_end_logits[i].detach().cpu().tolist()
+                    train_feature = train_features[example_index.item()]
+                    unique_id = int(train_feature.unique_id)
+                    all_results.append(RawResult(unique_id=unique_id,
+                                                 start_logits=start_logits,
+                                                 end_logits=end_logits))
+
+
+
+                loss, batch_start_logits, batch_end_logits = model(input_ids, segment_ids, input_mask, start_positions, end_positions)
+                all_results =[]
+                for i, example_index in enumerate(example_indices):
+                    start_logits = batch_start_logits[i].detach().cpu().tolist()
+                    end_logits = batch_end_logits[i].detach().cpu().tolist()
+                    train_feature = train_features[example_index.item()]
+                    unique_id = int(train_feature.unique_id)
+                    all_results.append(RawResult(unique_id=unique_id,
+                                                 start_logits=start_logits,
+                                                 end_logits=end_logits))
+                predict_sentences = predict_sentences(train_examples, train_features, all_results,
+                                  args.n_best_size, args.max_answer_length,
+                                  args.do_lower_case,args.verbose_logging)
+                # predict_sentence = [ "qid": "sentence"]
+                print(predict_sentences)
+                # best_sentences =
+                # reward = cal_rouge_reward[predict_sentences,best_sentences]  对每个句子分别计算
+                # loss = loss*reward
+
                 if n_gpu > 1:
                     loss = loss.mean() # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
