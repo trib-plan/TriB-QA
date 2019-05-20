@@ -3,13 +3,14 @@
 
 ###### **富强，民主，文明，和谐，自由，平等，公正，法治，爱国，敬业，诚信，友善**
 
+### TriB-QA Brief Intro.
 Here is our group's project for CCF & Baidu 2019 Reading Comprehension Competition, dataset is Baidu Dureader.
 
 The code will be completed once the competition finishes.
 The whole project is based on pytorch-version BERT: Passage Rerank, Answer predcition and YES/NO answer classification. So you may need to download pretrained language model,config file and vocab list in advance, or use our pretrained model to get final prediction. 
 
 Later, if possible, we will build a simple pipeline to ease the complicated procedures, also a web API may be built for it.
-
+(起初以为参加就是白给，没想到或许可以嫖上一笔零花钱！o(*￣▽￣*)ブ)
 
 ## 1.任务介绍  Task Description
 
