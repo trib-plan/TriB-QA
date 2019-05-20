@@ -1310,11 +1310,13 @@ class BertForBaiduQA_Answer_Selection(BertPreTrainedModel):
             ignored_index = start_logits.size(1)
             start_positions.clamp_(0, ignored_index)
             end_positions.clamp_(0, ignored_index)
-
+            # print(start_positions)
+            # print(start_logits.size())
+            # print(start_logits)
             loss_fct = CrossEntropyLoss(ignore_index=ignored_index)
             start_loss = loss_fct(start_logits, start_positions)
             end_loss = loss_fct(end_logits, end_positions)
             total_loss = (start_loss + end_loss) / 2
-            return total_loss
+            return total_loss,start_logits, end_logits
         else:
             return start_logits, end_logits
