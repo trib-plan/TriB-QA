@@ -72,8 +72,6 @@
 我们的模型初步定为三个bert，简称Tri-Bert。
 
 ### 模型的流程图
-
-
 <img src ="http://d.hiphotos.baidu.com/image/%70%69%63/item/aec379310a55b319b8172d674da98226cffc1731.jpg" width= "80%" height="60%"/>
 
 ### Passage Reranking
