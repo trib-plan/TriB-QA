@@ -1,3 +1,4 @@
+
 # coding=utf-8
 
 from __future__ import absolute_import, division, print_function
@@ -14,6 +15,7 @@ from io import open
 
 import numpy as np
 import torch
+from torch.nn import CrossEntropyLoss
 from torch.utils.data import (DataLoader, RandomSampler, SequentialSampler,
                               TensorDataset)
 from torch.utils.data.distributed import DistributedSampler
@@ -297,6 +299,7 @@ def convert_examples_to_features(examples, tokenizer, max_seq_length,
                     start_position=start_position,
                     end_position=end_position))
             unique_id += 1
+
     return features
 
 def _improve_answer_span(doc_tokens, input_start, input_end, tokenizer,
@@ -348,6 +351,86 @@ def _check_is_max_context(doc_spans, cur_span_index, position):
             best_span_index = span_index
 
     return cur_span_index == best_span_index
+
+
+def my_lcs(string, sub):
+    """
+    Calculates longest common subsequence for a pair of tokenized strings
+    :param string : list of str : tokens from a string split using whitespace
+    :param sub : list of str : shorter string, also split using whitespace
+    :returns: length (list of int): length of the longest common subsequence between the two strings
+
+    Note: my_lcs only gives length of the longest common subsequence, not the actual LCS
+    """
+    if (len(string) < len(sub)):
+        sub, string = string, sub
+
+    lengths = [[0 for i in range(0, len(sub) + 1)] for j in range(0, len(string) + 1)]
+
+    for j in range(1, len(sub) + 1):
+        for i in range(1, len(string) + 1):
+            if (string[i - 1] == sub[j - 1]):
+                lengths[i][j] = lengths[i - 1][j - 1] + 1
+            else:
+                lengths[i][j] = max(lengths[i - 1][j], lengths[i][j - 1])
+
+    return lengths[len(string)][len(sub)]
+
+def calc_Rouge_L(candidate, refs):
+    """
+   Compute ROUGE-L score given one candidate and references for an image
+   :param candidate: str : candidate sentence to be evaluated
+   :param refs: list of str : COCO reference sentences for the particular image to be evaluated
+   :returns score: int (ROUGE-L score for the candidate evaluated against references)
+   """
+    beta = 1.
+    assert (len(candidate) == 1)
+    assert (len(refs) > 0)
+    prec = []
+    rec = []
+
+    # split into tokens
+    token_c = candidate[0]  # .split(" ")
+
+    for reference in refs:
+        # split into tokens
+        token_r = reference  # .split(" ")
+        # compute the longest common subsequence
+        lcs = my_lcs(token_r, token_c)
+        prec.append(lcs / float(len(token_c)))
+        rec.append(lcs / float(len(token_r)))
+
+    prec_max = max(prec)
+    rec_max = max(rec)
+
+    if (prec_max != 0 and rec_max != 0):
+        score = ((1 + beta ** 2) * prec_max * rec_max) / float(rec_max + beta ** 2 * prec_max)
+    else:
+        score = 0.0
+    return [prec_max, rec_max, score]
+
+
+def cal_loss_L(start_logits,end_logits,start_positions,end_positions):
+    if start_positions is not None and end_positions is not None:
+        # If we are on multi-GPU, split add a dimension
+        if len(start_positions.size()) > 1:
+            start_positions = start_positions.squeeze(-1)
+        if len(end_positions.size()) > 1:
+            end_positions = end_positions.squeeze(-1)
+        # sometimes the start/end positions are outside our model inputs, we ignore these terms
+        ignored_index = start_logits.size(0)
+        start_positions.clamp_(0, ignored_index)
+        end_positions.clamp_(0, ignored_index)
+        start_logits = start_logits.unsqueeze(0)
+        end_logits = end_logits.unsqueeze(0)
+        # print(start_logits.size())
+        # print(start_positions.size())
+
+        loss_fct = CrossEntropyLoss(ignore_index=ignored_index)
+        start_loss = loss_fct(start_logits, start_positions)
+        end_loss = loss_fct(end_logits, end_positions)
+        total_loss = (start_loss + end_loss) / 2
+        return total_loss
 
 
 RawResult = collections.namedtuple("RawResult",
@@ -479,12 +562,12 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
         i = 0
         # 这里我做了一个修改，把“。’这个情况给抹去。
         # 但是为什么不起作用！！！？？？
-        # for i in range(n_best_size):
-        #     if nbest_json[i]['text'] == "。":
-        #         continue
-        #     else:
-        #         all_predictions[example.qas_id] = nbest_json[i]["text"]
-        #         break
+        for i in range(n_best_size):
+            if nbest_json[i]['text'] == "。":
+                continue
+            else:
+                all_predictions[example.qas_id] = nbest_json[i]["text"]
+                break
         # while i < n_best_size:
         #     if nbest_json[i]['text'] == "。":
         #         i +=1
@@ -492,7 +575,7 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
         #         all_predictions[example.qas_id] = nbest_json[i]["text"]
         #         break
 
-        all_predictions[example.qas_id] = nbest_json[0]["text"]
+        # all_predictions[example.qas_id] = nbest_json[0]["text"]
         all_nbest_json[example.qas_id] = nbest_json
 
     with open(output_prediction_file, "w") as writer:
@@ -500,6 +583,175 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
 
     with open(output_nbest_file, "w") as writer:
         writer.write(json.dumps(all_nbest_json, indent=4,ensure_ascii=False) + "\n")
+
+
+def predictions(all_examples, all_features, all_results, n_best_size,
+                      max_answer_length, do_lower_case, verbose_logging):
+    example_index_to_features = collections.defaultdict(list)
+    for index,feature in enumerate(all_features):
+        # print(feature.example_index)
+        # print(feature)
+        # example_index_to_features[feature.example_index].append(feature)
+        example_index_to_features[index].append(feature)
+    unique_id_to_result = {}
+    for result in all_results:
+        # print(result.unique_id)
+        unique_id_to_result[result.unique_id] = result
+
+    _PrelimPrediction = collections.namedtuple(  # pylint: disable=invalid-name
+        "PrelimPrediction",
+        ["feature_index", "start_index", "end_index", "start_logit", "end_logit"])
+
+    all_predictions = collections.OrderedDict()
+    # rougeL = []
+    t_loss = 0.0
+    for (example_index, example) in enumerate(all_examples):
+        # print(example_index)
+        # print("！！！！！！！！！！！！！！！！！！！！！！！！！")
+        features = example_index_to_features[example_index]
+        # print(features)
+        prelim_predictions = []
+        b_start_logits=[]
+        b_end_logits=[]
+        for (feature_index, feature) in enumerate(features):
+            # print(feature.unique_id)
+            # print(".......................................")
+            # print(feature.token_to_orig_map)
+            result = unique_id_to_result[feature.unique_id]
+            b_start_logits.append(result.start_logits)
+            b_end_logits.append(result.end_logits)
+            start_indexes = _get_best_indexes(result.start_logits, n_best_size)
+            end_indexes = _get_best_indexes(result.end_logits, n_best_size)
+
+            # print([start_indexes,end_indexes])
+
+            for start_index in start_indexes:
+                for end_index in end_indexes:
+                    # We could hypothetically create invalid predictions, e.g., predict
+                    # that the start of the span is in the question. We throw out all
+                    # invalid predictions.
+                    if start_index >= len(feature.tokens):
+                        continue
+                    if end_index >= len(feature.tokens):
+                        continue
+                    if start_index not in feature.token_to_orig_map:
+                        continue
+                    if end_index not in feature.token_to_orig_map:
+                        continue
+                    # if not feature.token_is_max_context.get(start_index, False):
+                    #     continue
+                    if end_index < start_index:
+                        continue
+                    length = end_index - start_index + 1
+                    if length > max_answer_length:
+                        continue
+                    prelim_predictions.append(
+                        _PrelimPrediction(
+                            feature_index=feature_index,
+                            start_index=start_index,
+                            end_index=end_index,
+                            start_logit=result.start_logits[start_index],
+                            end_logit=result.end_logits[end_index]))
+
+        prelim_predictions = sorted(
+            prelim_predictions,
+            key=lambda x: (x.start_logit + x.end_logit),
+            reverse=True)
+        if not prelim_predictions:
+            for i in features:
+                print(i.example_index)
+                print(i.unique_id)
+            print("()()()()()()()())())()())(()()")
+
+        _NbestPrediction = collections.namedtuple(  # pylint: disable=invalid-name
+            "NbestPrediction", ["text", "start_logit", "end_logit"])
+
+        seen_predictions = {}
+        nbest = []
+        index_start_end = []
+        for pred in prelim_predictions:
+            if len(nbest) >= n_best_size:
+                break
+            feature = features[pred.feature_index]
+            start_index = pred.start_index
+            end_index = pred.end_index
+            index_start_end.append([start_index,end_index])
+            tok_tokens = feature.tokens[pred.start_index:(pred.end_index + 1)]
+            orig_doc_start = feature.token_to_orig_map[pred.start_index]
+            orig_doc_end = feature.token_to_orig_map[pred.end_index]
+            orig_tokens = example.doc_tokens[orig_doc_start:(orig_doc_end + 1)]
+            tok_text = " ".join(tok_tokens)
+
+            # De-tokenize WordPieces that have been split off.
+            tok_text = tok_text.replace(" ##", "")
+            tok_text = tok_text.replace("##", "")
+
+            # Clean whitespace
+            tok_text = tok_text.strip()
+            tok_text = " ".join(tok_text.split())
+            orig_text = " ".join(orig_tokens)
+
+            final_text = get_final_text(tok_text, orig_text, do_lower_case, verbose_logging)
+            if final_text in seen_predictions:
+                continue
+
+            seen_predictions[final_text] = True
+            nbest.append(
+                _NbestPrediction(
+                    text=final_text,
+                    start_logit=pred.start_logit,
+                    end_logit=pred.end_logit))
+
+        # In very rare edge cases we could have no valid predictions. So we
+        # just create a nonce prediction in this case to avoid failure.
+        if not nbest:
+            print("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWshitWWWWWWWWWWWWWWWWWWWWWWWWW")
+            nbest.append(
+                _NbestPrediction(text="empty", start_logit=0.0, end_logit=0.0))
+
+        assert len(nbest) >= 1
+
+        total_scores = []
+        for entry in nbest:
+            total_scores.append(entry.start_logit + entry.end_logit)
+
+        probs = _compute_softmax(total_scores)
+
+        nbest_json = []
+        for (i, entry) in enumerate(nbest):
+            output = collections.OrderedDict()
+            output["text"] = entry.text
+            output["probability"] = probs[i]
+            output["start_logit"] = entry.start_logit
+            output["end_logit"] = entry.end_logit
+            nbest_json.append(output)
+
+
+        # print(probs)
+        loss = 0
+        for i in range(len(nbest_json)):
+            pred = nbest_json[i]["text"]
+
+            _,_,rouge = calc_Rouge_L([''.join(pred.split())],[example.orig_answer_text])
+            # rougeL.append(rouge)
+            # rouge值
+
+            current_loss = -(rouge) * math.log(probs[i])
+            loss += current_loss
+
+        t_loss+=loss
+
+        # print(example.qas_id)
+        all_predictions[example.qas_id] = [''.join(pred.split())]
+        # print(pred)
+    # rougeL = torch.tensor(([f for f in rougeL]))
+    # rougeL = rougeL.view(len(all_examples),n_best_size)
+    # print(rougeL)
+    # rougeL = [Batch , Nbest]
+    # print(t_loss)
+    return all_predictions,t_loss
+
+
 
 
 def get_final_text(pred_text, orig_text, do_lower_case, verbose_logging=False):
@@ -633,6 +885,10 @@ def _compute_softmax(scores):
     return probs
 
 
+
+
+
+
 def main():
     parser = argparse.ArgumentParser()
 
@@ -650,7 +906,7 @@ def main():
     parser.add_argument("--max_seq_length", default=384, type=int,
                         help="The maximum total input sequence length after WordPiece tokenization. Sequences "
                              "longer than this will be truncated, and sequences shorter than this will be padded.")
-    parser.add_argument("--doc_stride", default=300, type=int,
+    parser.add_argument("--doc_stride", default=128, type=int,
                         help="When splitting up a long document into chunks, how much stride to take between chunks.")
     parser.add_argument("--max_query_length", default=64, type=int,
                         help="The maximum number of tokens for the question. Questions longer than this will "
@@ -844,13 +1100,19 @@ def main():
         all_segment_ids = torch.tensor([f.segment_ids for f in train_features], dtype=torch.long)
         all_start_positions = torch.tensor([f.start_position for f in train_features], dtype=torch.long)
         all_end_positions = torch.tensor([f.end_position for f in train_features], dtype=torch.long)
+        all_example_index = torch.arange(all_input_ids.size(0), dtype=torch.long)
+        all_example_indice = torch.tensor([f.example_index for f in train_features], dtype=torch.long)
         train_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids,
-                                   all_start_positions, all_end_positions)
+                                   all_start_positions, all_end_positions,all_example_indice,all_example_index)
         if args.local_rank == -1:
             train_sampler = RandomSampler(train_data)
         else:
             train_sampler = DistributedSampler(train_data)
         train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)
+
+        all_example ={}
+        for indices,example in enumerate(train_examples):
+            all_example[indices] =example
 
         model.train()
         N_epoch  = 0
@@ -858,26 +1120,76 @@ def main():
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 if n_gpu == 1:
                     batch = tuple(t.to(device) for t in batch) # multi-gpu does scattering it-self
-                input_ids, input_mask, segment_ids, start_positions, end_positions = batch
-                loss = model(input_ids, segment_ids, input_mask, start_positions, end_positions)
-                if n_gpu > 1:
-                    loss = loss.mean() # mean() to average on multi-gpu.
-                if args.gradient_accumulation_steps > 1:
-                    loss = loss / args.gradient_accumulation_steps
+                input_ids, input_mask, segment_ids, start_positions, end_positions,example_id,example_indices= batch
+                if N_epoch <2:
+                    loss,_,_ = model(input_ids, segment_ids, input_mask, start_positions, end_positions)
+                    # print(loss)
+                    if n_gpu > 1:
+                        loss = loss.mean()  # mean() to average on multi-gpu.
+                    if args.gradient_accumulation_steps > 1:
+                        loss = loss / args.gradient_accumulation_steps
 
-                if args.fp16:
-                    optimizer.backward(loss)
-                else:
-                    loss.backward()
-                if (step + 1) % args.gradient_accumulation_steps == 0:
-                    # modify learning rate with special warm up BERT uses
-                    lr_this_step = args.learning_rate * warmup_linear(global_step/t_total, args.warmup_proportion)
-                    for param_group in optimizer.param_groups:
-                        param_group['lr'] = lr_this_step
-                    optimizer.step()
-                    optimizer.zero_grad()
-                    global_step += 1
+                    if args.fp16:
+                        optimizer.backward(loss)
+                    else:
+                        loss.backward()
+                    if (step + 1) % args.gradient_accumulation_steps == 0:
+                        # modify learning rate with special warm up BERT uses
+                        lr_this_step = args.learning_rate * warmup_linear(global_step / t_total, args.warmup_proportion)
+                        for param_group in optimizer.param_groups:
+                            param_group['lr'] = lr_this_step
+                        optimizer.step()
+                        optimizer.zero_grad()
+                        global_step += 1
+                elif N_epoch>=2:
+                    # loss, batch_start_logits, batch_end_logits = model(input_ids, segment_ids, input_mask, start_positions, end_positions)
+                    batch_start_logits, batch_end_logits = model(input_ids, segment_ids, input_mask)
+                    all_results =[]
+                    sub_train_features=[]
+                    sub_train_examples =[]
+                    # print(example_indices)
+                    # print(example_id)
+                    for i, (example_index,ex_id) in enumerate(zip(example_indices,example_id)):
+                        start_logits = batch_start_logits[i].detach().cpu().tolist()
+                        end_logits = batch_end_logits[i].detach().cpu().tolist()
+                        train_feature = train_features[example_index.item()]
+                        sub_train_features.append(train_feature)
+                        sub_train_examples.append(all_example[ex_id.item()])
+                        # sub_train_examples.append(train_examples[example_index])
+                        unique_id = int(train_feature.unique_id)
+                        all_results.append(RawResult(unique_id=unique_id,
+                                                     start_logits=start_logits,
+                                                     end_logits=end_logits))
 
+                    # print(sub_train_examples)
+
+                    predict_sentences,loss = predictions(sub_train_examples, sub_train_features, all_results,20, args.max_answer_length,args.do_lower_case,args.verbose_logging)
+
+                    # predict_sentence = [ "qid": "sentence"]
+                    # print(predict_sentences)
+                    # best_sentences =
+                    # reward = cal_rouge_reward[predict_sentences,best_sentences]  对每个句子分别计算
+                    # loss = loss*reward
+                    loss = torch.tensor(loss,requires_grad=True).cuda()
+                    # loss = loss.requires_grad_(True)
+                    if n_gpu > 1:
+                        loss = loss.mean() # mean() to average on multi-gpu.
+                    if args.gradient_accumulation_steps > 1:
+                        loss = loss / args.gradient_accumulation_steps
+
+                    if args.fp16:
+                        optimizer.backward(loss)
+                    else:
+                        loss.backward()
+                    if (step + 1) % args.gradient_accumulation_steps == 0:
+                        # modify learning rate with special warm up BERT uses
+                        lr_this_step = args.learning_rate * warmup_linear(global_step/t_total, args.warmup_proportion)
+                        for param_group in optimizer.param_groups:
+                            param_group['lr'] = lr_this_step
+                        optimizer.step()
+                        optimizer.zero_grad()
+                        global_step += 1
+                    # print(loss)
             # Save a trained model
             N_epoch+=1
             NAME = str(N_epoch)+"_"+ WEIGHTS_NAME

@@ -106,9 +106,10 @@ CUDA_VISIBLE_DEVICES=0 python run_classifier.py \
 --data_dir=/home/mcren/123 \
 --bert_model=/home/mcren/123/output4 \
 --task_name=baidu \
---output_dir=/home/mcren/123/test1output \
 --do_eval \
---do_lower_case
+--do_lower_case \
+--output_dir=/home/mcren/123/test1output_v2 \
+
 
 tmux a -t xxxx
 tmux new -s xxx
@@ -116,3 +117,191 @@ tmux detach
 
 ctrl B
 % left "" up
+
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=0  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/output-only-train\
+  --do_predict \
+  --do_lower_case \
+  --predict_file $BAIDU_DIR/data/preprocessed_zhidao_most_related_para.test1.json\
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 400 \
+  --doc_stride 128 \
+  --max_answer_length 100 \
+  --output_dir /home/mcren/TriB-QA/test1-1-zhidao/
+
+  4/07
+tmux a -t 1st
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=7  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/All.train.json \
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 400 \
+  --doc_stride 400 \
+  --max_answer_length 150 \
+  --output_dir /home/mcren/TriB-QA/ALL_TRAINN_1st_VERSION_LONG_ANSWER2/
+
+
+
+tmux a -t 2nd
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=2  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/2nd_version_train.json \
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 4.0 \
+  --max_seq_length 400 \
+  --doc_stride 400 \
+  --max_answer_length 150 \
+  --output_dir /home/mcren/TriB-QA/ALL_TRAIN_2nd_VERSION_LONG_ANSWER/
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=7  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/2nd_version_train.json \
+  --train_batch_size 10 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 4.0 \
+  --max_seq_length 400 \
+  --doc_stride 200 \
+  --max_answer_length 150 \
+  --output_dir /home/mcren/TriB-QA/ALL_TRAIN_2nd_VERSION_LONG_ANSWER2/
+
+
+
+# 4.8 再跑！！！
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=6  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/all_train.json \
+  --train_batch_size 6 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --max_answer_length 512 \
+  --output_dir /home/mcren/TriB-QA/lly_all_train_tok_start/
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=3  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/All.train.json \
+  --train_batch_size 6 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 512 \
+  --doc_stride 64 \
+  --max_answer_length 300 \
+  --output_dir /home/mcren/TriB-QA/ALL_TRAIN_2nd_VERSION_512_256/
+
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=0  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/lhy_train_zhidao.json \
+  --train_batch_size 6 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --max_answer_length 512\
+  --output_dir /home/mcren/TriB-QA/split_zhidao_512_128_512/
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=0,1  python run_AnswerPrediction.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/all_train.json \
+  --train_batch_size 32 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3.0 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --max_answer_length 512 \
+  --output_dir /home/mcren/TriB-QA/BATCH32/
+
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=3  python run_AnswerRank.py \
+  --bert_model /home/mcren/TriB-QA/data \
+  --do_train \
+  --do_lower_case \
+  --do_eval \
+  --data_dir $BAIDU_DIR/data \
+  --train_batch_size 2 \
+  --learning_rate 2e-5 \
+  --num_train_epochs 10 \
+  --max_seq_length 256 \
+  --output_dir /home/mcren/TriB-QA/Answer_Rank \
+  --gradient_accumulation_steps 2
+
+export MCSCRIPT_DIR=/home/mcren/MyBert/
+CUDA_VISIBLE_DEVICES=5 python MCScript.py \
+  --bert_model /home/mcren/MyBert/data \
+  --do_train \
+  --do_lower_case \
+  --do_eval \
+  --data_dir $MCSCRIPT_DIR/data \
+  --train_batch_size  \
+  --learning_rate 2e-5 \
+  --num_train_epochs 1.0 \
+  --max_seq_length 512 \
+  --output_dir /home/mcren/MyBert/output/2bert \
+  --gradient_accumulation_steps 2
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=2  python run_Baidu_v2.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_train \
+  --do_lower_case \
+  --train_file $BAIDU_DIR/data/baidu_train_v22.json \
+  --train_batch_size 6 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 5.0 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --max_answer_length 512\
+  --version_2_with_negative true \
+  --output_dir /home/mcren/TriB-QA/V2_TRAIN/
+
+
+
+export BAIDU_DIR=/home/mcren/TriB-QA
+CUDA_VISIBLE_DEVICES=2  python run_Baidu_v2.py \
+  --bert_model /home/mcren/TriB-QA/data\
+  --do_lower_case \
+  --predict_file $BAIDU_DIR/data/baidu_train_v22.json \
+  --train_batch_size 6 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 5.0 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --max_answer_length 512\
+  --version_2_with_negative true \
+  --output_dir /home/mcren/TriB-QA/V2_TRAIN/

@@ -1,4 +1,6 @@
 # -*- coding：utf-8 -*-
+
+# 自己做的测试文件，很粗燥，已经启用，用evaluation metric里弄的比较好。
 import json
 import thulac
 import rouge
