@@ -1,7 +1,17 @@
 > TriB-QA
 
+
 ###### **富强，民主，文明，和谐，自由，平等，公正，法治，爱国，敬业，诚信，友善**
-## 1.任务介绍
+
+Here is our group's project for CCF & Baidu 2019 Reading Comprehension Competition, dataset is Baidu Dureader.
+
+The code will be completed once the competition finishes.
+The whole project is based on pytorch-version BERT: Passage Rerank, Answer predcition and YES/NO answer classification. So you may need to download pretrained language model,config file and vocab list in advance, or use our pretrained model to get final prediction. 
+
+Later, if possible, we will build a simple pipeline to ease the complicated procedures, also a web API may be built for it.
+
+
+## 1.任务介绍  Task Description
 
 [百度阅读理解竞赛官网](http://lic2019.ccf.org.cn/read)查看具体要求.
 
@@ -9,9 +19,9 @@
 
 项目注意事项、进展情况可以由[这里](https://github.com/trib-plan/TriB-QA/projects/1)跟踪。
 
-数据格式可以从[这里](https://github.com/trib-plan/TriB-QA/tree/master/data) 查看并补全
+数据格式可以从[这里](https://github.com/trib-plan/TriB-QA/tree/master/data) 查看并补全。
 
-## 2. 时间规划
+## 2. 时间规划 Time Management
 
 竞赛的关键时间如下图：
     <table>
@@ -41,7 +51,7 @@
         </tr>
     </table>
 
-## 3. 进展提交汇总
+## 3. 进展提交汇总  Submitted Result History
 
 | 名字                     | Rouge | Bleu  | 时间      | Rouge提升 | Bleu 提升 |
 | ------------------------ | ----- | ----- | --------- | --------- | --------- |
@@ -67,11 +77,12 @@
 
 
 
-## 4. 模型结构
+## 4. 模型结构 Model Structure
 
 我们的模型初步定为三个bert，简称Tri-Bert。
+Since Our model was initialy desgined as a pipileline include three BERT, we also call it TriB(ert) in our group :>. Sounds rouge but superisely effective.
 
-### 模型的流程图
+### 模型的流程图  Model Flow-Chart
 <img src ="http://d.hiphotos.baidu.com/image/%70%69%63/item/aec379310a55b319b8172d674da98226cffc1731.jpg" width= "80%" height="60%"/>
 
 ### Passage Reranking
@@ -82,8 +93,7 @@
 
 <img src ="http://f.hiphotos.baidu.com/image/%70%69%63/item/0bd162d9f2d3572c6cbe35ce8413632762d0c340.jpg" width= "100%" height="100%"/>
 
-## 5. 任务分配
-
+## 5. 任务分配 Task Allocation
 小组目前成员5名：任慕成、魏然、柏宇、王洋、刘宏玉。
 
 
