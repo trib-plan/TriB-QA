@@ -10,6 +10,7 @@ The code will be completed once the competition finishes.
 The whole project is based on pytorch-version BERT: Passage Rerank, Answer predcition and YES/NO answer classification. So you may need to download pretrained language model,config file and vocab list in advance, or use our pretrained model to get final prediction. 
 
 Later, if possible, we will build a simple pipeline to ease the complicated procedures, also a web API may be built for it.
+
 (起初以为参加就是白给，没想到或许可以嫖上一笔零花钱！o(*￣▽￣*)ブ)
 
 ## 1.任务介绍  Task Description
@@ -81,7 +82,10 @@ Later, if possible, we will build a simple pipeline to ease the complicated proc
 ## 4. 模型结构 Model Structure
 
 我们的模型初步定为三个bert，简称Tri-Bert。
-Since Our model was initialy desgined as a pipileline include three BERT, we also call it TriB(ert) in our group :>. Sounds rouge but superisely effective.
+
+Since Our model was initialy desgined as a pipileline include three BERT, we also call it TriB(ert) in our group :>. 
+
+Sounds rough but superisely effective.
 
 ### 模型的流程图  Model Flow-Chart
 <img src ="http://d.hiphotos.baidu.com/image/%70%69%63/item/aec379310a55b319b8172d674da98226cffc1731.jpg" width= "80%" height="60%"/>
@@ -97,5 +101,5 @@ Since Our model was initialy desgined as a pipileline include three BERT, we als
 ## 5. 任务分配 Task Allocation
 小组目前成员5名：任慕成、魏然、柏宇、王洋、刘宏玉。
 
-
+人人都是炼丹师
 
