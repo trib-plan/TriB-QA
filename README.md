@@ -13,6 +13,8 @@ Later, if possible, we will build a simple pipeline to ease the complicated proc
 
 (起初以为参加就是白给，没想到或许可以嫖上一笔零花钱！o(*￣▽￣*)ブ)
 
+谢谢Naturali高抬一手，如愿以偿！ 🙇‍ 
+
 ## 1.任务介绍  Task Description
 
 [百度阅读理解竞赛官网](http://lic2019.ccf.org.cn/read)查看具体要求.
